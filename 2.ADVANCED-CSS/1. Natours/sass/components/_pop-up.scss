@@ -1,0 +1,246 @@
+/*------------------------------------------- POPUP -------------------------------------*/
+
+
+.popup {
+
+	position: fixed;
+	top: 0;
+	left: 0%;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba($color-black, 0.8);
+	z-index: 9999;
+	transition: all .3s;
+
+
+
+
+	/// to hide and reveal popup box ad id to popup div and link in the a href"#"
+
+
+	opacity: 0;
+	visibility: hidden;
+
+
+
+	//! not &__target{}!!!!!!!!!!!!!!!!!
+
+	&:target {
+
+		opacity: 1;
+		visibility: visible;
+	}
+
+
+	///                                                                             
+
+
+
+	&__content {
+
+
+		width: 75%;
+
+		background-color: $color-white;
+
+		box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+
+		@include centerContent;
+
+		border-radius: 3px;
+
+		overflow: hidden;
+
+
+
+		/// using table to make grid
+
+		display: table;
+
+		@include respond(phone) {
+
+			text-align: center;
+
+		}
+
+
+
+
+		/// create a zoom in for the popup (see below for target popup__content)
+
+
+		/// using transform:scale will mis-align the box as it overrides the translate state of the mixin
+		/// so reset the mixin translate
+
+		transform: translate(-50%, -50%) scale(0.4);
+
+		opacity: 0;
+		transition: all 0.5s;
+		transition-delay: 0.2s; // or can shorthand  	transition: all  0.5s  0.2s(delay);
+
+
+
+	}
+
+
+	&__left {
+
+		width: 33.33333%;
+		display: table-cell;
+
+		//! MEDIA QUERY
+
+		@include respond(phone) {
+
+			display: inline-block;
+			width: 100%;
+
+
+
+		}
+
+	}
+
+	&__right {
+
+		width: 66.666667%;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 3rem 5rem;
+
+		//! MEDIA QUERY
+
+		@include respond(phone) {
+
+			display: inline-block;
+			width: 100%;
+
+		}
+	}
+
+
+	&__img {
+		display: block;
+		width: 100%;
+
+		
+
+		//! MEDIA QUERY
+
+
+		@include respond(tab-land) {
+
+			padding: 2rem;
+		}
+
+		@include respond(tab-port) {
+
+			padding: 2rem;
+			padding-left: 4rem;
+
+
+			&:first-child {
+				margin-top: 4rem;
+			}
+		}
+
+
+		@include respond(phone) {
+
+			width: 50%;
+			float: left;
+			margin-top: 5rem;
+
+			&:first-child {
+
+				margin-top: 5rem;
+			}
+
+
+		}
+
+
+	}
+
+	&__text {
+
+		font-size: 1.4rem;
+		margin-bottom: 4rem;
+
+		// put text into columns and hyphen long word at the end
+
+
+
+		column-count: 2;
+
+		// gap between text
+
+		column-gap: 4rem;
+
+		// vertical border between text
+
+		column-rule: 1px solid $color-grey-light-2;
+
+
+		// hyphen long words at sentence end
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		-webkit-hyphens: auto;
+
+		hyphens: auto;
+
+
+	}
+
+	/// create a zoom in for the popup
+
+
+	// when the popup is the target - select popup__CONTENT
+
+	&:target &__content {
+		transform: translate(-50%, -50%) scale(1);
+
+		opacity: 1;
+	}
+
+
+	/// when you click x it links to section tours which changes the target to section tours 
+	/// thus removing the target state of the popup
+
+
+	&__close {
+
+		&:link,
+		&:visited {
+
+			color: $color-grey-dark;
+			position: absolute;
+			top: 2.5rem;
+			right: 2.5rem;
+			font-size: 3rem;
+			text-decoration: none;
+			display: inline-block;
+
+			/// as the x is a inline element it is treated like text so line-height applies
+
+			line-height: 1;
+
+			@include respond(phone) {
+
+				top: 1.5rem;
+				font-size: 4rem;
+
+
+			}
+
+
+		}
+
+		&:hover {
+			color: $color-primary;
+		}
+
+
+	}
+
+}

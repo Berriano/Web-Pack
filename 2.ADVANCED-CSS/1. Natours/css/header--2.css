@@ -1,0 +1,182 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/*-----------------------------------  Clip Path  ---------------------------------  */
+
+
+
+/*/ normal setup  */
+
+
+*{
+
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+html{
+	font-size: 62.5%;
+}
+
+
+/*/ all default font styles are set in body as it gets inherited to all child elemnets */
+
+
+/*! FOR THIS COURSE TRY TO KEEP EACH ARGUEMENT ON ITS OWN LINE  */
+
+
+body{
+
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 1.7;
+	color: #777;
+
+	/*/?  to create a border around whole page use padding in the body  */
+
+	padding: 3rem;
+/*!  padding doesnt get inherited, it will just put a 3rem padding around the page  */
+
+
+}
+
+.header{
+
+	height: 95vh;
+
+/*/?  use background image to set gradient coloring with the image*/
+
+	background-image: linear-gradient(
+			to right bottom, 
+			rgba(126, 213, 111, 0.801),   	/*! change the opacity to see the image */
+			rgba(40, 180, 133, 0.801)), 		/*! change the opacity to see the image */
+
+			url(../img/hero.jpg);
+
+
+
+	background-size: cover;
+
+/*! whole picture covers all the container background (wont be zoomed)*/
+
+
+	background-position: top;
+
+/*! what ever the viewport size, the image will always stay at the top (bottom and center also)*/
+
+
+
+/*-------   Clip path  -------*/
+
+
+/*/? specify  4 corner co-ordinates  top-left to bottom-right (x,y) x = h, y = v */
+
+
+
+clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+
+/*! use % and vh(for the height) for co-ords   */
+
+
+/*/? use clippy website to get pre-defined co-ords  */
+
+/* clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%); */
+
+
+position: relative;
+
+
+}
+
+
+/*/ positioning logo  */
+
+
+/*/?  to position img  */
+
+
+.logo-box{
+
+	position: absolute;
+	top: 4rem;          /*! Where box begins from the top */
+	left: 4rem;					/*! Where box begins from the left */
+
+}
+
+.logo{
+
+	/*/? only need to specify height as width will be auto in browser  */
+
+	height: 3.5rem;
+
+
+}
+
+
+
+/*/ centreing text box using absolute + transform:translate(x,y)*/
+
+.text-box{
+
+	position: absolute;
+
+		top: 40%;
+		left: 50%;
+
+			transform: translate(-50%,-50%);    /*!  to move the element a % of its whole size */
+
+			/*!  IF THE ELEMENT IS 100PX HIGH AND WIDE, THE ELEMENT WILL MOVE 50PX UP AND 50PX RIGHT*/
+
+
+}
+
+.heading-primary{
+
+	color: #fff;
+
+	text-transform: uppercase;
+
+
+
+
+}
+
+.heading-primary-main{
+
+		/*/?  to give each element a line break and 100% of the width of its container */
+
+		display: block;
+
+		font-size: 6rem;
+
+		font-weight: 400;
+
+		letter-spacing: 3.5rem;
+
+
+}
+
+.heading-primary-sub{
+
+		/*/?  to give each element a line break and 100% of the width of its container */
+
+		display: block;
+
+		font-size: 2rem;
+
+		font-weight: 700;
+
+		letter-spacing: 1.74rem;
+
+
+}

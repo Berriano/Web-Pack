@@ -1,0 +1,34 @@
+/*------------------------------------------- Video -------------------------------------*/
+
+
+.bg-video{
+
+			position: absolute;
+			top: 0;
+			left: 0%;
+			height: 100%;
+			width: 100%;
+
+			// hide behind all the other elements
+			
+			z-index: -1;
+			opacity: 0.15;
+
+			overflow: hidden;
+
+
+			// video is too big for container, needs shrinking whilst maintain aspect-ratio
+
+
+					&__content{
+
+						height: 100%;
+						width: 100%;
+
+						// still doesnt fill entire parent-box because of maintainence of aspect ratio
+
+						object-fit:cover ; 	//fills and maintains aspect-ratio by clipping excess
+
+					}
+
+}

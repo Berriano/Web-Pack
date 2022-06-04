@@ -1,0 +1,104 @@
+/* ------------------------------------------- Base --------------------------------------------------- */
+
+
+*,
+*::before,
+*::after {
+
+
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+
+
+}
+
+html {
+
+	font-size: 62.5%; 		// width 1200px 1800px
+	
+	
+	
+	/// add the ADVANCED mixin for responsive web design
+	
+	
+	// 1 rem = 16px
+	// To get a font-size of 10px - 10/16px = 62.5%   (1rem = 10px)
+	// to get a font-size of 8px  - 8/16px = 50%			(1rem = 8px)
+	// to get a font-size of 4px  - 4/16px = 25%			(1rem = 4px)
+	// etc,etc
+	
+	
+	//!  The lower placed media queries will over-ride higher placed media quries
+	
+	// the phone mixin is not needed as its the same as tab-port, and tab-port is lower placed
+	
+	
+	
+	// Normal html font-size: 62.5%; 	1rem = 10px  width 1200px 1800px
+	
+		//! MEDIA QUERY
+	
+	@include respond(tab-land) {
+		
+		font-size: 56.25%;
+		// 1rem = 9px 		width 900 - 1200px
+	}
+
+		//! MEDIA QUERY
+	
+	@include respond(tab-port) {
+		
+		font-size: 50%;
+		// 1rem = 8px  		width  600 - 900px
+	}
+	
+	
+	
+	// @include respond(phone) {
+		
+		// 	font-size: 50%;
+		// }
+		
+	
+		/// this goes at the bottom because its a min-with of 1800px
+		
+
+			//! MEDIA QUERY
+
+					@include respond(big-desk) {
+			
+			font-size: 75%;
+			// 1rem = 12px 		width < 1800px plus
+		}
+		
+	}
+
+
+
+
+body {
+
+
+	box-sizing: border-box;
+	padding: 3rem;
+
+
+	//! MEDIA QUERY
+
+	@include respond(tab-port) {
+		padding: 0;
+		
+	
+	}
+
+}
+
+
+///  to style 'selected text' on page
+
+::selection{
+
+	background-color: $color-primary;
+	color: $color-white;
+}

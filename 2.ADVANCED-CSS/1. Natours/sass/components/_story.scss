@@ -1,0 +1,180 @@
+/*------------------------------------------- Story -------------------------------------*/
+
+.story {
+
+	width: 75%;
+	margin: 0 auto;
+	box-shadow: 0 3rem 6rem rgba($color-black, .1);
+
+	// to see video thru box use color opacity
+	background-color: rgba($color-white, .7);
+	border-radius: 3px;
+	padding: 6rem;
+	padding-left: 9rem;
+	font-size: $default-font-size;
+	transform: skewX(-12deg);
+
+
+
+	//!  Media query
+
+
+	@include respond(tab-port) {
+
+		width: 100%;
+		padding: 4rem;
+		padding-left: 7rem;
+
+	}
+
+	//!  Media query
+
+
+	@include respond(phone) {
+
+		transform: skewX(0);
+
+
+	}
+
+
+	&__shape {
+
+
+		width: 15rem;
+		height: 15rem;
+
+		// float shape left to make the rest of the content float around it
+
+		float: left;
+
+		// Dimensions get added to the sahpe NOT the text
+
+		// ONLY WORKS WITH FLOAT and HEIGHT + WIDTH dimensions!!!!
+
+		// similar to clip-path, use shape-outside to wrap text around an image
+		// define size of circle(radius) and centre of circle		
+
+		// (50% is half the height and width of the element at 50% height and 50% width)
+
+		-webkit-shape-outside: circle(50% at 50% 50%);
+		shape-outside: circle(50% at 50% 50%);
+
+
+		-webkit-clip-path: circle(50% at 50% 50%);
+		clip-path: circle(50% at 50% 50%);
+
+		// to make the shape DONT use margin, use transform:translate along the correct axis
+
+		transform: translateX(-3rem) skewX(12deg);
+
+
+
+
+		//!  Media query
+
+
+		@include respond(phone) {
+
+			transform: translateX(-3rem) skewX(0);
+
+
+		}
+
+
+
+
+		// as this negatates the padding to the left, add more to the container
+
+		position: relative;
+
+		// remove certain glitches 
+
+		overflow: hidden;
+
+	}
+
+
+	&__img {
+
+		// width: 100%; // too wide for container so use height
+		height: 100%;
+
+		// to centre person in the circle use translate
+
+		transform: translateX(-3rem) scale(1.4);
+
+		backface-visibility: hidden;
+
+		transition: all 0.5s;
+
+
+	}
+
+
+	&__text {
+
+		transform: skewX(12deg);
+
+		
+
+
+		//!  Media query
+
+
+		@include respond(phone) {
+
+			transform: skewX(0);
+
+
+		}
+
+	}
+
+	&__caption {
+
+		position: absolute; // realative is story__shape
+		top: 50%;
+		left: 50%;
+
+		// have text come up from bottom so Y-axis is 20%(not centered)
+		transform: translate(-50%, 20%);
+		color: $color-white;
+		text-transform: uppercase;
+		font-size: 1.7rem;
+		text-align: center;
+
+
+		// make text invisible until hovered
+		opacity: 0;
+
+		transition: all .5s;
+
+		// if there is instability in hover, use backface-visibility
+
+		backface-visibility: hidden;
+
+
+	}
+
+	&:hover &__caption {
+
+		opacity: 1;
+
+		// move text back to center reseting the axis
+
+		transform: translate(-50%, -50%);
+	}
+
+	&:hover &__img {
+
+		transform: translateX(-3rem) scale(1);
+
+		// brightness < 100% reduces / > 100% increases
+
+		filter: blur(3px) brightness(80%);
+
+
+	}
+
+}

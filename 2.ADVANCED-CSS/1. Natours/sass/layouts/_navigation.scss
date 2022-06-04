@@ -1,0 +1,333 @@
+/*------------------------------------- Navigation -------------------------------------*/
+
+.navigation {
+
+	&__checkbox {
+
+		// hide html checkbox
+
+		display: none;
+
+	}
+
+	&__button {
+
+		background-color: $color-white;
+
+
+		// make slightly bigger than the background so it covers any color showing
+
+		height: 7rem;
+		width: 7rem;
+		position: fixed;
+		top: 6rem;
+		right: 6rem;
+		border-radius: 50%;
+		z-index: 2000;
+		box-shadow: 0 1rem 3rem rgba($color-black, .1);
+		text-align: center;
+		cursor: pointer;
+
+
+
+
+		//! MEDIA QUERY
+
+
+		/// change size of nav button for smaller screen
+
+
+		@include respond(tab-port) {
+
+			top: 4rem;
+			right: 4rem;
+
+		}
+
+		@include respond(phone) {
+
+			top: 3rem;
+			right: 3rem;
+
+		}
+
+	}
+
+
+
+	&__background {
+
+		height: 6rem;
+		width: 6rem;
+		border-radius: 50%;
+
+
+		// to keep button on screen in same position always - use position:fixed 
+		//	(like absolute but no parent-relative needed)
+
+		position: fixed;
+		top: 6.5rem;
+		right: 6.5rem;
+
+
+		// radial gradient starts in the middle and spreads out
+
+		background-image: radial-gradient($color-primary-light, $color-primary-dark);
+
+		z-index: 1000;
+
+
+		// make button circle expand so large it covers the screen
+
+
+		/// easing function for background of nav(onstead of ease-in/ease-out)
+
+		transition: transform 0.8s cubic-bezier(.52, .87, .93, .85);
+
+
+
+		//! MEDIA QUERY
+
+
+		/// change size of nav background(shadow) for smaller screen
+
+
+		@include respond(tab-port) {
+
+			top: 4.5rem;
+			right: 4.5rem;
+
+		}
+
+		@include respond(phone) {
+
+			top: 4rem;
+			right: 4rem;
+
+		}
+
+	}
+
+
+
+	&__nav {
+
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		right: 0;
+
+		z-index: 1500;
+
+		// set opacity to hide navigation
+
+		opacity: 0;
+
+		//but link will still be clickable so set width to 0
+
+		width: 0;
+
+		// now the links are set on the right side of the screen!!
+
+
+
+
+		/// easing function for nav list element(onstead of ease-in/ease-out)
+
+		transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+
+	}
+
+	&__list {
+
+		// use centrecontent mixin to centre navigation
+
+		@include centerContent;
+		list-style: none;
+		text-align: center;
+
+
+
+
+	}
+
+	&__item {
+
+		margin: 1rem;
+
+
+	}
+
+	&__link {
+
+		&:link,
+		&:visited {
+
+			display: inline-block;
+
+			font-size: 4rem;
+			font-weight: 300;
+			padding: 1rem 2rem;
+			color: $color-white;
+			text-decoration: none;
+			text-transform: uppercase;
+			background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+
+
+			// set background position to double so white side is hidden
+
+			background-size: 230%;
+
+			transition: all .4s;
+
+			span {
+				margin-right: 1.6rem;
+				display: inline-block;
+			}
+
+
+		}
+
+		&:hover,
+		&:active {
+
+
+			// set background position to 100% to move white strip across
+			// so background is 220% wide					[ 			220%]
+			// it move it back 100% of this				[	  %100	 	]
+			// it moves it halfwayish back				[220%				]
+
+			background-position: 100%;
+			color: $color-primary;
+			transform: translateX(1rem);
+
+
+		}
+
+	}
+
+
+	/// Functionality for checkbox hack navigation menu
+
+
+	//  WHEN CHECKBOX IS CHECKED (by clicking the label NOT the checkbox) -
+	//  SELECT SIBLING :background and apply code to it
+
+	&__checkbox:checked~&__background {
+
+		transform: scale(90);
+
+		// to animate add a transition to the &__background
+
+	}
+
+
+	// ALSO when checked make the nav appear by reseting width and opacity
+
+
+	&__checkbox:checked~&__nav {
+
+		opacity: 1;
+		width: 100%;
+
+
+		// to animate add a transition to the &__nav
+
+	}
+
+	/// Hamburger Icon
+
+
+	&__icon {
+
+		position: relative;
+		margin-top: 3.5rem;
+
+
+
+
+		&,
+		&::before,
+		&::after {
+
+			width: 3rem;
+			height: 2px;
+			background-color: $color-grey-dark-3;
+
+			display: inline-block;
+
+		}
+
+
+		&::before,
+		&::after {
+
+			content: "";
+			position: absolute;
+			left: 0;
+
+			transition: all .2s;
+		}
+
+		&::before {
+			top: -0.8rem;
+
+		}
+
+		&::after {
+			top: 0.8rem;
+		}
+
+		// to center icon lines use text align on the button
+
+	}
+
+	&__button:hover &__icon::before {
+
+		top: -1.1rem;
+
+
+	}
+
+	&__button:hover &__icon::after {
+
+		top: 1.1rem;
+
+
+	}
+
+	/// when checkbox is checked , the span element should disappear (transparent)
+
+	// when checkbox is checked select its sibling(+) the button
+
+	//&__checkbox + &__button
+
+	// from there select the buttons child element - the span class
+
+	&__checkbox:checked+&__button &__icon {
+
+		background-color: transparent;
+
+	}
+
+	/// now rotate the before and after (they are still there because original span is only transparent)
+
+	&__checkbox:checked+&__button &__icon::before {
+
+		transform: rotate(135deg);
+		top: 0;
+
+	}
+
+	&__checkbox:checked+&__button &__icon::after {
+
+		transform: rotate(-135deg);
+		top: 0;
+	}
+
+
+
+
+
+}

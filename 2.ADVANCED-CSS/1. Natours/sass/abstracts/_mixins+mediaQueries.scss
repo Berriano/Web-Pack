@@ -1,0 +1,188 @@
+@mixin clearfix {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+}
+
+@mixin centerContent {
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+
+/*------------------------------- Responsive Web Media queries --------------------------------------*/
+
+
+/*
+
+0 - 600px:			  phone
+600 - 900px: 		tablet
+900 - 1200px: 		Tablet landscape
+1200 -1800px:			normal
+1800px+ 					big desktop
+
+
+/// BASIC Responsive mixin
+
+
+@mixin respond-phone {
+	
+	@media (max-width:600px) {
+		
+		//! content will be the code we put when we @include the mixin
+		
+		@content;
+		
+	}
+}
+
+*/
+
+
+
+
+/// ADVANCED Responsive mixin - (like js if statement)
+
+
+
+//! USE EMS AS REM CAN HAVE ISSUES WITH SOME BROWSERS
+
+
+
+/*/ ------------------------------ Media Query Manager --------------------------- */
+
+
+// 1em =16px
+
+
+
+
+@mixin respond($breakpoint) {
+
+	
+	@if $breakpoint==phone {
+
+		@media only screen and (max-width:37.5em) {					//600px
+
+			@content;
+
+		}
+
+	}
+	
+	
+	@if $breakpoint==tab-port {
+		
+		@media only screen and (max-width:56.25em) {			// 900px
+
+			@content;
+			
+		}
+	}
+	
+	
+	@if $breakpoint==tab-land {
+		
+		@media only screen and (max-width:75em) { 				// 1200px
+			
+			@content;
+			
+		}
+	}
+	
+	
+	@if $breakpoint==big-desk {
+
+		@media only screen and (min-width:112.5em) { 			// 1800px
+			
+			@content;
+
+		}
+		
+	}
+
+}
+
+///                    PREFFERED ORDER TO MAKE THE CHANGES                              ///
+
+
+
+/*
+
+1. BASE (starting with font-size which does most of the changes)
+2. TYPOGRAPHY
+3. GENERAL LAYOUT + GRID
+4. PAGE LAYOUT
+5. COMPONENETS
+
+
+
+*/
+
+
+
+/*
+
+
+@mixin respond($breakpoint) {
+
+
+
+
+	@if $breakpoint==tab-land {
+
+		@media (max-width:1200px) {
+
+			@content;
+
+		}
+	}
+
+
+
+	@if $breakpoint==tab-port {
+
+		@media (max-width:900px) {
+
+			@content;
+
+		}
+	}
+
+
+
+
+	@if $breakpoint==phone {
+
+		@media (max-width:600px) {
+
+			@content;
+
+		}	
+
+	}	
+
+
+
+
+
+	@if $breakpoint==big-desk {
+
+		@media (min-width:1800px) {
+
+			@content;
+
+		}
+
+	}
+
+}
+
+*/

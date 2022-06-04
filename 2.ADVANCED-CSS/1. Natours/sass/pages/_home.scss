@@ -1,0 +1,263 @@
+/*--------------------------------------- Home -----------------------------------------*/
+
+.section-about {
+
+	background-color: $color-grey-light-1;
+	padding: 25rem 0;
+
+	// to move container up, use a negative margin-top
+
+	margin-top: -20vh;
+
+
+
+	//! MEDIA QUERY
+
+	@include respond(tab-port) {
+
+		padding: 20rem 0;
+		margin-top: -15vh;
+
+	}
+
+
+}
+
+
+
+.section-features {
+
+	background-color: $color-grey-light-1;
+	padding: 20rem 0;
+
+	/// Responsive img
+
+
+	background-image: $background-color,
+		url(../img/nat-4-small.png);
+
+			background-size: cover;
+
+		
+		@media(min-resolution:192dpi) and (min-width:600px), (min-width:2000px){
+			
+			
+				background-image: $background-color,
+					url(../img/nat-4.jpg);
+			
+
+		}
+
+
+
+
+	// skew the whole section one-way
+
+	transform: skewY(-7deg);
+
+	// skews everything 
+
+	// once skewing is correct move whole section up by using margin top negative value
+
+	margin-top: -11.5rem;
+
+
+
+
+	// to unskew (not using shorthand so easier to understand(but can use & shorthand)
+
+
+	// ( > = direct child) (* = all) = all direct children of the section-features selector
+
+	&>* {
+
+		transform: skewY(7deg);
+
+		// use the direct child other wise all children will inherit an dwill accumalate 
+
+	}
+
+
+
+	//! MEDIA QUERY
+
+	@include respond(tab-port) {
+
+		padding: 10rem 0;
+
+
+	}
+
+
+}
+
+
+
+
+.section-tours {
+
+	background-color: $color-grey-light-1;
+	padding: 25rem 0 15rem 0;
+
+	margin-top: -11.5rem;
+
+
+
+	//! MEDIA QUERY
+
+	@include respond(tab-port) {
+
+		padding: 20rem 0 10rem 0;
+
+
+	}
+
+
+}
+
+
+
+
+.section-stories {
+
+	padding: 15rem 0;
+
+	position: relative;
+
+
+
+	//! MEDIA QUERY
+
+	@include respond(tab-port) {
+
+		padding: 10rem 0;
+
+	}
+
+}
+
+
+
+
+/// booking form
+
+
+
+.section-book {
+
+	padding: 15rem 0;
+	background-image: linear-gradient(to right bottom,
+			$color-primary-light,
+			$color-primary-dark);
+
+
+
+
+
+	//! MEDIA QUERY
+
+	@include respond(tab-port) {
+
+		padding: 10rem 0;
+
+	}
+
+}
+
+
+
+
+.book {
+
+	background-size: 100%;
+	border-radius: 3px;
+	box-shadow: 0 1.5rem 4rem rgba($color-black, .25);
+
+
+	/// 											Solid color gradient															
+
+	// use gradient to slice a color over half the picture
+
+	// instead of direction, use degrees for starting angle
+
+	// use percentage for where color should start completely
+
+
+	// background-image:linear-gradient(105deg,					
+	// 																	rgba($color-white, .9) 0%,
+	// 																orangered 50%), 
+	// 																	url(../img/nat-10.jpg);
+
+	// when you put the colors at the same number there is no gradient- just a solid line divider
+	// use transparent as a color to show half and fade half the picture
+
+
+	background-image: linear-gradient(105deg,
+			rgba($color-white, .9) 0%,
+			rgba($color-white, .9) 50%,
+			transparent 50%),
+		url(../img/nat-10.jpg);
+
+
+	///																																						
+
+
+
+	//! MEDIA QUERY
+
+	@include respond(tab-land) {
+
+		background-image: linear-gradient(105deg,
+				rgba($color-white, .9) 0%,
+				rgba($color-white, .9) 65%,
+				transparent 65%),
+			url(../img/nat-10.jpg);
+
+			background-size: cover;
+			
+			
+		}
+
+			//! MEDIA QUERY
+
+
+		@include respond(tab-port) {
+			
+			background-image: linear-gradient(to right,
+					rgba($color-white, .9) 0%,
+					rgba($color-white, .9) 100%),
+				url(../img/nat-10.jpg);
+	
+				background-size: cover;
+
+		
+
+	}
+
+
+
+
+	&__form {
+
+		width: 50%;
+		padding: 6rem;
+
+			//! MEDIA QUERY
+
+		@include respond(tab-land) {
+
+			width: 65%;
+
+		}
+
+			//! MEDIA QUERY
+			
+		@include respond(tab-port) {
+
+			width: 100%;
+
+		}
+
+	}
+
+}
