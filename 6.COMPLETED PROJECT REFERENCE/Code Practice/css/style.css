@@ -1,0 +1,28 @@
+.container {
+  width: 1000px;
+  margin: 30px auto;
+  background-color: #ddd;
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(2, minmax(150px, min-content)); }
+  .container .item {
+    padding: 10px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 30px;
+    background-color: orangered; }
+    .container .item--1 {
+      background-color: orangered; }
+    .container .item--2 {
+      background-color: yellow; }
+    .container .item--3 {
+      background-color: purple; }
+    .container .item--4 {
+      background-color: pink; }
+    .container .item--6 {
+      background-color: blue; }
+    .container .item--7 {
+      background-color: gold; }
+    .container .item--8 {
+      background-color: cyan; }

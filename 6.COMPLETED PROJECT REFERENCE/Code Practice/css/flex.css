@@ -1,0 +1,165 @@
+* {
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+
+/*--------------------------------------- FLEXBOX -----------------------------------------  */
+
+
+.container {
+
+
+	height: 1000px;
+
+	padding: 20px;
+	background-color: aqua;
+
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+
+
+	/*----------------------------------------- flex-wrap ------------------------------------  */
+
+
+
+	/*/ wraps content onto a new row so content doesnt overlap container   */
+
+
+
+	flex-wrap: wrap;
+
+
+
+	/*-------------------------------------- align-content -----------------------------------  */
+
+
+
+	/*/ align rows along the x-axis ⬇ ⬆*/
+	
+
+	align-content: stretch;
+
+
+}
+
+
+
+/*------------------------------------- Grow / Shrink / Basis --------------------------------  */
+
+
+
+.test {
+
+	padding: 50px;
+	font-size: 30px;
+	margin: 5px;
+	background-color: crimson;
+	color: white;
+	font-weight: 700;
+
+
+
+	/*------- grow -------  */
+
+
+
+	/*/ flex-grow means the element will occupy the entire space that it can when set to 1  */
+
+
+	/* flex-grow: 1; */
+
+
+}
+
+.t2 {
+
+	/*/ when other elements are set to 1, if you set an element to 2 it will be double the size of the others  */
+
+
+	/* flex-grow: 2; */
+
+
+	/*/ shorthand for flex grow is simply flex:1 (no limit on how high - 3,4,5,6 etc) */
+
+
+	/* flex: 1; */
+
+
+	/*! now this element occupies all the available space after each element is set to its styles  */
+
+
+
+	/*------- basis ------  */
+
+
+
+	/*/ basis is for setting the width of a flex item  */
+
+
+	/* flex-basis: 20%; */
+
+
+	/*!  now the element is 20% of the CONTAINER width  */
+
+
+
+	/* flex-basis: 300px; */
+
+
+	/*! now it just takes up 300px of width  */
+
+
+	/*------- shrink ------  */
+
+
+
+	/*/ shrink controls how an element can shrink - default value 1 means its allowed to shrink */
+
+
+	/*/ setting to 0 means it is not allowed to shrink  */
+
+
+	/* flex-shrink: 0; */
+
+
+	/*/ Always use the shorthand for flex: grow / shrink / basis */
+
+
+
+	flex: 0 1 20%;
+
+	/*! flex: dont grow -0 / be able to shrink - 1 / 20% -  take up 20% of the container width */
+
+
+	font-size: 80px;
+
+}
+
+
+.t3 {
+
+	flex: 1;
+
+
+	/*-------------------------------------- Order ---------------------------------------  */
+
+
+	/* / order moves an item in the flow to before -1 or after 1 the normal flow(default 0)*/
+
+	order: 1;
+}
+
+.t4 {
+
+	/* align-self: flex-end; */
+	order: -1;
+
+}

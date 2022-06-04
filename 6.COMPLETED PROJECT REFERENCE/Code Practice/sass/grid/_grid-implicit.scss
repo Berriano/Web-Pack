@@ -1,0 +1,96 @@
+.container {
+
+
+	width: 1000px;
+	height: 1000px;
+	margin: 30px auto;
+	background-color: #ddd;
+
+
+	display: grid;
+
+
+	// grid-template-rows: repeat(2, 150px);
+	// grid-template-columns: repeat(2, 1fr);
+
+	grid-gap: 30px;
+	
+	
+	/// for implicit rows/columns use grid-auto...
+	
+	
+	grid-auto-rows: 80px;
+	//! gives all undefined rows a height of 80px
+	
+	grid-auto-columns: .5fr;
+	
+	
+	/// the undefined items will be automatically put into rows, but can be changed
+	
+	
+	grid-auto-flow: row dense;
+	
+	
+	/// so completely changes the grid direction(like flex-direction) and continues flowing in the columns direction
+	
+	
+
+	
+	/// align-items: default set to stretch
+	
+	// align-items: center;
+	
+	/// justify content
+	
+	// justify-items: center;
+	
+	
+	
+	
+	/// align grid tracks
+	
+	
+	grid-template-rows: repeat(2, 100px);
+	grid-template-columns: repeat(2, 200px);
+
+	justify-content: center;
+	align-content: center;
+
+
+
+
+	.item {
+
+		padding: 10px;
+		color: #fff;
+		font-family: sans-serif;
+		font-size: 30px;
+		background-color: orangered;
+
+
+		&--4 {
+
+
+			background-color: purple;
+
+			grid-row: 2/span 3;
+		}
+
+		&--7 {
+
+			background-color: rgb(244, 158, 244);
+
+			grid-column: 1 / -1;
+
+		}
+		
+		&--6{
+
+			background-color: lightcoral;
+			grid-row: 2 /span 2;
+		}
+
+	}
+
+
+}

@@ -1,0 +1,105 @@
+.container {
+
+
+	width: 1000px;
+	margin: 30px auto;
+	background-color: #ddd;
+
+
+	display: grid;
+
+
+
+	/// min - max content
+
+
+
+	// grid-template-columns:max-content 1fr 1fr min-content;
+
+	// grid-template-rows: repeat(2, min-content);
+
+
+
+	/// use minmax function to set a minimum and a maximum
+
+
+
+	// grid-template-rows: repeat(2, minmax(150px, min-content));
+
+	// //! So the row should be at least 150px high and at max the minimum height of the content
+
+	// grid-template-columns: minmax(200px, 300px) repeat(3 , 1fr);
+
+
+
+
+	/// auto-fit/fill
+
+	width: 90%;
+
+
+	// grid-template-columns: repeat(auto-fill, 100px);
+	
+	//!  Although there are 8 elements, this will make 10 columns as the container is 1000px (1000px / 100px = 10 columns)
+	
+	
+	// grid-template-columns: repeat(auto-fit, 100px);
+	
+	//! auto fit is similar except after it creates the 10 columns - it collapse the empty columns on the end
+	
+
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+	//! using the minmax function allows the grid to strech out to 1fr to fill the content OR set the width to 100px as a minimum
+	//! which will flow onto the next row if the content exceeds this
+
+
+
+	grid-template-rows: repeat(2, minmax(150px, min-content));
+
+
+
+
+
+
+	.item {
+
+		padding: 10px;
+		color: #fff;
+		font-family: sans-serif;
+		font-size: 30px;
+		background-color: orangered;
+
+
+		&--1 {
+			background-color: orangered;
+		}
+
+		&--2 {
+			background-color: yellow;
+		}
+
+		&--3 {
+			background-color: purple;
+		}
+
+		&--4 {
+			background-color: pink;
+		}
+
+		&--6 {
+			background-color: blue;
+		}
+
+		&--7 {
+			background-color: gold;
+		}
+
+		&--8 {
+			background-color: cyan;
+		}
+
+
+	}
+
+}
