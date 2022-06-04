@@ -1,0 +1,301 @@
+/*------------------------------------   homes    ----------------------------*/
+
+
+
+.homes {
+
+
+
+  ///               Add a bit of margin like the features section               //
+
+
+
+  margin: 15rem 0;
+
+
+
+  ///                      Define grid position using names                     //
+
+
+
+  grid-column: center-start / center-end;
+
+
+
+  ///               Create 3 x 2 grid to hold a card in each block              //
+
+
+
+  display: grid;
+
+
+
+  ///        We want as many columns that can fit in the grid container         //
+  ///             									 so use auto fit           								  //
+
+
+
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+  //! so the minimum column width should be 250px and the maximum should be 1 fractional unit
+
+
+
+  ///            Use grid-gap to space, instead of any margin/padding           //
+
+
+  grid-gap: 7rem;
+
+
+}
+
+
+
+
+//-            												Home Cards 												          //
+
+
+.home {
+
+  background-color: $color-grey-light-1;
+
+
+  ///										 Define a 2 column grid inside the cards 									//
+
+  //! * we mainly just set columns not rows as the content should fill the rows
+
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+
+
+  ///    	Centralized heading will overlap lower content, so set a row gap	      //
+
+
+  grid-row-gap: 3.5rem;
+
+
+
+
+  &__like {
+
+
+    ///          					PLace heart icon in top right of image 								      //
+
+
+
+    ///          								First place in correct cell 										      //
+
+
+    grid-row: 1/2;
+
+    grid-column: 2/3;
+
+
+
+    ///        							As its an svg icon, use same styling								      //
+
+    //! *see svg below
+
+
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $color-primary;
+
+
+
+    ///        				Give both the image and heart icon a z-index							      //
+    ///        									so they stay in that order							   	 			   //
+
+
+    z-index: 2;
+
+
+
+    ///        									position in top right corner							   	 			   //
+
+    justify-self: end;
+
+    margin: 1rem;
+
+  }
+
+
+
+  &__img {
+
+
+    ///			 			Position image/heading/buttons to span the whole width					//
+
+
+    grid-column: 1/ -1;
+
+    width: 100%;
+
+
+
+    ///			 			To merge image with svg icon, give them both the same row					//
+
+
+
+    grid-row: 1/2;
+
+
+    z-index: 1;
+
+
+  }
+
+  &__name {
+
+
+    ///				 										Span across both columns														//
+
+
+    grid-column: 1/ -1;
+
+
+    ///				 															Styling																		//
+
+
+    font-family: $font-display;
+
+    font-size: 1.6rem;
+
+    padding: 1.25rem;
+
+    background-color: $color-secondary;
+
+    color: #fff;
+
+    font-weight: 400;
+
+
+
+
+    ///				 														Positioning																	//
+
+
+    width: 80%;
+
+
+    text-align: center;
+
+
+    justify-self: center;
+
+
+
+    ///				 				Heading is currently in row 2, so move to row 1									//
+
+
+
+    grid-row: 1/2;
+
+
+
+    ///				 				If it gets hidden, use z-index to place on top									//
+
+
+    z-index: 30;
+
+
+    /// 						 align is set to stretch by default, so set to end								//
+
+
+    align-self: end;
+
+
+
+    /// 						Use translate to move heading 50% of its own height	down					//
+
+
+    transform: translateY(50%);
+
+
+
+  }
+
+
+
+  ///  		Add a margin to the top row icons to give some space between the heading		 //
+
+
+
+  &__location,
+  &__rooms {
+
+
+    margin-top: 2.5rem;
+
+
+  }
+
+
+
+
+  ///  													Set styling for all the card info		 											//
+
+
+
+  &__location,
+  &__rooms,
+  &__area,
+  &__price {
+
+    font-size: 1.5rem;
+
+    margin-left: 2rem;
+
+
+    ///			  	Make All card icon and text line up side-by-side- by using flex					//
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+
+
+
+    svg {
+
+
+      ///          											  How to style an svg  											        //
+
+
+      fill: $color-primary;
+
+      height: 2rem;
+
+      width: 2rem;
+
+
+
+      /// 							Add some margin right to separate icon from the text   	   			 //
+
+      //! * redundant as you can use gap with flex now
+
+      // margin-right: 1rem;
+
+
+    }
+
+
+  }
+
+
+  ///          							 How to style an button to span grid 									        //
+
+
+  &__btn {
+
+    grid-column: 1/ -1;
+
+
+  }
+
+}

@@ -1,0 +1,125 @@
+/*----------------------------- List -----------------------------*/
+
+
+
+
+.list {
+
+	list-style: none;
+	padding: 3rem 0;
+	margin: 3rem 0;
+
+	border-top: var(--line);
+	border-bottom: var(--line);
+
+
+
+	////////   make the list 2 columns   ////////
+
+
+
+	/// squeeze onto one line
+
+
+	display: flex;
+
+
+	/// wrap text onto multiple lines - side by side
+
+
+	flex-wrap: wrap;
+
+
+	/// give each item a width of 50% of the container width (2 x 50 = 2 on each row)
+
+
+	&__item {
+
+		//! dont grow / dont shrink / take 50% of width available
+
+		flex: 0 0 50%;
+
+		margin-bottom: 0.7rem;
+
+	}
+
+
+
+	///////  ADD SVG ICON USING CSS - FROM THE SVG ICON FOLDER NOT THE SPRITE PACK  AS WE ONLY NEED TO ADD IT ONCE  /////////
+
+
+
+
+	&__item::before {
+		content: "";
+		display: inline-block;
+		height: 1rem;
+		width: 1rem;
+		margin-right: .7rem;
+
+
+
+
+		///Use mask to add color to an svg icon as background image wont allow change of color  
+
+
+
+
+		/////////////////////////////////  @SUPPORTS  //////////////////////////////////
+
+
+		
+
+
+		//----- If doesnt support maks image, then do :-
+
+
+		//!  Older Browser
+
+
+		background-image: url(../img/chevron-thin-right.svg);
+		background-size: cover;
+
+
+		//! New Browser
+
+
+		//--------- If supports mask image then do :-
+
+
+
+		//! leave the url blank - just needs something there
+
+
+		@supports(-webkit-mask-image: url()) or (mask-image: url()) {
+
+
+			/// Set background color to the color of the icon you want
+
+
+			background-color: var(--color-primary);
+
+
+			/// use a mask-image (the SVG image showm would then be the color of the background 
+			/// and the SVG background would block out the rest of the background color)        
+
+
+			mask-image: url(../img/chevron-thin-right.svg);
+			-webkit-mask-image: url(../img/chevron-thin-right.svg);
+
+
+			/// use cover so icon covers the entire element
+
+			mask-size: cover;
+			-webkit-mask-size: cover;
+
+			/// set background image to none otherwise wont work
+
+			background-image: none;
+
+
+		}
+
+	}
+
+}

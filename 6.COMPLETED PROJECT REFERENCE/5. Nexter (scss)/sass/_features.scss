@@ -1,0 +1,137 @@
+/*---------------------------------  Features -----------------------------------*/
+
+
+
+///     	 Features will be the grid container for the feature blocks             //
+
+
+
+.features {
+
+
+  ///              		  Define features grid position using names        	          //
+
+
+  grid-column: center-start / center-end;
+	
+
+
+
+  ///             	   Turn features section into a grid container                  //
+
+
+  display: grid;
+
+
+  ///    	    Use auto-fit to make grid responsive,a nd not keep to 3 columns       //
+
+
+
+  /// 	Auto fit will create as many columns needed based on the defined size:- 		///
+  ///										 a minimum of 250px and a maximum of 1fr										///
+
+
+  //!  If the columns go below 250px wide,move content to next row
+
+
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+
+
+
+  ///                   			 Styling the grid container     	      				     //
+
+
+
+  margin: 15rem 0;
+
+  grid-gap: 6rem;
+
+
+  /// 						As the text content of the items is various lengths, 						///
+  /// 						align items to start so all text starts at the top							///
+
+
+  align-items: start;
+
+
+
+}
+
+
+
+///                    			 Styling each feature block   	  	 							     //
+
+
+.feature {
+
+
+
+  /// 								Turn each feature block into its own grid container					 //
+
+
+
+  display: grid;
+
+
+  /// 			Use min-content again for the icon-box as the size is set already			//
+  /// 							and set the rest to have the leftover space										//
+
+
+
+  grid-template-columns: min-content 1fr;
+
+
+
+  /// 										Add some gap as the content is bunched									//
+
+
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 1.5rem;
+
+
+
+
+
+
+  &__icon {
+
+
+    /// 								As the icon is svg, use fill to color										//
+
+
+    fill: $color-primary;
+
+
+    /// 		use width and height to size icons - both sizes should be equal		// 
+
+
+    width: 4.5rem;
+    height: 4.5rem;
+
+
+    /// 										set the icon to spead over 2 rows, 									//
+    ///								so the top rows height is not set by the icon 						//
+
+
+    grid-row: 1 / span 2;
+
+
+    /// The icon is positioned just above the block, so use translate to move it//
+
+
+    transform: translateY(-1rem);
+
+
+
+  }
+
+
+  &__text {
+
+    font-size: 1.7rem;
+
+
+  }
+
+}

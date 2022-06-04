@@ -1,0 +1,144 @@
+/*----------------------------------- Layout -------------------------------*/
+
+
+.container {
+
+	max-width: 120rem;
+	margin: 8rem auto;
+	background-color: var(--color-grey-light-1);
+	box-shadow: var(--shadow-dark);
+
+	min-height: 50rem;
+
+
+	//! MEDIA QUERY
+
+	@media only screen and (max-width: $bp-largest) {
+
+		margin: 0;
+
+		/// because we changed the font size - everything now shrinks revealing the body red background
+
+		/// set max-width to 100% should fix, but also add width 100%
+
+		max-width: 100%;
+		width: 100%;
+
+	}
+}
+
+
+
+
+/// 														Header																		//
+
+
+
+.header {
+
+	height: 7rem;
+	background-color: #fff;
+	border-bottom: var(--line);
+	font-size: 1.4rem;
+
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	//! MEDIA QUERY
+	
+	
+	@media only screen and (max-width: $bp-medium) {		
+	
+	
+		
+		/// to wrap the search bar to the next line
+		
+		flex-wrap: wrap;
+		
+		/// all still crammed so give the header some height and align-content
+		
+		
+		height: 11rem;
+
+		align-content: space-around;
+		
+	}
+
+}
+
+
+.content {
+
+	display: flex;
+
+
+	//! MEDIA QUERY
+
+
+	@media only screen and (max-width: $bp-medium) {
+
+		flex-direction: column;
+
+	}
+
+}
+
+
+
+
+/// sidebar
+
+
+
+
+.sidebar {
+
+	background-color: var(--color-grey-dark-1);
+
+	flex: 0 0 18%;
+	//! 0 grow 0 shrink 18% of parent container
+
+	display: flex;
+	flex-direction: column;
+
+
+	justify-content: space-between;
+	align-items: center;
+
+
+}
+
+
+///                       flex:1 = occupy remaining space                                   
+
+//!                flex:1 = the element should grow as much as it can
+
+
+
+/// main content
+
+
+.hotel-view {
+
+	flex: 1;
+
+}
+
+
+
+/// user reviews
+
+
+.user-reviews {
+
+	flex: 1;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+}

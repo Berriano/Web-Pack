@@ -1,0 +1,12 @@
+/*------------------------------------- Mixins -----------------------------*/
+
+
+/// centering @1200px
+
+
+@mixin centering {
+
+	margin: 0 auto;
+	max-width: 120rem;
+
+}

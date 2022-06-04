@@ -1,0 +1,404 @@
+/*---------------------------------- Header ------------------------------*/
+
+
+/// logo
+
+
+.logo {
+
+	height: 3.25rem;
+	margin-left: 2rem;
+}
+
+
+
+
+/// search box
+
+
+
+.search {
+
+
+	flex: 0 0 40%;
+
+
+	/// to centre items in a flex item, its posiible to turn it into a flex container
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
+
+	//! Media Query
+
+
+
+	@media only screen and (max-width: $bp-smallest) {
+
+
+
+		/// change the order to move the search bar to the end
+
+
+		order: 1;
+
+
+		/// to move the search bar to the next line - use wrap on th ewhole header
+
+
+		/// the search bar is crammed in the corner, so give it 100% of the width using flex
+
+
+		flex: 0 0 100%;
+
+
+		/// all still crammed so give the header some height and align-content
+
+
+
+
+		/// make the netire search area the same color to lose the round edges
+
+
+		background-color: var(--color-grey-light-2);
+
+
+
+	}
+
+
+
+	&__input {
+
+		font-family: inherit;
+		font-size: inherit;
+		background-color: var(--color-grey-light-2);
+		border: none;
+		padding: .7rem 2rem;
+		border-radius: 100px;
+		width: 90%;
+		transition: all .2s;
+
+		margin-right: -3rem; // (width of the search bar stays the same)
+
+
+
+
+		&:focus {
+			outline: none;
+			width: 100%;
+			background-color: var(--color-grey-light-3);
+		}
+
+
+
+
+		&::-webkit-input-placeholder {
+
+			font-weight: 100;
+			color: var(--color-grey-light-4);
+		}
+	}
+
+
+
+
+	/// when you want another eleemnt to do something when clicking a different element ie click input/btn changes color
+	/// so when you focus on the search bar(input),  the button changes color                                           
+
+
+
+
+	&__input:focus+&__button {
+
+		background-color: var(--color-grey-light-3);
+
+	}
+
+
+
+	&__button {
+
+		border: none;
+		background-color: var(--color-grey-light-2);
+
+
+
+		&:focus {
+
+			outline: none;
+
+		}
+
+
+		&:active {
+
+			transform: translateY(2px);
+		}
+
+	}
+
+
+
+	&__icon {
+
+		height: 2rem;
+		width: 2rem;
+		fill: var(--color-grey-dark-3);
+
+	}
+
+}
+
+
+
+
+/// user-nav
+
+
+
+.user-nav {
+
+	display: flex;
+	align-items: center;
+
+	position: relative;
+
+
+
+	/// to fill header container height with elements use strecth for the user-nav container
+
+
+	align-self: stretch;
+
+
+	/// select all direct children of user-nav
+
+
+	&>* {
+
+		padding: 0 2rem;
+		height: 100%;
+
+		cursor: pointer;
+
+
+		/// make the direct children of user-nav a flex container - 
+		/// then use flex properties for positioning elements inside
+
+
+		//!  makes a 3rd level of flex-container ⬇
+
+		display: flex;
+		align-items: center;
+
+
+	}
+
+	&>*:hover {
+
+		background-color: var(--color-grey-light-2);
+
+	}
+
+
+
+
+
+	/////////////////////////////////////////
+
+
+	&__icon-box {
+
+		position: relative;
+
+	}
+
+
+	&__icon {
+
+
+		height: 2.25rem;
+		width: 2.25rem;
+
+
+		/// svg icons need fill and stroke to color them
+
+
+		fill: var(--color-grey-dark-2);
+
+
+
+		&-message:hover~.message-box {
+
+			background-image: linear-gradient(to left, var(--color-grey-light-2), var(--color-grey-dark-2));
+			visibility: visible;
+			opacity: 1;
+
+
+		}
+
+
+	}
+
+
+
+	&__notification {
+
+		font-size: .8rem;
+		height: 1.75rem;
+		width: 1.75rem;
+		border-radius: 50%;
+		background-color: var(--color-primary-light);
+		color: #fff;
+
+		position: absolute;
+		top: 1.5rem;
+		right: 1.1rem;
+
+
+		/// to align text inside - use flex as a container once again, and position text
+
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+
+
+
+	&__user-photo {
+
+		height: 3.75rem;
+		border-radius: 50%;
+		margin-right: 1rem;
+
+
+	}
+
+
+
+
+	&__list {
+
+
+		display: flex;
+		flex-direction: column;
+
+		background-color: var(--color-grey-light-2);
+		padding: 1rem 2.65rem;
+
+		position: absolute;
+		top: 6.8rem;
+		left: 12.6rem;
+
+		border-radius: 3px;
+
+		visibility: hidden;
+		opacity: 0;
+
+	}
+
+
+
+
+	&__user-name:hover+&__list,
+	&__user-name:active+&__list {
+
+		visibility: visible;
+		opacity: 1;
+
+	}
+
+
+
+
+	&__link {
+
+		&:link,
+		&:visited {
+
+			font-size: 1.2rem;
+			font-weight: 600;
+
+			text-decoration: none;
+
+			&:not(:last-of-type) {
+				margin-bottom: 0.5rem;
+			}
+
+
+		}
+
+	}
+
+}
+
+
+
+.message-box {
+
+	display: flex;
+	flex-direction: column;
+
+	border-radius: 1px;
+
+	padding: 2rem;
+
+	position: absolute;
+	top: 100%;
+	left: -72%;
+
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.2rem;
+
+
+	&__top {
+		padding: 2rem 0;
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		margin-bottom: .8rem;
+		background-color: var(--color-grey-light-1);
+		border-radius: 3px;
+		box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2)
+	}
+
+
+	&__bottom {
+
+		display: flex;
+
+		&-icon{
+
+			fill: var(--color-primary);
+			height:2rem;
+			width: 2rem;
+			border-radius:100px;
+		}
+	}
+
+
+	&__input {
+
+		border-radius: 3px;
+		box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		font-size: inherit;
+		padding: .5rem;
+
+
+	}
+	&__messages{
+
+		font-size: inherit;
+		margin-bottom: 4px;
+
+	}
+
+}
+
+
+/////////////////////////////////////// End of header ////////////////////////////////

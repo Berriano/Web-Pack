@@ -1,0 +1,114 @@
+/*----------------------------- Side Bar hover element ---------------------*/
+
+
+.side-nav {
+
+
+
+	&__item {
+
+		position: relative;
+
+		&:not(:last-child) {
+
+			margin-bottom: 2rem;
+
+
+			//! 	MEDIA QUERY
+	
+	
+			@media only screen and (max-width: $bp-medium) {
+	
+				&:not(:last-child) {
+	
+					margin-bottom: 0;
+	
+				}			
+	
+			}			
+
+		}
+
+
+		//! 	MEDIA QUERY
+
+
+		@media only screen and (max-width: $bp-medium) {		
+
+			flex:1;
+			justify-content: center;
+
+
+		}
+
+	}
+
+
+
+	&__item::before {
+
+		content: "";
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 3px;
+		background-color: var(--color-primary);
+
+
+		/*------------------------------ Animation ---------------------------*/
+
+
+
+		/// original state
+
+		transform: scaleY(0);
+
+		/// set the transform, width, and  background color on the transition, 
+		/// using the cubic bezier animation and DELAY for the width,          
+		/// and just a time on the transform and the active:bg color.          
+
+		transition: transform 0.1s, width .4s cubic-bezier(1, 0, 0, 1) .2s, background-color .2s;
+
+		//! a delay of .2 seconds on the width then fills from the left and takes .4 seconds
+
+	}
+
+
+	/// when hovered - target the before element
+
+
+	&__item:hover::before,
+	&__item--active::before {
+
+
+		/// scale in the y-axis direction only, put original state in item:before element
+
+		transform: scaleY(1);
+
+
+		/// set width to 100% to go all the way across the element
+
+		width: 100%;
+
+	}
+
+
+
+	/// make a link already be active when page loads
+
+	//! Add an active class to the side-nav__item -  side-nav__item--active
+
+
+	/// then add that class name to the hover state also -             
+	/// so it highlights when its hovered AND when it has active state 
+
+
+	/// add a lighter color to show the active state( when clicked)
+
+	&__item:active::before {
+
+		background-color: var(--color-primary-light)
+	}
+}

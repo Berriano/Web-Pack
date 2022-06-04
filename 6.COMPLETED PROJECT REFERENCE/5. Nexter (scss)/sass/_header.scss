@@ -1,0 +1,320 @@
+/*-----------------------------------   Header   --------------------------------*/
+
+.header {
+
+  background-color: $color-grey-dark-1;
+
+
+
+  ///                		  Define grid position using names                         //
+
+
+
+  grid-column: full-start / col-end 6;
+
+
+
+  /// 											Background image for whole header              	       //
+
+
+
+  /// 		Create an overlay by using gradient with the same color- faded to .93    //
+
+
+
+  background-image: linear-gradient(rgba($color-secondary, .93),
+      rgba($color-secondary, .93)), url(../img/hero.jpeg);
+
+
+
+  /// 				The img will not fit exactly so use background-size to cover          //
+
+
+  background-size: cover;
+  background-position: center;
+
+
+
+  /// 												Define a grid to set the rows     								    //
+
+
+  display: grid;
+
+
+  /// 									Create an equal gap between the grid rows				    				//
+
+
+
+  row-gap: 1.5rem;
+
+
+
+  /// 		1.	Set the 1st row to 1fr so it takes all the available space 				    //
+
+
+  //! THIS WILL BE A LOT AS THE CONTAINERS FIRST ROW IS SET TO 80vh	
+
+  // grid-template-rows: 80vh min-content 40vw repeat(3, min-content);\\
+
+
+  //! The rest of the content will only take the space it needs
+
+
+
+  // grid-template-rows: 1fr;
+
+
+
+  /// 	2.	Set the 2nd	row to the size of its content as it's only a h3 heading		//
+
+
+
+  // grid-template-rows: 1fr min-content;
+
+
+
+  /// 		3.	Set the 3rd	row to 6rem as its the main heading (h1) on the page 			//
+
+
+
+  // grid-template-rows: 1fr min-content 6rem;
+
+
+
+  /// 4.						Give the button row the same space as the 1st row,									
+  ///												and make the column fit the content												//
+
+
+
+  grid-template-rows: 1fr min-content minmax(6rem , min-content) 1fr;
+
+
+  grid-template-columns: minmax(min-content , max-content);
+
+  //! eliminates the big space on the right of the elements and allows logos to shrink
+
+
+
+  /// 											5. Center all the content in the grid										//
+
+  justify-content: center;
+
+
+
+
+  /// 								6. Now the button spans the width of the page									//
+
+
+
+  &__btn {
+
+
+    /// 				Use align and justify to move btn to top left(start on both)				//
+
+    //! This will fix any spanning issues
+
+    align-self: start;
+
+    justify-self: start;
+
+
+  }
+
+
+
+  /// 					7. Now Padding to move the content away from the edges							//
+
+
+  padding: 8rem;
+
+  //! The top needs less so the logo is closer to the top
+
+  padding-top: 4rem;
+
+
+
+  /// 															8. Now center logo															//
+
+
+  &__logo {
+
+    justify-self: center;
+
+    height: 3rem;
+
+  }
+
+
+
+
+  //--              					 Styling the logo images     		                   //
+
+
+
+
+  &__seenon-logos {
+
+
+
+    ///    			 		 	Make section into a grid of 4 colums and 2 rows						//
+    ///												 the banner and logos															//
+
+
+
+    display: grid;
+
+
+    grid-template-columns: repeat(4, 1fr);
+
+    column-gap: 3rem;
+
+    grid-template-rows: repeat(2, 1fr);
+
+
+
+    ///									Centering	the items inside the grid											//
+
+
+
+    justify-items: center;
+
+		align-items: center;
+
+
+
+
+    //- 																images 																 //
+
+
+    img {
+
+
+      /// Set the max-height/width so they are all level and can shrink if needed //
+
+
+      max-height: 2.5rem;
+
+			max-width: 100%;
+
+
+      ///  									Dull the images so they arent so bright								  //
+
+
+      filter: brightness(70%);
+
+    }
+
+  }
+
+
+  //- 																Text																 //
+
+
+
+  ///								Even html text can be made into a grid item						  //
+
+  //! And even pseudo elements can be!!
+
+
+
+
+  ///										Define the grid/ rows and columns										//
+	
+	
+	
+  &__seenon-text {
+		
+		
+		display: grid;
+		
+		
+		
+		///		give the 2 lines an equal amount	and set text to max-content			//
+		
+		//! * so text doesnt break over 2 lines
+		
+		
+		
+		grid-template-columns: 1fr max-content 1fr;		
+		
+		
+		
+		///												Add gap and vertically align									//
+
+
+
+		column-gap: 1.5rem;
+
+
+		align-items: center;
+
+
+		
+		///															style the text 													//
+
+
+    font-size: 1.6rem;
+
+    color: $color-grey-light-2;
+
+
+
+
+    ///		Use before/after to create the 2 lines either side of the 'seen on' //
+		
+		
+		
+    &::before,
+    &::after {
+
+
+			///												Usual before/after stylings											//
+
+			
+      content: "";
+			
+      display: block; // so it takes the whole width
+
+			
+						
+			///																1px thin line														//
+			
+			
+			
+			height: 1px;
+			
+			
+			///												Use the current element color										//
+			
+			
+			
+			background-color: currentColor;
+			
+			
+			
+			//!			The grid will only show 1 row, but it actually has the 3 row			//
+			
+			
+    }
+
+  }	
+	
+	
+	
+	///								Make header take up whole top column width									//
+
+	
+	
+  //! 					MEDIA QUERY						//
+	
+	
+	
+	
+  @media only screen and (max-width:$bp-medium) {
+
+		grid-column: 1 / -1;
+
+  }
+
+
+}
