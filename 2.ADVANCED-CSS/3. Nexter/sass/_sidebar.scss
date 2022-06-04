@@ -1,0 +1,206 @@
+/*------------------------------------  Side Bar  ------------------------------*/
+
+
+.sidebar {
+
+  background-color: $color-primary;
+
+
+
+  ///                   Define grid position using names                        //
+
+
+
+  grid-column: sidebar-start/ sidebar-end;
+
+  grid-row: 1 / -1;
+
+
+
+  ///         Make button a flex container to centre the content inside         //
+
+  display: flex;
+
+  justify-content: center;
+
+
+
+  ///         Change position of sidebar to top of screen         //
+
+
+  //! 					MEDIA QUERY						//
+
+
+
+
+
+  @media only screen and (max-width:$bp-large) {
+
+
+
+    grid-column: 1/-1;
+
+    grid-row: 1 / 2;
+
+
+    ///        Sidebar need positioning in centre vertically       //
+
+
+    justify-content: end;
+
+    align-items: center;
+
+
+    //! Change nav-btn class to position margin to 0
+
+
+  }
+
+
+}
+
+.nav-btn {
+
+
+
+  /// 		                  Style the navigation button     		                 //
+
+
+
+
+  /// 		            ALWAYS - take the border off the button    		             //
+
+
+  border: none;
+
+
+  border-radius: 0;
+
+
+
+  /// 		         	   Make the button a single white line   		    		         //
+	
+	
+  background-color: #fff;
+	
+  height: 2px;
+	
+  width: 4.5rem;
+	
+	
+	
+  ///				Cannot see the top line so move the button down with margin-top 	      //
+	
+  //! * see pseudo elements
+	
+	
+  margin-top: 4rem;	
+	
+	
+	
+
+  cursor: pointer;
+
+
+
+  ///			 Using before and after makes elements on top of the button line				 //
+
+
+  &::before,
+  &::after {
+
+
+    /// 	Always add  the content property and leave blank if no content is used	 //
+
+
+    content: "";
+
+
+
+    /// 												Display them as a block														 //
+
+
+    display: block;
+
+
+    /// 		    		  Make the pseudo elements single white lines   		 	         //
+
+
+    background-color: #fff;
+
+    height: 2px;
+
+    width: 4.5rem;
+
+
+  }
+
+
+
+
+  /// 		 		   				Now move 1 of them up and the other 1 down  		 	         //
+
+
+
+  &::before {
+
+    transform: translateY(-1.5rem);
+  }
+
+
+  &::after {
+
+    transform: translateY(1.3rem);
+  }
+
+  //! play with the values as the lines may look different to the btn line
+
+
+
+  ///				Cannot see the top line so move the button down with margin-top 	      //
+	
+  //! * see the nav-btn
+
+
+	
+
+
+
+	
+  ///														Hamburger btn media query 	   									   //
+	
+	
+  //! 					MEDIA QUERY						//	
+	
+	
+	
+  @media only screen and (max-width:$bp-large) {
+
+
+		
+		/// 		    			   	Remove margin top and add margin right		    			        //
+		
+		
+		
+    margin-top: 0;
+		
+		margin-right: 3rem;
+		
+		
+		
+		/// 		    			 					  	Re-position lines		    			 							       //
+
+
+		&::before {
+
+			transform: translateY(-1.2rem);
+		}
+	
+		&::after {
+	
+			transform: translateY(1.0rem);
+		}
+
+  }
+
+}

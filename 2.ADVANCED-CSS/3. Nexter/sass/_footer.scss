@@ -1,0 +1,134 @@
+/*-----------------------------------  footer  -------------------------------*/
+
+.footer {
+
+  background-color: $color-secondary;
+
+
+  ///                    Define grid position using names                     //
+
+
+  grid-column: full-start / full-end;
+
+
+
+  ///                   					Footer Styling         						           //
+
+
+  padding: 8rem;
+
+
+
+}
+
+
+.nav {
+
+
+  ///                   						List Styling         						           //
+
+
+  list-style: none;
+
+
+
+  ///               			List items side by side using grid   						      //
+
+  //! Its easier to use grid when you want to have space between elements(no margins)
+
+
+  display: grid;
+
+
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+
+  //! So the minimum width should be 150px, when the 6 items wont fit (6*150px = 900px width),
+  //! the last item will create a new row and go into the first column of thenew row -
+  //!	and the max is to stretch to 1fr of the available space, so will keep going the bigger 
+  //!	the screen gets
+
+
+  grid-gap: 2rem;
+
+
+  align-items: center;
+
+
+
+
+
+
+
+  &__link:link,
+  &__link:visited {
+
+
+    ///                   						Link Styling         						           //
+
+
+    font-size: 1.4rem;
+
+    font-family: $font-display;
+
+    color: #fff;
+
+
+    padding: 1.5rem;
+
+
+    display: block; //! so the padding works
+
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    text-align: center;
+
+
+
+    /// 		For the hover animation to work add transition to the link state       //
+
+
+    transition: all .2s;
+
+
+  }
+
+
+  &__link:hover,
+  &__link:active {
+
+
+    /// 							Change background color on hover / active   						   //
+
+
+    background-color: rgba(#fff, 0.5);
+
+
+
+    /// 									Move the text up on hover / active  								   //
+
+
+
+    transform: translateY(-3px);
+
+
+  }
+
+}
+
+.copyright {
+
+  font-size: 1.4rem;
+  color: $color-grey-light-2;
+  margin-top: 6rem;
+	margin-left:auto;
+	margin-right:auto;
+  text-align: center;
+
+  width: 70%;
+
+
+}

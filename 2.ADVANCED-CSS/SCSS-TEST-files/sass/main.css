@@ -1,0 +1,106 @@
+/*-------------------------------------- Variables ---------------------------------*/
+/*
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+Colors:
+
+grey : : #f2f2f2;
+carousel : #72a3b155;
+
+*/
+/*----------------------------------------- Base -----------------------------------*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*---------------------------------- Typography -------------------------------------*/
+body {
+  font-family: 'Roboto';
+  background-color: #fff;
+  font-weight: 400;
+  line-height: 1;
+  font-size: 1.6rem;
+}
+
+/*----------------------------------- Utilities Classes -----------------------------------------*/
+/*/ containers  */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.container-flex {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container-head {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/*----------------------------------------- Boxes ---------------------------------------*/
+.grid__1-of-3--paragraph + span {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ff7730;
+  padding: 2rem;
+}
+
+/*---------------------------------- Grid Float Test -------------------------------------*/
+.grid {
+  max-width: 150rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.grid__1-of-3 {
+  font-size: 2rem;
+  background-color: green;
+  height: 12rem;
+  float: left;
+  padding-top: 5rem;
+  width: calc((100% - 2 * 3rem) / 3);
+}
+
+.grid__1-of-3:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.grid::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*---------------------------------------- Header ------------------------------------*/
+.header {
+  height: 50vh;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,279 @@
+/*--------------------------------    Story   ----------------------------------*/
+
+
+
+.story {
+
+
+
+  //--------------------------------  Pictures   --------------------------------*//
+
+
+
+  &__pictures {
+
+
+    ///  		 								Add the background image with css								 		//
+    ///  		 			using the linear gradient to add an overlay of color			 		//
+
+
+    background-image: linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)), url(../img/back.jpg);
+
+		background-size: cover;
+
+
+    grid-column: full-start / col-end 4;
+
+
+
+    ///  		 Make pictures div a grid container with 6 columns and 6 rows		 		//
+
+
+    display: grid;
+
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+
+
+
+    ///  	 As images maintain aspect ratio - the image may not fill the grid-		//
+    /// 					so use position to centalize the width or the height					//
+
+
+
+    align-items: center;
+
+
+
+
+    ///  		 							Make pictures div take 1 row/column								 		//
+
+
+
+
+    @media only screen and (max-width:$bp-medium) {
+
+
+      grid-column: 1 / -1;
+			grid-row: 6/7;
+
+
+      /// 														make imgs smaller													//
+
+      padding: 3rem;
+
+    }
+
+  }
+
+
+
+
+  &__img--1 {
+
+
+
+    /// 												Position images in 6x6 grid												//
+
+
+
+    grid-row: 2 / 6;
+    grid-column: 2 / 6;
+
+
+
+    /// 							Specify image widths @ 100%	to fit in container								//
+
+    //! This also makes them responsive
+
+
+    width: 100%;
+
+
+
+    /// 										Style the images with shadow etc												//
+
+
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
+
+
+
+
+    //! 						MEDIA QUERY			//
+
+
+
+    /// 										Keep 6x6 grid	but reposition image											//
+
+
+
+    @media only screen and (max-width:$bp-medium) {
+
+      grid-column: 1 / 5;
+      grid-row: 1 / -1;
+
+	    }
+
+  }
+
+
+  &__img--2 {
+
+
+    grid-row: 4 / 6;
+    grid-column: 4 / 7;
+
+
+
+    ///					To position the image slightly outside the container							//
+    ///				make it wider - if the extra is hidden increase z index							//
+
+    //! image will maintain aspect ratio
+
+
+    width: 115%;
+    z-index: 20;
+
+
+
+    /// 										Style the images with shadow etc												//
+
+
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+
+
+    //! 						MEDIA QUERY			//
+
+
+
+    /// 										Keep 6x6 grid	but reposition image											//
+
+
+
+    @media only screen and (max-width:$bp-medium) {
+
+     
+      grid-row: 1 / -1;
+
+
+      ///										 Change width so img doesnt overlap											//
+
+
+			width: 100%;
+
+    }
+
+  }
+
+
+
+
+  &__content {
+
+
+
+    //--------------------------------   Content   -------------------------------*//
+
+
+
+    ///	As the content is one dimensional -  we can use flex to positon and align	//
+
+    //! * Check grid solution below
+
+
+    /*
+		
+    display: flex;
+		
+		
+		/// 									Change direction flow to downwards											//
+		
+		
+    flex-direction: column;
+		
+		
+		/// 						To align content vertically - you now use justify							//
+		
+		
+		justify-content: center;
+		
+		
+		///		Align-items default is set to stretch - so the button is stretching			//
+		
+		
+		/// 											Align all items to start														//
+		
+		
+		align-items: flex-start;
+		
+		
+		*/
+
+
+
+    ///  								Grid Method for one dimensional block											//
+
+    //! * Less lines of code
+
+
+
+    display: grid;
+
+    align-content: center;
+
+    justify-items: start;
+
+
+
+    background-color: $color-grey-light-1;
+
+    grid-column: col-start 5 / full-end;
+
+
+    /// 											Using vw /vh for padding units											//
+
+
+
+    padding: 6rem 8vw;
+
+
+
+
+    /// 				Make content div take up 1 row/column	and go up 1 row							//
+
+
+
+    //! 						MEDIA QUERIES    //
+
+
+
+    @media only screen and (max-width:$bp-medium) {
+
+
+      grid-column: 1 / -1;
+
+      grid-row: 5/6;
+
+
+    }
+
+
+
+
+  }
+
+  &__text {
+
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 4rem;
+
+
+  }
+
+
+
+
+
+}

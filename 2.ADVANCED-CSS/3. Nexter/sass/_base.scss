@@ -1,0 +1,259 @@
+/*--------------------------------    Base file   ---------------------------------*/
+
+/// 													COLOR VARIABLES																
+
+
+$color-primary: #c69963;
+$color-primary-dark: #b28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+
+///													 FONT VARIABLES																		
+
+
+$font-primary: "Nunito",
+sans-serif;
+$font-display: "Josefin Sans",
+sans-serif;
+
+
+
+/// 											 RESPONSIVE BREAKPOINTS															
+
+//! Use ems - 16px = 1em
+
+
+// 1200px / 16px  = 75em 
+
+$bp-largest: 75em;
+
+
+// 1000px
+
+
+$bp-large:62.5em;
+
+
+// 800px
+
+$bp-medium:50em;
+
+
+
+
+///        Set the live-server browser to - live-server --browser=firefox     		    //
+
+
+
+*,
+*::before,
+*::after {
+
+
+  ///                     		        Global reset                                     //
+
+
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
+
+}
+
+
+html {
+
+
+  ///    Set the box model to include the border and set global font-size to 10px  	  //
+
+  box-sizing: border-box;
+
+  font-size: 62.5%;
+
+
+
+
+  //! 			MEDIA QUERY			!//
+
+
+  ///  At 1200px - font-size is 50% of 16px = 8px
+
+
+  @media only screen and (max-width:$bp-largest) {
+
+    font-size: 50%; // 8px	
+
+
+  }
+
+}
+
+
+
+body {
+
+
+  ///               		  Font settings go in the body element         		           //
+
+	
+	
+  font-family: $font-primary, sans-serif;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+
+
+}
+
+
+
+
+//---------------------------------  Page Container ----------------------------------//
+
+
+
+.container {
+
+
+
+  /// Use body element as a container with the class and set to grid- rows and columns //
+
+
+
+  //--------------------------  8 COLUMN GRID LAYOUT ----------------------------------//
+
+
+
+  display: grid;
+
+
+
+  //-------------------------------- GRID ROWS 	---------------------------------------//
+
+
+
+
+  ///                         Define rows to be responsive             		             //
+
+
+
+  ///                  	Define row 1 - set it to a viewport height                     //
+
+  ///                    Define row 2 and set it to a min-content      	               //
+
+  ///                	 Define row 3 and set it to 40% of the width           	         //
+
+  ///             		   Define row 4,5,6 and set it to a min-content                   //
+
+
+
+
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+
+
+
+  //-------------------------------- GRID COLUMNS -------------------------------------//
+
+
+
+
+  ///                          Define an 8 column layout                 			         //
+
+
+
+  ///         1120px container / 8 columns =  140px (14rem each column)      	         //
+
+
+  ///           	To make responsive, use the minmax function to say :-  	             //
+
+
+  //!  									The maximum width the column can go is 14rem,
+  //!  						the minimum it can go is the actual size of the content  						!//
+
+
+  ///          		Add an 80px column to the left-side for the sidebar                  //
+
+
+  ///    	  Then add another 2 columns:- one to the right-side of the sidebar          //
+  ///             	 and one to the right-side of the main grid                        //
+
+
+
+  //!		Use grid-coloumn names to help with identification and media queries				!//
+
+
+
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem,1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem,1fr)  [full-end];
+
+
+
+
+
+  //!										Each column will not expand above 140px, 
+  //!									but they also wont shrink below the content size											
+
+  //! 		      		With the 2 * 1fr columns either side of the main grid, 									
+  //!					 			the grid will always stay central to the viewport	
+
+
+
+
+/// 						Side bar is now redundant in its position so move to top by							
+/// 									removing its column and adding a row															
+
+
+//! Change sidebar row/column in sidebar styling
+
+
+
+
+
+
+
+
+
+
+//! 						MEDIA QUERIES FOR CONTAINER							!//
+
+
+@media only screen and (max-width:$bp-large) {	
+	
+	
+	grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+	
+	
+	grid-template-columns: [full-start] minmax(6rem,1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem,1fr)  [full-end];
+	
+	
+}
+
+
+
+
+/// 														New row for realtors list															//
+
+
+
+  @media only screen and (max-width:$bp-medium) {	
+
+
+		/// Change header to fill 100% of viewport and add a content row for realtors
+		//! The 100% + the 6rem sidebar means the header will fill over the vport
+		//! so a calc function is needed to minus the 6rem
+
+
+		grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content);
+
+
+  }
+
+
+}

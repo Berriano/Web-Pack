@@ -1,0 +1,203 @@
+/*-----------------------------------  Realtors  -----------------------------*/
+
+
+.realtors {
+
+  background-color: $color-secondary;
+
+
+
+  ///                       Define grid position using names                    //
+
+
+
+  grid-column: col-start 7 / full-end;
+
+
+
+  ///                				   Some padding for some space  	     	           //
+
+
+
+  padding: 3rem;
+
+
+
+
+  ///           Make this container a grid to centre the realtors grid           //
+
+
+
+  display: grid;
+
+
+
+
+  ///								 Use content to centre the whole grid     							    //
+
+
+
+  align-content: center;
+
+  justify-content: center;
+
+
+
+
+  ///			 			Add some space between the heading and the list						    //
+
+
+
+  row-gap: 2rem;
+	
+	
+	
+  ///			 													To centre heading											    //
+	
+	
+	
+  justify-items: center;
+	
+	
+	
+	
+	/// 		    			 			Re-position list to under header   					       //
+
+
+			
+		//! 					MEDIA QUERY						//		
+		
+		
+		
+		@media only screen and (max-width:$bp-medium) {
+			
+			
+			grid-column: 1 / -1;			
+			
+			
+		}		
+
+
+
+
+
+  &__img {
+
+    width: 7rem;
+
+    border-radius: 50%;
+
+    display: block;
+
+
+  }
+
+
+
+  &__sold {
+
+
+    text-transform: uppercase;
+    color: $color-grey-light-2;
+    margin-top: -3px;
+
+
+  }
+
+
+
+  &__list {
+
+
+
+    /// 												List will be the	2x3 grid												//  
+
+
+
+    display: grid;
+
+
+
+    /// 			First column is for the images		- min-content											//
+    /// 			Second column is for the text	- max-content so no line breaks				//
+
+
+
+    grid-template-columns: min-content max-content;
+		
+		
+		
+    /// 												Spacing needed so add gap													//
+		
+		
+    column-gap: 2rem;
+		
+		
+    /// 								use vh so gap can increase and decrease										//
+		
+		
+    row-gap: 5vh;
+		
+		
+    align-items: center;
+		
+		
+		
+    // /// 		    			 			Re-position list to side by side	    					       //
+		
+		
+
+		//--------------  MY WAY ---------------- //
+		
+		
+		
+    //! 					MEDIA QUERY						//	
+		
+		
+		
+    @media only screen and (max-width:$bp-medium) {
+			
+			display: flex;
+			
+			
+    }
+		
+		
+		
+		
+		//-------------- JONAS WAY ---------------- //
+
+
+		// @media only screen and (max-width:$bp-medium) {
+
+					
+		// grid-template-columns: repeat(3, min-content max-content);
+
+		// }
+
+
+		
+		
+		/// 		    			 			Re-position list to side by side	    					       //
+		
+		
+		
+		//! 					MEDIA QUERY						//
+		
+		
+		
+		
+		@media only screen and (max-width:$bp-medium) {
+			
+			
+			grid-column: 1 / -1;
+			
+			
+			
+		}
+		
+		
+	}
+
+
+}
