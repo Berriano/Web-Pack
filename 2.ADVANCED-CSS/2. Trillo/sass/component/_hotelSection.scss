@@ -1,0 +1,525 @@
+/*-------------------------------------------- Hotel Section ---------------------------------------*/
+
+
+
+
+//////////////// 												gallery														/////////////////
+
+
+
+
+
+.gallery {
+
+
+	/// to put photos on one line, use a flex
+
+	display: flex;
+
+
+	&__photo {
+
+		width: 100%;
+
+		/// stop image having a bit of whitespace underneath
+
+		display: block;
+
+	}
+}
+
+
+
+
+
+/////////////													 overview															//////////////
+
+
+
+
+.overview {
+
+	display: flex;
+	align-items: center;
+
+	border-bottom: var(--line);
+
+
+	&__heading {
+
+		font-size: 2.25rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		padding: 1.5rem 3rem;
+
+
+		@media only screen and (max-width: $bp-small) {
+
+
+			font-size: 1.8rem;
+			padding: 1.25rem 2rem;
+
+
+		}
+
+
+
+	}
+
+
+	&__stars {
+
+		///      Using margin:auto with flexbox      
+
+		margin-right: auto;
+
+		//! if you want to hover the stars- margin auto allows this with no blank space
+
+		/// starts have more whitespace under so make stars container flexbox
+
+		display: flex;
+
+	}
+
+
+
+	&__icon-stars,
+	&__icon-location {
+
+		width: 1.75rem;
+		height: 1.75rem;
+		fill: var(--color-primary);
+
+
+	}
+
+
+
+
+
+	/////////////													 location													/////////////
+
+
+
+
+
+	&__location {
+
+		font-size: 1.2rem;
+
+		display: flex;
+		align-items: center;
+
+
+	}
+
+
+	&__icon-location {
+
+		margin-right: .5rem;
+
+	}
+
+
+
+
+	/////////////											  	 	 Rating							 						//////////////
+
+
+
+
+
+
+	&__rating {
+
+
+		background-color: var(--color-primary);
+		margin-left: 3rem;
+		color: #fff;
+
+
+		/// all items are vertically aligned to the center of their container,
+		/// streching will keep content vertically aligned, but fill from top to bottom
+
+
+		align-self: stretch;
+
+
+		padding: 0 2.25rem;
+
+		@media only screen and (max-width: $bp-medium) {
+
+
+			padding: 0 1.5rem;
+
+
+		}
+
+
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+
+
+
+		&-average {
+
+			font-size: 2.25rem;
+			font-weight: 300;
+			margin-bottom: -.3rem;
+
+			@media only screen and (max-width: $bp-medium) {
+
+
+				font-size: 1.7rem;
+
+
+
+			}
+
+
+
+		}
+
+
+		&-count {
+
+			font-size: .8rem;
+			text-transform: uppercase;
+
+
+		}
+
+	}
+}
+
+
+
+
+
+///////////////											  	 	 Details							 							////////////////
+
+
+
+
+.detail {
+
+
+	/// make description and user-reviews go side by side\
+
+
+	display: flex;
+
+
+
+
+
+	/// add padding the same as the separated space	
+
+
+	@media only screen and (max-width: $bp-medium) {
+
+
+		padding: 3rem;
+
+
+	}
+
+
+	/// for the media query make them go one above the other
+
+
+	@media only screen and (max-width: $bp-small) {
+
+		flex-direction: column;
+
+
+
+	}
+
+
+	background-color: var(--color-grey-light-1);
+
+	border-bottom: var(--line);
+
+	font-size: 1.4rem;
+
+
+
+}
+
+
+
+//------------------------------------------   Description  ---------------------------------------//
+
+
+
+.description {
+
+	background-color: #fff;
+	box-shadow: var(--shadow-light);
+	padding: 3rem;
+
+
+
+
+	//! Media Query
+
+
+	@media only screen and (max-width: $bp-medium) {
+
+		padding: 2rem;
+
+
+	}
+
+
+
+
+	/// dont grow or shrink and take 60% of flex container
+
+
+	flex: 0 0 60%;
+
+
+	/// add margin to separate them
+
+
+	margin-right: 4.5rem;
+
+
+
+	//! Media Query
+
+
+	@media only screen and (max-width: $bp-medium) {
+
+		margin-right: 3rem;
+
+
+	}
+
+
+
+	//! Media Query
+
+	@media only screen and (max-width: $bp-small) {
+
+		margin-right: 0;
+		margin-bottom: 3rem;
+
+
+	}
+
+}
+
+
+
+
+//-------  Paragraph  --------//
+
+
+/// as the last paragraph is not the last child, use last of type to select the last paragraph
+
+
+.paragraph:not(:last-of-type) {
+
+	margin-bottom: 2rem;
+
+
+}
+
+
+//-------  Recommend  --------//
+
+
+.recommend {
+
+	font-size: 1.3rem;
+	color: var(--color-grey-light-4);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+
+
+	&__friends {
+
+		display: flex;
+
+	}
+
+
+
+	&__photo {
+
+		height: 4rem;
+		width: 4rem;
+		border-radius: 50%;
+
+		border: 3px solid #fff;
+
+		//! as border-box is the default box-sizing - the border gets included inside the element, which shrinks it!
+		//! Use box-sizing:content-box - which is the default, to add the border outside the element
+
+		box-sizing: content-box;
+
+
+
+		/// to make photos overlap, add a negative side margin to all but the last photo
+
+
+		&:not(:last-child) {
+
+			margin-right: -2rem;
+
+		}
+
+	}
+
+}
+
+
+
+
+//------ User Reviews -------//
+
+
+
+
+.review {
+
+
+	background-color: #fff;
+	box-shadow: var(--shadow-light);
+	padding: 3rem;
+	margin-bottom: 3.5rem;
+	position: relative;
+
+
+	@media only screen and (max-width: $bp-medium) {
+
+		padding: 2rem;
+		margin-bottom: 3rem;
+
+
+
+	}
+
+
+
+
+
+	&__text {
+
+		margin-bottom: 2rem;
+		z-index: 10;
+
+		//! must set position to relative when using z-index
+
+		position: relative;
+
+
+
+	}
+
+	&__photo {
+
+		height: 4.5rem;
+		width: 4.5rem;
+		border-radius: 50%;
+		margin-right: 1.5rem;
+
+
+	}
+
+
+
+	&__user {
+
+		display: flex;
+		align-items: center;
+
+
+		&-box {
+
+			margin-right: auto;
+
+		}
+
+		&-name {
+			font-size: 1.1rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-bottom: .4rem;
+
+		}
+
+
+		&-date {
+			font-size: 1rem;
+			color: var(--color-grey-dark-3)
+		}
+
+
+	}
+
+	&__rating {
+
+		font-size: 2.25rem;
+		color: var(--color-primary);
+		font-weight: 300;
+
+	}
+
+
+
+	/// Quotation graphics on reviews
+
+
+	//! instead of leaving content empty - put the ISOnum inside
+
+
+	&::before {
+
+		content: "\201C";
+
+		/// position absolutely
+
+		position: absolute;
+		top: -2.25rem;
+		left: -0.5rem;
+
+		font-size: 20rem;
+
+		color: var(--color-grey-light-2);
+
+		/// set a different font-family to change the image look
+
+		font-family: sans-serif;
+
+
+		//! if position is off, check line-height and set to 1
+
+		line-height: 1;
+
+
+		/// set z index to lower than the text
+
+		z-index: 1;
+
+		//! then set the text to higher than the image
+
+		opacity: 0.4;
+
+	}
+
+	//! SEE BUTTONS FOR 'SEE ALL' BUTTON STYLING
+
+
+}

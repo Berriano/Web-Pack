@@ -1,0 +1,198 @@
+/*----------------------------------------------- Buttons ------------------------------------------*/
+
+
+.btn-inline {
+
+	border: none;
+	color: var(--color-primary);
+
+	/// set button to inherit font-siz so it can be use in different ways
+
+
+	font-size: inherit;
+
+
+	/// set the border color to current color to help with psuedo classes
+
+
+	border-bottom: 1px solid currentColor;
+
+
+	/// add some space between the text and the border-bottom
+
+
+	padding-bottom: 2px;
+
+
+	display: inline-block;
+
+
+	background-color: transparent;
+
+	//! so it can be re-used o any background
+
+
+	cursor: pointer;
+
+	transition: all 0.2;
+
+
+	&:hover {
+
+		color: var(--color-dark-grey-1);
+
+		//! now, when the element is hovered, the border-bottom changes to this color
+
+	}
+
+
+	/// keyframes animation
+
+	&:focus {
+
+		outline: none;
+		animation: pulsate 1s infinite;
+		//! see animation.scss file
+
+	}
+
+
+	/// Styling the span element in the button
+
+
+	& span {
+
+		margin-left: .3rem;
+
+
+		/// add the transition to the element being hovered - but set it only on the style set e.g margin-left
+
+		transition: margin-left .2s;
+
+
+
+	}
+
+
+	//! can add the hover style to the above hover, but keep it like this for easier reference
+
+	/// so when we hover btn-inline, the span element has the margin left applied to it
+
+
+	&:hover span {
+
+		margin-left: .8rem;
+
+	}
+
+}
+
+
+
+/*------------------------------------------ CTA button -----------------------------------------*/
+
+
+
+.btn {
+
+	font-size: 1.5rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	border-radius: 100px;
+	border: none;
+
+	background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+	color: #fff;
+
+	position: relative;
+	cursor: pointer;
+
+
+	/// to hide the outside button - set overflow
+
+
+	overflow: hidden;
+
+
+
+	/// Lots of code is being repeated, so use direct child selector
+
+
+
+	&>* {
+
+
+
+		/// set button to absolute to position outside of the button
+
+
+		display: inline-block;
+
+
+		/// so its the same size
+
+
+		height: 100%;
+		width: 100%;
+
+		transition: all .2s;
+
+	}
+
+
+
+	&__visible {
+
+		padding: 2rem 7.5rem;
+
+
+	}
+
+
+	&__invisible {
+
+		position: absolute;
+
+		padding: 2rem 0;
+
+		left: 0;
+		top: -100%;
+
+		//! top -100% means it will move up 100% size of the element e,g the btn
+
+	}
+
+	/// to swap gradient on hover, change direction to left
+
+
+	&:hover {
+
+		background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+
+	}
+
+
+	&:hover &__invisible {
+
+		top: 0;
+
+	}
+
+	&:hover &__visible {
+
+		transform: translateY(100%);
+
+	}
+
+
+	/// Add the animation focus to pulsate
+
+
+
+	&:focus{
+
+		animation: pulsate 1s infinite;
+		outline: none;
+
+	}
+}

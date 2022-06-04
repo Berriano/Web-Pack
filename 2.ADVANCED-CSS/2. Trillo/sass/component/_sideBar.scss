@@ -1,0 +1,112 @@
+/*---------------------------------------------- Side Bar -------------------------------------------*/
+
+
+.side-nav {
+
+	list-style: none;
+	font-size: 1.4rem;
+	margin-top: 3.5rem;
+	width: 100%;
+
+
+	//! Media Query
+
+
+
+	@media only screen and (max-width: $bp-medium) {
+
+		display: flex;
+		margin: 0;
+
+	}
+
+
+
+
+
+	&__link {
+
+		&:link,
+		&:visited {
+
+			color: var(--color-grey-light-1);
+			text-decoration: none;
+			text-transform: uppercase;
+			display: block;
+			padding: 1.5rem;
+
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+
+			position: relative;
+			z-index: 100;
+
+			//! if z-index isnt working, add position:relative to the selector
+
+
+			//! Media Query
+
+			@media only screen and (max-width: $bp-small) {
+
+				flex-direction: column;
+				font-size: 1.2rem;
+
+
+			}
+
+		}
+
+
+	}
+
+
+
+	&__icon {
+
+		height: 1.75rem;
+		width: 1.75rem;
+		margin-right: 2rem;
+		
+		/// choose the color of the this OR parent element
+		
+		fill: currentColor;
+		
+		//! chooses the grey form the link element as there is now color on this element
+		//! THIS WOULD ALSO WORK WITH A HOVER ELEMENT
+		
+		@media only screen and (max-width: $bp-small) {
+			
+			margin-right: 0;
+			margin-bottom: 4px;
+			
+			height: 1.5rem;
+			width: 1.5rem;
+		
+		
+		}
+
+
+
+	}
+
+
+}
+
+.legal {
+
+	font-size: 1.2rem;
+	color: var(--color-grey-light-4);
+	text-align: center;
+
+	@media only screen and (max-width: $bp-medium) {
+
+		display: none;
+
+
+
+	}
+
+}
