@@ -1,0 +1,242 @@
+/*----------------------------------------- Form ----------------------------------------*/
+
+
+.form {
+
+	// margin bottom EXCEPT last element
+
+	&__group:not(:last-child) {
+
+		margin-bottom: 2rem;
+
+	}
+
+	&__input {
+
+		// input elements dont inherit font settings- so set manually
+
+		font-family: inherit;
+		color: inherit;
+
+		font-size: 1.5rem;
+		padding: 1.5rem 2rem;
+		border-radius: 2px;
+		background-color: rgba($color-white, .5);
+		border: none;
+
+		// add transparent border so boxes dont move when focus is selected
+		// *(because of border-btm on focus state)
+
+		border-bottom: 3px solid transparent;
+
+		// use 100% width to use the whole div
+
+		width: 90%;
+
+		// display as block to give the elements there own line
+
+		display: block;
+
+		// add transition to bar color change
+
+		transition: all .3s;
+
+
+
+		// remove blue border around selected form area and add own styling
+
+		
+
+			//! MEDIA QUERY
+
+
+		@include respond(tab-port) {
+
+			width: 100%;
+		
+
+		}
+
+
+		&:focus {
+
+			outline: none;
+
+			// add shadow
+
+			box-shadow: 0 1rem 2rem rgba($color-black, .1);
+
+			// add border to bottom when item is selected
+
+			border-bottom: 3px solid $color-primary;
+
+		}
+
+
+		// when we have an 'invalid' 'focus' 'input' element use this style
+
+		&:focus:invalid {
+
+			border-bottom: 3px solid $color-secondary-dark;
+
+
+		}
+
+
+		// use webkit to change color of placeholder text
+
+
+		&::-webkit-input-placeholder {
+
+			color: $color-grey-dark-2;
+
+		}
+
+	}
+
+
+	&__label {
+
+		font-size: 1.2rem;
+		font-weight: 700;
+		margin-left: 2rem;
+		margin-top: .7rem;
+
+		display: block;
+
+		// use transition as animation is needed
+
+		transition: all .3s;
+
+	}
+
+
+	/// when the placeolder is shown/ field empty - 
+	/// hide the label, then animate to underneath when field is selected and typed in
+
+
+	// use sibling selector to select next sibling AFTER selected element
+
+	// + selects placeholder shown in label as its the next sibling
+
+
+	// when placeholder is shown- opacity=0 / visibility=hidden
+	// when placeholder disappears - so do these settings adding all styiling back to element
+
+	&__input:placeholder-shown + &__label {
+
+		opacity: 0;
+
+		// to remove element form page until its shown, use visibility hidden
+
+		visibility: hidden;
+
+		// text starts on placeholder using y-axis
+
+		transform: translateY(-4rem);
+
+
+	}
+
+	/// radio buttons
+
+
+
+	&__radio-group {
+
+		width: 49%;
+		display: inline-block; // 50% width too much to display side by side so reduced
+			
+		
+		//! MEDIA QUERY
+
+
+		
+		@include respond(tab-port) {
+
+			width: 100%;
+			margin-bottom: 2rem;
+
+		}
+
+
+	}
+
+
+	&__radio-label {
+
+		font-size: $default-font-size;
+		cursor: pointer;
+		position: relative;
+		padding-left: 4.5rem;
+
+	}
+
+	&__radio-button {
+
+		height: 3.2rem;
+		width: 3.2rem;
+		border: 5px solid $color-primary;
+		border-radius: 50%;
+
+		// as the added btn is a span element, display:inline-block to add width and keep on same line
+
+		display: inline-block;
+
+		// positioning is still off so position:absolute
+
+		position: absolute;
+		top: -.4rem;
+		left: 0;
+
+		
+		
+		
+		/// add the dot element using the after pseudo element instaed of the html as radio dots 
+		/// and labels cannot be styled using css 
+
+		
+		&::after {
+			content: "";
+			display: block;
+			height: 1.5rem;
+			width: 1.5rem;
+			border-radius: 50%;
+			background-color: $color-primary;
+			
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			
+			transform: translate(-50%, -50%);
+			
+			// make it invisible as it hasnt been checked 
+			
+			opacity: 0;
+			
+			transition: opacity 0.2s;
+			
+		}
+		
+		
+	}
+	
+	/// using check dots on css element as html form labels cannot be styled
+	
+	
+	// 
+	
+	&__radio-input {
+
+		visibility: hidden;
+	}
+	
+	// when you check the hidden radio button, the radio button after class is activated
+
+	&__radio-input:checked~&__radio-label &__radio-button::after {
+
+		opacity: 1;
+
+	}
+
+}

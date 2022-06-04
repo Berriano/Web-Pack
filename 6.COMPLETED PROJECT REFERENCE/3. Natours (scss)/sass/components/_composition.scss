@@ -1,0 +1,120 @@
+/*--------------------------------------- Composition ---------------------------------------*/
+
+
+/// 3 photo layered composition
+
+
+
+.composition {
+
+	position: relative;
+
+
+	&__photo {
+
+		width: 55%; // width of the photo in container (55% of container size)
+		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+		position: absolute;
+		z-index: 10;
+		transition: all 0.2s;
+
+		// to distance border from element, use outline on the elements hover class to show the outline,
+		// but outline-offset on the actual element so when its hovered the offset is used
+
+		outline-offset: 2rem;
+
+
+
+		//! MEDIA QUERY
+
+		@include respond(tab-port) {
+
+			float: left;
+			position: relative;
+			width: 33.333%;
+			box-shadow: 0 1.5rem 3rem rgba($color-black, 0.2);
+
+		}
+
+
+		&--p1 {
+
+			left: 0;
+			top: -2rem;
+
+
+			//! MEDIA QUERY
+
+			@include respond(tab-port) {
+
+				top: 0rem;
+				transform: scale(1.2);
+
+			}
+
+		}
+
+
+		&--p2 {
+
+			right: 0;
+			top: 2rem;
+
+
+
+			//! MEDIA QUERY
+
+			@include respond(tab-port) {
+				top: -1rem;
+				transform: scale(1.3);
+				z-index: 100;
+
+			}
+
+		}
+
+
+		&--p3 {
+
+			left: 20%;
+			top: 10rem;
+
+
+
+			//! MEDIA QUERY
+
+			@include respond(tab-port) {
+
+				top: 1rem;
+				left: 0;
+				transform: scale(1.1);
+
+			}
+
+		}
+
+
+		&:hover {
+
+			outline: 1.5rem solid $color-primary;
+			transform: scale(1.05) translateY(-.5rem);
+			box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+			z-index: 20;
+
+		}
+
+	}
+
+	/// when a photo in the composition is hovered, the photos not hovered shrink
+
+	// zoom hovered photo BUT shrink the others
+	// .composition:hover .composition__photo:not(:hover){ transform:scale(0.8)}
+
+
+
+	&:hover &__photo:not(:hover) {
+
+		transform: scale(.95);
+	}
+
+}

@@ -1,0 +1,240 @@
+/*
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+*/
+
+/*/?  MAIN COLOR : #087f5b  */
+/*/? GREY COLOR :  #343a40  */
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #343a40;
+
+}
+
+img {
+
+    height: 200px;
+    border-radius: 8px;
+
+    /*/ Scaling an image using transform  */
+
+
+    transform: scale(1.5);
+    /* times the image by 1.5*/
+
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+
+
+
+}
+
+.carousel {
+
+    width: 800px;
+    margin: 100px auto;
+    border-radius: 8px;
+    background-color: #087f5b;
+    padding: 32px 48px 32px 86px;
+
+    display: flex;
+    align-items: center;
+
+    /*/? enlarge gap to see writing hidden behind image  */
+
+    gap: 86px;
+
+    position: relative;
+
+
+}
+
+
+.testimonial-text {
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    color: #e6fcf5;
+
+}
+
+.testimonial-author {
+
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #c3fae8;
+
+}
+
+.testimonial-job {
+
+    font-size: 12px;
+    color: #c3fae8;
+
+}
+
+
+/*/ 														Styling buttons 																 */
+
+
+
+
+.btn {
+    /* acts like a container for the icon*/
+
+    background-color: #fff;
+
+    /*/? buttons have borders so need to remove  */
+
+    border: none;
+
+    /*/? set height and width  */
+
+
+    height: 40px;
+    width: 40px;
+
+    position: absolute;
+
+    /* /? if the element is square - use 50% border radius to make round */
+
+    border-radius: 50%;
+
+
+    /*/? Add shadow to the button  */
+
+
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+
+    /*! as the btn-icon is a chiled element of btn - use flex to position icon  */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    /*/?  When cursor hovers, change to pointer hand  */
+
+    cursor: pointer;
+
+
+
+}
+
+
+
+/*/            Centering icon with transform: translate( x,y )							  */
+
+
+
+
+/*/? use different classes for each btn  */
+
+/*! as they are in a flex container , they are centred already  */
+
+/*! if flex isnt being used, you can centre like this .....  */
+
+
+.btn--left {
+
+    /*/?  Centering */
+
+    /*! moves the icon down 50% its container to the top of the icon*/
+
+    top: 50%;
+
+    /*! moves the icon along the (x,y) axis*/
+
+    /* transform: translate(0, -50%);  -100% would align bottom of icon to 50% */
+
+
+    transform: translate(-50%, -50%);
+    /*/?  -50% would align horizontally too*/
+
+    left: 0;
+
+
+}
+
+.btn--right {
+
+    top: 50%;
+
+    transform: translate(50%, -50%);
+
+    right: 0;
+
+}
+
+
+.btn-icon {
+
+    height: 24px;
+    width: 24px;
+
+    /*/? stroke to color icons  */
+
+    stroke: #087f5b;
+
+
+}
+
+
+/*/ 							Adding the 4 buttons and positioning absolutle							 */
+
+
+/*/? Add a div to the html at the bottom of the container */
+
+
+.dots {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translate(-50%, 32px);
+
+    bottom: 0;
+
+    display: flex;
+
+    gap: 12px
+}
+
+.dot {
+
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
+    border: 2px solid #087f5b;
+
+    /* /? 50% borderr radius on square makes round */
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+}
+
+.dot-fill {
+
+    background-color: #087f5b;
+}

@@ -1,0 +1,152 @@
+/*------------------------------------------ Footer ------------------------------------*/
+
+.footer {
+
+	background-color: $color-grey-dark-3;
+	padding: 10rem 0;
+	font-size: 1.4rem;
+	position: relative;
+
+	color: $color-grey-light-1;
+
+
+
+	//! MEDIA QUERY
+
+
+	@include respond(tab-port) {
+
+		/// too much padding now so decrease
+
+
+		padding: 8rem 0;
+	}
+
+
+
+	&__logo-box {
+
+		// inline elements are like text , so text align works to centre image
+
+		text-align: center;
+		margin-bottom: 8rem;
+		
+		
+	}
+
+	
+	&__logo {
+		
+		height: 15rem;
+		width: auto;
+		
+		
+		
+		
+		//! MEDIA QUERY
+		
+		@include respond(tab-port) {
+			
+			margin-bottom: 6rem;
+				
+					}
+
+	}
+
+	&__navigation {
+
+		border-top: 1px solid $color-grey-dark;
+		padding-top: 2rem;
+
+		// to make the line break the width of the text, make inline-block
+
+		display: inline-block;
+
+
+
+			//! MEDIA QUERY
+
+			@include respond(tab-port) {
+
+				width: 100%;
+				text-align: center;
+
+			}
+
+
+	}
+
+
+
+	&__list {
+
+		list-style: none;
+
+
+	}
+
+	&__item {
+
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 1.5rem;
+		}
+
+
+	}
+
+	&__link {
+
+		&:link,
+		&:visited {
+
+
+			color: $color-grey-light-1;
+			background-color: $color-grey-dark-3;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: inline-block;
+			transition: all .2s;
+
+		}
+
+		&:hover,
+		&:active {
+
+			color: $color-primary;
+			box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+			transform: rotate(5deg) scale(1.3);
+
+
+		}
+	}
+
+	&__copyright {
+
+		border-top: 1px solid $color-grey-dark;
+		padding-top: 2rem;
+
+		// make symetrical by using width and float
+
+		width: 80%;
+		float: right;
+		text-align: left;
+
+
+		
+			//! MEDIA QUERY
+
+			@include respond(tab-port) {
+
+				width: 100%;
+			float: none;
+
+			}
+
+
+
+	}
+
+
+}

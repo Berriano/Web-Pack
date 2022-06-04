@@ -1,0 +1,132 @@
+*{
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1;
+
+	/*/? Set background color for whole page */
+
+	
+
+}
+
+
+/* -------------------------- MAIN TAGS ---------------------------------- */
+
+body{
+	font-family: 'inter' ;
+	
+}
+
+.pagination{
+
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+
+margin-top: 150px;
+
+
+}
+
+
+.arrow-btn{
+
+	height: 48px;
+	width: 48px;
+	border: 2px solid #087f5b;
+	background:none;
+	border-radius: 50%;
+	cursor: pointer;
+
+	
+}
+
+.arrow-btn:hover{
+background-color:  #087f5b;
+
+}
+
+.arrow-icon{
+
+	height: 24px;
+	width: 24px;
+  stroke: #087f5b  ;
+}
+
+
+
+/*/ Style an inner element when the outer element is hovered  */
+
+/*! This doesnt work properly as only when icon is hoverd not button */
+
+/* .arrow-icon:hover{
+
+	stroke: #fff;
+} */
+
+/*/? Style the outer element for the inner element when is hovered  */
+
+
+.arrow-btn:hover .arrow-icon{
+
+	stroke: #fff;
+}
+
+
+
+
+a:link, a:visited{
+	text-decoration: none;
+	font-size: 16px;
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(134, 134, 134);
+
+
+}
+
+/*/ Using "and" (.) to use 2 classes */
+
+
+/*/! use both element classes to make higher priortiy when an element has 2 classes  */
+
+/*! element has num class and page-selected class  */
+
+.num.page-selected{
+	background-color: #087f5b;
+	color: #fff;
+}
+
+
+a:hover:active{
+	background-color: #087f5b;
+	color:#ffffff;
+
+
+}
+
+
+
+a:hover{
+	background-color: #087f5b;
+	color:#ffffff;
+
+
+}
+
+.num{
+	font-size: 16px;
+}
+
+
+.dots{
+color: rgb(211, 211, 211);
+
+}

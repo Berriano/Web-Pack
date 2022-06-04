@@ -1,0 +1,188 @@
+/*
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+*/
+
+/*/?  MAIN COLOR : #087f5b  */
+/*/? GREY COLOR :  #343a40  */
+
+
+
+
+
+
+*{
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+
+	/*/? Set background color for whole page */
+
+	
+
+}
+
+
+
+/* -------------------------- MAIN TAGS ---------------------------------- */
+
+
+html{
+
+	font-family: 'Rubik' , sans-serif;
+	color: #444;
+}
+
+/*/ create a container class and add it to all elements that need centreing */
+
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+	
+}
+
+body{
+	line-height: 1;
+}
+
+
+
+/*/?  Add background color to whole section */
+
+
+header{
+
+
+	color: #fff;
+
+	padding-top: 32px;
+
+/*/ 														 Viewport Height 															*/
+
+
+/*/? 	Set height to 100% of the viewport  */
+
+
+/* !  Viewport is the current in monitor/browser page window size */
+
+
+height: 100vh;
+
+
+/*/? vw is viewport width which doesnt get used much */
+
+
+position: relative;
+
+
+/*/						Adding an image to cover the whole section background  					*/
+
+
+/*/?  Specify link to current file  in url( image link ) */
+
+
+/* background-image: url(hero.jpg); */
+
+/*/!  Use background size and cover which automatically */
+/*!  sizes the image to cover the entire element (viewport) */
+
+background-size: cover;
+
+
+/*/  				   Use linear-gradients to fade background images 							 */
+
+
+/*/?  gradients go from one color to another, so set to the same color*/
+/*/?  decrease opacity to around 0.6 , add the image after */
+
+
+	background-image:linear-gradient(rgba(98, 98, 98, 0.575),rgba(93, 93, 93, 0.575)),
+																	 url(hero.jpg);
+}
+
+
+
+nav{
+
+	font-size: 20px;
+	font-weight: 700;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+
+}
+
+
+/*/	  Vertically align section using absolute positioning with translate 			*/
+
+
+
+
+.header-container{
+
+	width: 1200px;
+	position: absolute;
+
+	left: 50%;
+	top: 50%;
+
+	transform: translate(-50%,-50%);
+
+}
+
+
+/*/			 						Give the text half the header container  										*/
+
+
+.header-container-inner{
+
+	width: 50%;
+}
+
+
+h1{
+	font-size: 52px;
+	margin-bottom: 32px;
+	line-height: 1.05;
+}
+
+p{
+
+	font-size: 20px;
+	line-height: 1.6;
+	margin-bottom: 48px;
+}
+
+.btn:link, btn:visited{
+
+	font-size: 20px;
+	font-weight:600;
+	background-color: #e67e22;
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+	padding: 16px 32px;
+	border-radius: 9px;
+
+}
+
+h2{
+	font-size: 44px;
+	margin-bottom: 48px;
+}
+
+section{
+	padding: 96px 0;
+	background-color: #f7f7f7;
+	
+}
