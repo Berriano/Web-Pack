@@ -1,0 +1,672 @@
+/* / welcome  */
+
+
+
+.opening-section{
+
+	background-color: #fff;
+	padding-top:8rem;
+	
+}
+
+.welcome-text{
+
+	font-size: 3.6rem;
+	/* font-weight: 500; */
+	
+}
+
+/*/  header  */
+
+
+header img{
+
+	height: 10rem;
+	/* border-radius: 0.8rem; */
+
+
+}
+
+.title{
+	font-size: 5.2rem;
+	font-family: 'Wallpoet', sans-serif;
+	margin-bottom: 1.2rem;
+	
+}
+
+
+.top-header{
+
+
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 1.2rem;
+
+}
+
+
+
+.name-search{
+
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 1.6rem;
+		align-items: center;
+		justify-content: center;
+	
+
+}
+
+.search-bar{
+
+		height: 3.2rem;
+		border-radius: 1.0rem;
+		padding: 1.6rem;
+		border: 0.1rem solid #fff;
+		font-size: 1.6rem;
+		width: 100%;
+		
+
+}
+
+
+
+
+
+.signup:link, .signup:visited {
+
+	cursor: pointer;
+
+}
+.signup:active, .signup:hover{
+
+	background-color: #ff4d4d;
+	color:  #f2f2f2;
+
+
+	cursor: pointer;
+}
+
+
+
+.signup{
+	
+	background-color: #222;
+	border-radius:  1.2rem;
+	padding:0.8rem 1.2rem;
+	font-family: 'Wallpoet', sans-serif;
+	color: #f1f3f5 !important;
+	font-size: 1.4rem;
+	transition: all 0.3s;
+}
+
+
+/*/ nav */
+
+.container-flex.navigation{
+	padding: 1.6rem 0;
+
+}
+
+
+
+
+/*/ reviews */
+
+
+
+.article-reviews{
+
+	background-color: #fff;
+	padding: 2rem 0 9rem ;
+
+}
+
+
+
+.review img{
+
+	width: 25rem;
+	height: 15rem;
+	margin-bottom: 1.8rem;
+}
+
+
+.game-title{
+	font-size: 2rem;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	margin-bottom: 1rem;
+
+}
+
+
+.review:hover{
+
+	transform: scale(1.05);
+	box-shadow: 1.2rem 1rem 1rem rgba(0, 0, 0, 0.198);
+
+}
+
+.review{
+
+	padding: 1.6rem;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.198);
+	border-radius: 12px;
+	background-color: #fff;
+	transition: all 0.5s;
+
+}
+
+.review-description{
+	line-height: 1.2;
+	font-size: 1.2rem;
+	margin-bottom: 1.8rem;
+	height: 3.2rem;
+}
+
+.review-card-container{
+
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 0.4rem 0.8rem;
+
+	
+
+}
+
+.review-icon{
+
+	height: 1.6rem;
+	width: 1.6rem;
+}
+
+.review-card-text{
+
+	font-size: 1.2rem;
+
+
+}
+
+.score{
+	font-size: 1.6rem;
+	margin-left: auto;
+	
+}
+
+
+.final-score-flex{
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.8rem 0.6rem 0.4rem;
+	border-top: 0.5px dashed rgba(0, 0, 0, 0.816);
+
+	
+}
+
+
+.overall-score{
+
+	font-size:2rem;
+	font-weight: 700;
+	
+
+
+}
+
+.total-score{
+
+	font-size: 3.2rem;
+	font-weight: 700;
+}
+
+
+/*/ news */
+
+
+.r-pi-pic{
+
+	width: 100%;
+	border-radius: 4.8rem;
+	/* align-self:flex-end;
+	justify-self: end;
+	margin-bottom: 4.8rem; */
+
+}
+
+.grid--news{
+
+	grid-template-columns:70% 30%;
+	/* gap: 3.2rem */
+	align-items: center;
+justify-content: center;
+}
+
+
+
+.news-subhead{
+
+	font-size: 3.2rem;
+	margin-bottom: 3.2rem;
+
+}
+
+.news-p{
+
+	font-size: 1.6rem;
+	line-height: 1.5;
+	padding-right:9.6rem;
+	margin-bottom: 3.2rem;
+
+}
+
+.news-link:link, .news-link:visited{
+
+	text-decoration: none;
+	padding: 1rem;
+	display: inline-block;
+	border: 1px solid #ff4d4d;
+	font-size: 1.2rem;
+	border-radius: 8px;
+	color: #272727;
+
+	/* color: #fff; */
+	margin-left: 3.2rem;
+
+	background-color: #c8c8c8;
+
+	/* background-color: #ff4d4d; */
+
+	cursor: pointer;
+
+	transition: all 0.3s;
+
+
+
+	
+}
+
+.news-link:active, .news-link:hover{
+
+	text-decoration: none;
+	/* padding: 1.2rem; */
+	display: inline-block;
+	box-shadow: inset 1px solid #ff4d4d;
+	font-size: 1.2rem;
+	border-radius: 8px;
+	color: #fff;
+	/* color: #272727; */
+	margin-left: 3.2rem;
+	/* background-color: #c8c8c8; */
+	background-color: #ff4d4d;
+	cursor: pointer;
+
+
+
+	
+}
+
+
+
+
+/* / top 10 reviews */
+
+
+.review-section{
+
+ max-height: 75rem;
+	background-color: #fff;
+	border: 1px solid  #ff4d4d;
+	border-radius: 8px;
+	overflow: auto;
+
+}
+
+.grid--top-ten{
+	max-width: 120rem;
+	grid-template-columns: 15% 20% 50% 15%;
+	grid-template-rows: repeat(10, 1fr);
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	padding: 0 3.2rem;
+	margin: 2.4rem 0;
+
+
+}
+
+
+.top-ten-img{
+width: 100%;
+
+}
+
+.text-ten{
+
+	font-size: 1.4rem;
+	padding: 2.4rem 4.8rem;
+	align-self: center;
+	justify-self: center;
+	line-height: 1.3;
+
+}
+
+.number{
+
+	font-size: 6.4rem;
+	text-align: center;
+
+}
+
+.top-ten-score{
+
+	font-size:6.4rem ;
+	text-align: center;
+	justify-content: center;
+
+}
+
+
+
+
+
+/*/ retro */
+
+
+.carousel-section{
+
+	margin-bottom: 16.4rem;
+}
+
+
+.carousel{
+	max-width: 110rem;
+	background-color: #72a3b155;
+	padding: 3.2rem 4.8rem 3.2rem 9.4rem;
+	border-radius: 10px;
+	display: flex;
+	gap: 13rem;
+	margin-bottom: 9.6rem;
+	position: relative;
+}
+
+.carousel-pic{
+
+	width: 16rem;
+	height:16rem;
+	transform: scale(1.58);
+	border-radius: 10px;
+	position: absolute;
+	bottom: 15%;
+}
+
+.carousel-text{
+	margin-left: 30rem;
+}
+
+.carousel-heading{
+
+	font-size: 3rem;
+	margin-bottom: 4rem;
+}
+
+.carousel-quote{
+
+	font-size: 2rem;
+	line-height: 1.25;
+}
+
+
+.carousel-author{
+
+	font-size: 1.2rem;
+	color: #1a1a1a;
+	margin: 1.6rem 0 0.6rem ;
+
+}
+.carousel-job{
+
+font-size: 1rem;
+	color: #1a1a1a;
+}
+
+.carousel-btn{
+
+	position: absolute;
+	width: 4.8rem;
+	height: 4.8rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: none;
+	box-shadow: 0.4rem 0.6rem 1rem rgba(0, 0, 0, 0.253);
+
+	
+}
+
+.btn-icon{
+
+	width: 3.2rem;
+	height: 3.2rem;
+	
+}
+
+.carousel-btn:hover .btn-icon{
+
+	stroke: #6394a2;
+
+}
+
+.left-btn{
+
+	left: 0;
+	top: 50%;
+	transition: all 0.1s;
+	transform: translate(-50%, -50%);
+
+	
+}
+
+.right-btn{
+
+	right: 0;
+	top: 50%;
+	transform: translate(50%, -50%);
+	transition: all 0.3s;
+}
+
+.left-btn:hover, .left-btn:active{
+
+
+	box-shadow: 1.2rem 1rem 1rem rgba(0, 0, 0, 0.198);
+	left: 0;
+	top: 50%;
+	background-color: #ff4d4d;
+	transform: translate(-50%, -50%) scale(1.1);
+
+
+
+
+}
+
+
+.right-btn:hover, .right-btn:active{
+
+
+	box-shadow: 1.2rem 1rem 1rem rgba(0, 0, 0, 0.198);
+	right: 0;
+	top: 50%;
+	transform: translate(50%, -50%) scale(1.1);
+	background-color: #ff4d4d;
+ 
+
+
+}
+
+.dots{
+
+	display: flex;
+	position: absolute;
+	bottom: -18%;
+	left: 50%;
+	gap: 1.6rem;
+	transform: translateX(-50%);
+}
+
+.dot{
+	border-radius:50% ;
+	width: 1.4rem;
+	height: 1.4rem;
+	border: 1px solid #6394a2;
+}
+
+.dot-fill{
+
+	background-color: #ff4d4d;
+}
+
+
+
+
+/*//  Form cta   */
+
+.cta-signup{
+
+	margin-bottom: 12.8rem;
+}
+
+.cta-styling{
+
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	overflow: hidden;
+  background-image: linear-gradient(to right bottom,#f7f7f7,rgba(185, 185, 185, 0.747));
+  border-radius: 12px;
+	box-shadow: -2px 1px 24px rgba(0, 0, 0, 0.295);
+
+}
+
+
+.cta-text-box{
+
+	padding: 3.2rem;
+}
+
+
+.cta-heading{
+
+	font-size: 3.2rem;
+	text-align: center;
+	margin-bottom: 3.2rem;
+}
+
+.cta-p{
+
+	font-size: 2.4rem;
+	text-align: center;
+	margin-bottom: 2.4rem;
+}
+
+
+
+.cta-img-box{
+
+	background-image: linear-gradient(to right bottom,hsla(0, 0%, 97%, 0.336)
+	,rgba(139, 139, 139, 0.349))
+	,url('../img/cta-pic.jpg');
+	
+	background-size:cover;
+	
+	background-position: center;
+	
+}
+
+
+/*/ form grid */
+
+
+.cta-input{
+
+	display: grid;
+	grid-template-columns: 35% 65%;
+	row-gap:1.6rem ;
+	column-gap: 0.8rem;
+
+}
+
+.label-input{
+
+	font-size: 1.8rem;
+	align-self:center;
+	justify-self: end;
+}
+.input{
+
+	display: flex;
+}
+
+input{
+
+	width: 80%;
+
+}
+
+.cta-submit{
+	grid-column: 2/3;
+	width: 25%;
+	align-self: center;
+	justify-self: start;
+	border-radius: 8px;
+	margin-left: 6.4rem;
+	padding: 0.5rem 0;
+	border: 1px solid #ff4d4d;;
+	display: inline-block;
+	background-color: #ff4d4d;
+	color: rgb(241, 241, 241);
+	font-size: 1.6rem;
+	transition: all 0.3s;
+}
+
+.cta-submit:hover{
+
+	cursor: pointer;
+	background-color: #ff1e1e;
+	transform: scale(1.1);
+	
+}
+
+#user-name{
+
+	padding: 0.6rem;
+	border-radius: 8px;
+	border: 1px solid rgb(172, 172, 172);
+
+
+}
+
+#email{
+
+	padding: 0.6rem;
+	border-radius: 8px;
+	border: 1px solid rgb(172, 172, 172);
+
+}
+
+
+/*/ footer   */
+
+
+.col{
+
+	height: 20rem;
+}

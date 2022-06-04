@@ -1,0 +1,137 @@
+/*---------------------------------    Forms --------------------------------------- */
+/*/ Form cta */
+
+
+.cta{
+	
+
+			&__container{
+			
+				max-width: 90rem;
+				margin: 0 auto;
+
+						
+			
+			}
+
+		
+
+			&__styling{
+
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				overflow: hidden;
+				background-image: linear-gradient(to right bottom,#f7f7f7,rgba(185, 185, 185, 0.747));
+				border-radius: 12px;
+				box-shadow: -2px 1px 24px rgba(0, 0, 0, 0.295);
+
+
+				
+			
+			}
+
+			&__text-box{
+
+				padding: 3.2rem;
+
+				
+			}
+
+			&__heading{
+
+				font-size: 3.2rem;
+				text-align: center;
+				margin-bottom: 3.2rem;
+			}
+
+			&__paragraph{
+
+				font-size: 2.4rem;
+				text-align: center;
+				margin-bottom: 2.4rem;
+			}
+
+			&__img-box{
+
+				background-image: linear-gradient(to right bottom,hsla(0, 0%, 97%, 0.336)
+				,rgba(139, 139, 139, 0.349))
+				,url('../img/cta-pic.jpg');
+				
+				background-size:cover;
+				
+				background-position: center;
+				
+			}
+		
+
+			// form grid 
+
+
+			&__input{
+
+				display: grid;
+				grid-template-columns: 35% 65%;
+				row-gap:1.6rem ;
+				column-gap: 0.8rem;
+
+						&-label{
+
+							font-size: 1.8rem;
+							align-self:center;
+							justify-self: end;
+						}
+
+			}
+			
+
+			&__submit{
+				grid-column: 2/3;
+				width: 25%;
+				align-self: center;
+				justify-self: start;
+				border-radius: 8px;
+				margin-left: 6.4rem;
+				padding: 0.5rem 0;
+				border: 1px solid $color-primary-red;
+				display: inline-block;
+				background-color: $color-primary-red;
+				color: rgb(241, 241, 241);
+				font-size: 1.6rem;
+				transition: all 0.3s;
+
+				&:hover{
+
+					cursor: pointer;
+					background-color: $color-primary-red;
+					transform: scale(1.1);
+					
+				}
+		}
+
+	
+}
+
+
+#cta{
+
+	&__user-name{
+
+		padding: 0.6rem;
+		border-radius: 8px;
+		border: 1px solid $color-grey;
+		width: 80%;
+	
+	}
+
+	&__email{
+
+		padding: 0.6rem;
+		border-radius: 8px;
+		border: 1px solid $color-grey;
+		width: 80%;
+	
+	}
+	
+}
+
+

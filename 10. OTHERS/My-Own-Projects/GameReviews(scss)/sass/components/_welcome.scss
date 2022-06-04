@@ -1,0 +1,28 @@
+
+/*-------------------------------------- Welcome section ---------------------------------*/
+
+
+
+
+.section__opening{
+
+	background-color: #fff;
+	padding-top:8rem;
+
+
+	transition: all;
+	
+}
+
+.section__opening-text{
+
+	font-size: 3.6rem;
+	background-image: linear-gradient(to right,#c8c8c8,#616161);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	outline: 0.25rem solid $color-primary-red;
+	border-radius: 1rem;
+	padding: 1.6rem;
+	
+}

@@ -1,0 +1,112 @@
+/*---------------------------------------- Header ------------------------------------*/
+
+
+
+.header{
+
+
+	border-bottom: 1px solid red;
+	
+	
+	&__top{
+		
+		
+		
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		padding: 1.2rem;
+		
+		&--img{
+			
+			height: 10rem;
+				
+			
+			}
+		}
+	
+
+		&__search{
+
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			padding: 1.6rem;
+			align-items: center;
+			justify-content: center;
+
+		}
+
+		&__title{
+			font-size: 5.2rem;
+			font-family: 'Wallpoet', sans-serif;
+			margin-bottom: 1.2rem;
+				
+		}
+
+
+
+}
+
+
+.search-bar{
+
+		height: 3.2rem;
+		border-radius: 1.0rem;
+		padding: 1.6rem;
+		border: 0.1rem solid #fff;
+		font-size: 1.6rem;
+		width: 100%;
+		
+
+}
+
+
+
+/* nav */
+
+.container__nav{
+
+		padding: 1.6rem 0;
+
+}
+
+
+.nav__box{
+
+	
+			&-flex{
+				list-style: none;
+				display: flex;
+				gap: 8rem;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 0.4rem;
+
+				a:link , a:visited{
+
+								font-size: 2rem;
+								font-weight: 700;	
+								text-decoration: none;
+								color: #272727 ;
+								padding: 0.2rem 0.6rem;
+								transition: all 0.3s;
+				}
+
+				a:active, a:hover{
+
+								background-color: $color-primary-red;
+								color: rgb(241, 241, 241);
+								border-radius: 0.8rem;
+										
+				}
+
+		}
+
+}
+
+	
+	
+
+
+

@@ -1,0 +1,122 @@
+
+/*----------------------------------- Utilities Classes -----------------------------------------*/
+
+
+//! Special reusable classes to do specific actions
+
+
+
+/*/ containers  */
+
+.container{
+	
+	max-width: 120rem;
+  margin: 0 auto;
+
+	
+	
+}
+
+
+
+.container-flex{
+	
+	max-width: 120rem;
+  margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+
+
+}
+
+.container-head{
+	
+	max-width: 120rem;
+	margin: 0 auto;
+
+	
+}
+
+
+.extra-content{
+	border-top: 1px solid red;
+}
+
+
+
+// sections
+
+
+.section__reviews{
+	
+	background-color: #fff;
+	padding: 2rem 0 9rem ;
+	
+}
+
+
+
+
+
+// .section__news{
+
+
+// }
+
+
+.section__reviews--top-ten{
+
+	 max-height: 75rem;
+	 background-color: #fff;
+	 border: 1px solid  $color-primary-red;
+	 border-radius: 8px;
+	 overflow: auto;
+	
+	}
+
+
+	
+	.section__carousel{
+ 
+		margin-bottom: 16.4rem;
+	
+	
+	}
+
+
+	.cta{
+	
+		margin-bottom: 12.8rem;
+		
+	}	
+
+
+// headings
+
+.section-heading{
+
+
+	background-color: $color-primary-red;
+	padding: 0.6rem 1.2rem;
+	border-radius: 8px;
+	display: inline-block; 
+	margin: 8.2rem 0 5.4rem  /* 3.2rem */;
+
+	
+}
+
+.retro-games-heading{
+
+
+	background-color: $color-primary-red;
+	padding: 0.6rem 1.2rem;
+	border-radius: 8px;
+	display: inline-block;
+	margin: 12.8rem 0 9.6rem;
+
+
+}
+
+
+
+

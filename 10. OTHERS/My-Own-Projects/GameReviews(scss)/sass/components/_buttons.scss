@@ -1,0 +1,38 @@
+/*------------------------------------ Buttons --------------------------------------*/
+
+
+
+.header__sign-in{
+
+	.signup{
+
+		background-color: #222;
+		border-radius:  1.2rem;
+		padding:0.8rem 1.2rem;
+		font-family: 'Wallpoet', sans-serif;
+		color: #f1f3f5 !important;
+		font-size: 1.4rem;
+		transition: all 0.3s;
+	}
+	
+
+					
+		.signup:link, .signup:visited {
+
+			cursor: pointer;
+
+		}
+
+		.signup:active, .signup:hover{
+
+			background-color: $color-primary-red;
+			color:  #f2f2f2;
+
+
+			cursor: pointer;
+		}
+
+
+
+
+}

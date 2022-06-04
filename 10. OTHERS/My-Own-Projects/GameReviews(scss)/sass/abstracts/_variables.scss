@@ -1,0 +1,36 @@
+/*-------------------------------------- Variables ---------------------------------*/
+
+/*
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+Colors:
+
+grey : : #f2f2f2;
+carousel : #72a3b155;
+
+*/
+
+
+$color-primary:#55c57a;
+$color-primary-red:#ff4d4d;
+$color-primary-light:#7ed56f;
+$color-primary-dark:#28b485;
+$color-white:#fff;
+$color-black:#000;
+$color-grey:#acacac;
+$color-grey-light-1:#f7f7f7;
+$color-grey-dark:#777;
+
+
+
+
+// Grid 
+
+$grid-width:114rem;
+$gutter-vertical:8rem;
+$gutter-horizontal:6rem;
