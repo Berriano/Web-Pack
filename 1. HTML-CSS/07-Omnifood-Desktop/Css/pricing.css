@@ -1,0 +1,892 @@
+
+
+
+/* --------------------------- 	Hero Section	------------------------------  */
+
+
+.section-hero{
+
+	background-color: #fdf2e9;
+	padding: 4.8rem 0 9.6rem 0;
+
+}
+
+.hero-container{
+
+	
+	max-width: 130rem;
+	margin: 0 auto;
+	padding: 0 3.2rem ;
+
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	align-items: center;
+	gap: 9.6rem;
+
+}
+
+.hero-image{
+
+	width: 100%;
+
+}
+
+
+.hero-description{
+
+	font-size: 2rem;
+	line-height: 1.6;
+	margin-bottom: 4.8rem;
+
+}
+
+
+.delivered-meals{
+	display: flex;
+	margin-top: 8rem;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+
+.delivered-meals p{
+	font-size: 1.8rem;
+
+	font-weight: 600;
+}
+
+
+.delivered-imgs{
+	display: flex;
+}
+
+
+.delivered-imgs img{
+
+	height: 4.8rem;
+	width: 4.8rem;
+	border-radius: 50%;
+	margin-right: -1.6rem;
+	border: 3px solid #fdf2e9;;
+
+}
+
+
+.delivered-imgs img:last-child{
+
+	margin-right: 0;
+}
+
+
+.delivered-text span{
+
+	color: #cf711f;
+	font-weight: 700;
+}
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+/*--------------------- Header / Navigation Section --------------------  */
+
+
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fdf2e9;
+	height: 9.6rem;
+	padding:0 4.8rem;
+
+}
+
+.logo{
+
+	height: 2.2rem
+}
+
+
+
+.main-nav-list{
+
+	list-style: none; 
+	display: flex;
+	gap: 3.2rem;
+	align-items: center;
+
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+	font-weight: 500;
+	font-size: 1.8rem;
+	transition: all 0.3s;
+	
+
+}
+
+.main-nav-link:hover,
+.main-nav-link:active{
+
+	color: #cf711f;
+
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+
+	padding: 1.2rem 2.4rem;
+	border-radius: 9px;
+	color: #fff;
+	background-color:#e67e22 ;
+
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active{
+
+	background-color: #cf711f;
+}
+
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+
+/* ------------------------- Featured In Section ------------------------ */
+
+
+.section-featured{
+
+	padding: 4.8rem 0 3.2rem 0;
+}
+
+
+.heading-featured-in{
+
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 0.75px;
+	font-weight: 500;
+	color: #888;
+	text-align: center;
+	margin-bottom: 2.4rem;
+
+}
+
+.logos{
+
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+
+
+.logos img{
+
+	height: 3.2rem;
+
+	filter: brightness(0%); 
+
+	opacity: 50%;
+
+}
+
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+
+
+
+/* ------------------------- How it works Section ----------------------- */
+
+
+
+.section-how{
+
+	padding: 9.6rem 0;
+
+}
+
+
+.step-number{
+
+	font-size: 8.6rem;
+	font-weight: 600;
+	color: #ddd;
+	margin-bottom: 1.2rem;
+
+}
+
+.heading-tertiary{
+
+	font-size: 2.8rem;
+	line-height: 1.2;
+	margin-bottom: 3.2rem;
+
+}
+
+.step-description{
+
+	font-size: 1.8rem;
+	line-height: 1.8;
+}
+
+
+.step-img-box{
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position:relative;
+
+}
+
+
+.step-img{
+
+	width: 35%;
+
+}
+
+.step-img-box::before{
+
+	width: 60%;
+	padding-bottom: 60%;
+	background-color: #fdefe3;
+
+	z-index: -2;
+
+}
+
+
+.step-img-box::before, .step-img-box::after {
+
+	content: "";
+	display: block;
+	border-radius: 50%;
+
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+
+}
+
+
+.step-img-box::after{
+
+	width: 45%;
+	padding-bottom: 45%;
+	background-color:#fae5d3;
+	
+	z-index: -1;
+
+}
+
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+
+/* ---------------------------  Meals Section  -------------------------- */
+
+
+
+.section-meals{
+
+	padding: 9.6rem;
+}
+
+
+
+.meal{
+
+	box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.116);
+
+	border-radius: 12px;
+
+	/*/?  Instead of using border-top-left-radius to curve top image edges....  */
+	/*/?  Use overflow:hidden  */
+
+	overflow: hidden;
+	
+}
+
+.meal-text-box{
+
+	padding: 3.2rem  4.8rem 4.8rem 4.8rem;
+}
+
+
+.meals-image{
+
+	width: 100%;
+
+
+}
+
+
+.meal-name{
+
+	font-size: 2.4rem;
+	color: #333;
+	font-weight: 600;
+	margin-bottom: 3.2rem;
+
+
+}
+
+
+.meal:hover{
+
+	transform: translateY(-1.2rem);
+
+	transition: all 0.4s;
+
+	box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.308);
+
+
+}
+
+
+.tag{
+
+display: inline-block;
+
+padding: 0.4rem 0.8rem;
+
+font-size: 1.2rem;
+
+text-transform: uppercase;
+
+color:#333;
+
+border-radius: 100px;
+
+font-weight: 600;
+
+	
+}
+
+
+.tag--vegetarian{
+
+	background-color: #51cf66;
+
+}
+
+.tag--vegan{
+
+	background-color:rgb(170, 255, 148) ;
+
+}
+
+.tag--paleo{
+
+	background-color: rgb(245, 248, 32);
+
+}
+
+.meal-tags{
+
+	margin-bottom:1.2rem ;
+
+	display: flex;
+	
+	gap: 0.4rem;
+}
+
+
+.meal-attributes{
+
+	list-style: none;
+
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+
+}
+
+
+.meal-icon{
+
+	height: 2.4rem;
+	width: 2.4rem;
+ 	color: #e67e22;
+
+}
+
+
+
+
+.meal-attribute{
+
+	font-size: 1.8rem;
+
+	display: flex;
+	align-items: center;
+	gap: 1.6rem;
+
+
+}
+
+
+
+strong{
+
+	font-weight: 500;
+}
+
+
+.list-item{
+
+	font-size: 1.8rem;
+
+	display: flex;
+	align-items: center;
+	gap: 1.6rem;
+
+
+}
+
+.list{
+
+	list-style: none;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+}
+
+
+.list-icon{
+
+	width: 3rem;
+	height: 3rem;
+	color: #e67e22;
+}
+
+
+.link:link, .link:visited{
+
+	color: #e67e22;
+
+	text-decoration: none;
+
+	border-bottom: 1px solid currentColor;
+
+	display: inline-block;
+
+	padding-bottom: 0.3rem; 
+
+	transition: all 0.3s;
+
+}
+
+
+.link:active, .link:hover{
+
+	color: #cf711f;
+
+	border-bottom: 1px solid transparent;
+
+
+}
+
+
+.margin-bottom-md{
+
+	margin-bottom: 4.8rem !important;
+
+}
+
+
+.all-recipes{
+
+	text-align: center;
+	font-size: 1.8rem;
+
+
+}
+
+
+.center-text{
+
+	text-align: center;
+}
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+
+/* ------------------------  Testimonials Section  ---------------------- */
+
+
+
+.section-testimonials{
+
+	display: grid;
+
+/* !  Treat the fr size as percentages to distribute space accordingly */
+
+	grid-template-columns: 55fr 45fr;  /*/  essentially  55%  45% */
+
+/*!  use align-items to maintain grid spacing when shrunk  */
+
+align-items: center;
+
+
+	background-color: #fdf2e9;
+
+
+
+}
+
+
+.testimonials-grid{
+
+		display:grid;
+		grid-template-columns:  1fr 1fr ;
+		row-gap: 4.8rem;
+		column-gap: 8rem;
+
+
+}
+
+.testimonials-container{
+
+	padding: 9.6rem;
+
+
+}
+
+.testimonial-img{
+
+	width: 6.4rem;
+	border-radius: 50%;
+	margin-bottom: 1.2rem;
+
+}
+
+.testimonial-text{
+
+	font-size: 1.8rem;
+
+	/* !  line-height multiplies the font-size by the value i.e 1.8 * 1.8 */
+	line-height: 1.8;
+
+	margin-bottom: 1.6rem;
+
+
+}
+
+
+.testimonial-name{
+
+	font-size:1.6rem;
+	color: #6F6F6F;
+
+}
+
+
+					/*   -------------------   Gallery   ---------------------   */
+
+
+
+.gallery{
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.6rem;
+
+	padding: 1.6rem;
+
+
+}
+
+
+.gallery-item img {  /*/  no class on images so use decendant selector*/
+
+/*!  Images have a white space around because they are inline- not block */
+
+display: block;
+
+width: 100%; /*/  100% of the grid size ( 1fr )*/
+
+/*! giving it a width of 100% means it will fit into the defined grid  */
+
+
+/*/ transition on original element to use pseudo classes */
+
+transition: all 0.4s;
+
+}
+
+
+
+/* -------  Make images hover off page using hover pseudo-class  -------- */
+
+
+
+.gallery-item img:hover{
+
+	/*/?  to rorate 45 degrees */
+
+	/* transform: rotate(45deg); */
+
+
+	/*/?  add transition to original element to add timing*/
+
+	transform: scale(1.1);
+
+
+}
+
+/*/ to fix issue of overflow out of container  */
+
+.gallery-item{
+
+	overflow: hidden;
+}
+
+
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+
+/* --------------------  Pricing / features Section  -------------------- */
+
+
+
+
+/* --------- Pricing ------------- */
+
+
+.section-pricing{
+
+	padding: 9.6rem;
+
+}
+
+.pricing-plan{
+
+	border-radius: 12px;
+
+	/*/ block-level elements will use 100% of the width of a container */
+	/*/ use width to use less of the container  */
+
+	width: 75%;
+
+}
+
+
+.pricing-plan--starter{
+
+	justify-self: end;
+
+	border: 0.2rem solid 	#fdf2e9 ;
+
+	/*/ now that a border has been added/ the box is 2px bigger  */
+	/*/ so add the padding style to each card, */
+	/*/ and remove 2px from the padding of this container */
+
+	padding: 4.6rem;
+
+}
+
+/*/  Add the background color to the best value card only  */
+
+
+.pricing-plan--complete{
+
+	background-color:#fdf2e9 ;
+
+	padding: 4.8rem;
+
+	position: relative;
+
+/*/  hide the ribbon overflow  */
+
+	overflow: hidden;
+
+}
+
+
+/*/ Adding a ribbon to the corner of the best value container  */
+
+.pricing-plan--complete::after{
+
+	content:"Best value";
+
+	position: absolute;
+
+	text-transform: uppercase;
+
+	font-size: 1.4rem;
+
+	font-weight: 700;
+
+
+	top: 6%;
+	right: -17%;
+
+	background-color: #ffd43b;
+	color :#333;
+
+	/*/ increase padding to fill to the edges of the container  */
+
+	padding: 1rem 8rem;
+
+
+	/*/ rotate the ribbon 45 degrees  */
+
+	transform: rotate(45deg);
+
+
+
+
+}
+
+
+
+.plan-header{
+	
+	text-align: center;
+	margin-bottom: 4.8rem;
+
+
+}
+
+
+.plan-name{
+
+	color:#cf711f;
+	font-size: 2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5;
+	margin-bottom: 3.2rem;
+
+}
+.plan-price{
+
+	font-size: 6.2rem;
+font-weight: 600;
+color: #333;
+margin-bottom: 1.6rem;
+
+}
+
+
+.plan-price span{
+
+	font-size: 3rem;
+	font-weight: 500;
+	margin-right: 0.8rem;
+
+}
+
+
+.plan-text{
+
+font-size: 1.6rem;
+line-height: 1.6;
+color: #6F6F6F;
+}
+
+
+.plan-sign-up{
+
+	/*/ to centre a link button - use text align  */
+
+	text-align: center;
+
+	margin-top: 4.8rem;
+}
+
+
+/*------------------------		 Copied from main 	---------------------- */
+
+
+
+
+
+.grid{
+	display: grid;
+
+	row-gap:9.6rem;
+	column-gap: 6.4rem;
+
+/*/----------------   Using last child for a grid element  ------------- */
+
+
+
+/*/ if the .grid class is the not last child in the section - */
+/*/ use margin-bottom:9.6rem */
+
+	/* margin-bottom: 9.6rem; */
+
+}
+
+
+
+/*/ if the grid class div is the last child in the section - margin-bottom:0  */
+
+
+/*! ONLY APPLIES WHEN THE .GRID CLASS HAS BEEN USED AS THE LAST CHILD */
+/*! IF THE .GRID HASNT BEEN USED AS THE LAST CHILD IT WILL HAVE MARGIN-BOTTOM 9.8REM  */
+
+/* .grid:last-child{
+
+margin-bottom: 0;
+} */
+
+
+
+
+
+/*! BUT........to keep in one line of code, use.......  */
+/*! you can also use the not() keyword instead  */
+
+
+/*/  If .grid class is not the last child inside the parent container */
+/*/  then apply margin-bottom: 9.6rem */
+/*/  if it is apply the current margin setting */
+
+
+.grid:not(:last-child){
+
+margin-bottom: 9.6rem;
+
+}
+
+/*/																				  */
+

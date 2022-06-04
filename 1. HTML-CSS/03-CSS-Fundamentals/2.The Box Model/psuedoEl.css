@@ -1,0 +1,385 @@
+
+/*/ 														Psuedo elements														  */
+
+
+
+/*/?  Elements that dont exist in the html but can select and style in CSS */
+
+
+/*! first letter of a <p> or first line of a <p> for example */
+
+
+/*!  Fix the italic icon in the heading1 with ::first-letter */
+/* ! also give it some space to the right */
+
+
+h1::first-letter{
+
+	font-style: normal;
+	margin-right: 5px;
+
+}
+
+/*/?  Style the first line of a paragraph */
+
+
+/* p::first-line{
+
+	color: red;
+} */
+
+
+
+
+/*/ 	Adjacent siblings  */
+
+
+/*/?  Adjacent siblings come from the same parent, and are the next element */
+
+
+/*!  select the paragraghs after the h3 headings */
+
+
+/* h3 + p::first-line{
+
+	color: red;
+} */
+
+
+
+/*/										AFTER AND BEFORE PSUEDO ELEMENTS										  */
+
+
+/* /  After */
+
+
+/*/?  Creates an element after an element  */
+
+
+/*!  add the word top next to the h2 heading */
+
+
+h2::after{
+
+		/*! content: has to be used */
+
+		content:"TOP";
+
+		/*/? then style it */
+
+		background-color: #ffe70e;
+		font-size: 16px;
+		font-weight: bold;
+		color: #000;
+
+	/*!  All psuedo elements are inline elements so change to inline-block*/
+
+		display: inline-block;
+		padding: 5px 10px;
+
+
+
+	/*/?  Positioning  */
+
+
+	/*! use absolute positioning by adding position:relative to parent element(h2)*/
+	
+
+	/*/? then use position: absolute*/
+
+
+	  position: absolute;
+
+
+	/*/?  Use negative length to position outside its parent element  */
+
+
+	  top:-10px;
+	  right: -25px;
+
+
+
+}
+
+h2{
+
+	position: relative;
+}
+
+/*/ 	Before 	*/
+
+
+/*/? WORKS THE SAME AS AFTER EXCEPT THE ELEMENT GOES BEFORE THE PARENT IN THE HTML */
+
+/*!  AS ABSOLUTE POSITIONING IS USED, IT DOESNT MATTER */
+
+
+
+
+
+button::first-letter{
+	color: red;
+	margin-right: 5px;
+}
+
+
+button{
+
+	font-size: 22px;
+	padding:20px;
+	cursor: pointer;
+
+	position: absolute;
+
+	bottom:50px;
+	right: 50px;
+
+}
+
+body{
+
+	position: relative;	
+
+	font-family: sans-serif;
+	color:#444;
+	
+	}
+
+	.container{
+
+		width:800px;
+		margin: 0 auto;
+
+	
+	}
+
+	
+
+li {
+
+		font-size: 20px;
+		margin-bottom: 10px;
+	
+	
+
+	}
+	
+
+
+nav a:link{
+
+	margin-right: 30px;
+	margin-top: 10px;
+	display: inline-block;
+
+
+}
+
+nav a:link:last-child{
+
+	margin-right: 0;
+
+}
+
+
+*{
+
+	margin:0;
+	padding: 0;
+
+}
+
+
+aside{
+
+	padding: 50px 0;
+	
+	border-top:5px solid #1098ad ;
+	
+	border-bottom:5px solid #1098ad ;
+	
+	background-color: #eee;
+
+	width:500px;
+	
+	}
+
+
+.post-pic{
+
+	width:100%;
+	height: auto;
+
+	}
+
+
+li:last-child{
+
+	margin-bottom: 0;
+
+}
+
+
+article{
+
+	margin-bottom: 60px;
+}
+
+
+ul,ol{
+
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+
+
+nav{
+font-size: 18px;	
+}
+
+
+p {
+
+font-size: 22px;
+line-height: 1.5;
+margin-bottom: 15px;
+
+}
+
+
+h1,
+h2,
+h3{
+
+color:rgb(16, 152, 173) ;
+
+}
+
+h1 { 
+
+font-size: 26px;
+text-transform: uppercase;
+font-style: italic;
+
+}
+
+h2 {
+
+font-size: 40px;
+margin-bottom: 30px;
+
+}
+
+h3 {
+
+font-size: 30px;
+margin-bottom: 20px;
+margin-top: 40px;
+
+}
+
+h4 {
+font-size: 20px;
+text-transform: uppercase;
+text-align: center;
+
+}
+
+
+
+.post-header{
+
+	margin-bottom: 40px;
+
+}
+
+.main-header{
+
+	background-color: #eee;
+	padding: 20px 40px;
+	margin-bottom: 60px;
+
+
+}
+
+
+
+#author{
+font-style: italic;
+font-size: 18px;
+}		
+
+#copyright{
+font-size: 16px;
+}
+
+.related-author{
+font-size: 18px;
+font-weight: bold;
+}
+
+.related-bullet{
+
+list-style: none;
+
+}
+
+
+.author-pic{
+
+border:3px dotted rgba(0, 0, 0, 0.596)
+
+}
+
+
+li:first-child{
+
+	font-weight: bold;
+
+}
+	
+li:last-child{
+
+		font-style: italic;
+}
+
+
+#copyright{
+
+color: black;
+}
+
+
+
+a:link{
+
+color:#1098ad;
+
+text-decoration: none;
+
+}
+
+a:visited{
+
+color:#1098ad;
+
+}
+
+a:hover{
+
+color:rgb(7, 7, 7);
+font-weight: bolder;
+text-decoration: underline wavy rgb(79, 255, 55);
+
+}
+
+a:active{
+
+background-color: rgb(0, 0, 0);
+font-style: italic;
+}
+
+
+
+
+

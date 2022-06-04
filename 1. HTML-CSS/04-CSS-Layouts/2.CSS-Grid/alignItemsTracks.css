@@ -1,0 +1,286 @@
+
+.el--1 {
+background-color: blueviolet;
+}
+.el--2 {
+background-color: orangered;
+}
+.el--3 {
+background-color: green;
+height: 150px;
+}
+.el--4 {
+background-color: goldenrod;
+}
+.el--5 {
+background-color: palevioletred;
+}
+.el--6 {
+background-color: steelblue;
+}
+.el--7 {
+background-color: yellow;
+}
+.el--8 {
+background-color: crimson;
+}
+
+
+
+.container--1 {
+
+font-family: sans-serif;
+background-color: #ddd;
+font-size: 30px;
+margin: 40px;
+
+
+display: grid;
+
+grid-template-columns: repeat(4, 1fr) ;
+
+grid-template-rows: 1fr 1fr;
+
+/* height:500px; */
+
+column-gap: 20px;
+
+row-gap: 40px;
+
+
+/*/ TEMPORARAY REMOVAL */
+
+display: none;
+
+}
+
+
+/* 
+
+
+.el--8{
+	
+	grid-column: 2/3;
+	grid-row: 1/2;
+	
+}
+
+.el--2{
+	
+	
+	grid-column: 1 / -1;
+	grid-row: 2;
+	
+	
+}
+
+
+
+*/
+
+
+
+/*/ 								Aligning grid items and tracks(columns/rows) 										*/
+
+
+
+.container--2 {
+
+
+font-family: sans-serif;
+background-color: black;
+font-size: 40px;
+margin: 40px;
+
+width: 700px;
+height: 600px;
+
+
+
+/*/ grid */
+
+
+display: grid;
+
+
+grid-template-columns:125px 200px 125px;
+grid-template-rows: 250px 100px;
+
+
+
+/*/ can still use gap */
+
+
+gap:50px;
+
+
+
+
+/*/ 				Align grid tracks(columns and rows) inside container: 			*/ 
+/*/ 	distribute the empty space using justify-content and align-content */
+
+
+
+/* ! only possible if the grid is smaller than the grid-container  */
+
+
+/*! same commands as flex e.g */
+
+
+
+/*/ justify-content:  */
+
+
+/*! justify-content: start | end | space-between | space-around | left | right */
+
+
+
+
+/*/?  to spread to the edges(LIKE FLEX) use space-between */
+
+
+/* justify-content: space-between; */
+
+
+
+/*/? to center the grid inside the container horizontally (move left-right)  */
+
+
+justify-content:center;
+
+
+
+
+
+/*/ align-content */
+
+
+/*/? to center the grid inside the container vertically (move up and down)  */
+
+
+/*! align-content: start | end | space-between | space-around  */
+
+
+
+align-content:center;
+
+
+
+
+
+/*/ 								Aligning/moving the items/content inside the cells 									*/
+
+
+
+
+/*/ 		align-items 		*/
+
+
+/*! CONTENT DICTATES SIZE OF CELL UNLESS SPECIFIED */
+
+
+
+
+/*/?  align items inside its cell (height) */
+
+
+/* !  item height will be height of content unless specified  */
+
+
+align-items: center;
+
+
+/*! align-items: start | end | space-between | space-around  */
+
+
+
+
+/* align-items: start; */
+
+
+/*!  moves items to the top of the cell */
+
+
+/* align-items: end; */
+
+
+/*!  moves items to the bottom of the cell */
+
+
+
+
+
+
+/*/		 justify-items 		 */
+
+
+
+
+/*/?  justify items inside its cell (width) */
+
+
+
+/*! item width will be the width of the content */
+
+
+
+justify-items:center;
+
+
+
+/*! justify-items: start | end | space-between | space-around | left | right */
+
+
+
+/* justify-items:start; */
+
+
+
+/*!  moves items to the left of the cell */
+
+
+
+/* justify-items:end; */
+
+
+
+/*!  moves items to the right of the cell */
+
+
+
+
+
+
+/* ! items are now horizontally and vertically aligned in the center of its cell*/
+
+/* ! JUSTIFY FOR HORIZONTAL */
+/* ! ALIGN FOR VERTICAL */
+
+}
+
+
+
+
+/*/					 align-self for individual alignment/movement(like flexbox)					*/
+
+
+
+.el--3{
+
+	align-self: end;
+	justify-self: end;
+
+
+	/*! moves el-3 to the bottom-right of the cell */
+
+
+}
+
+
+
+
+
+
+
+
+

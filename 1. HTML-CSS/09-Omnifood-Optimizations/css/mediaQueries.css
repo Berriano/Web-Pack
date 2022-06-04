@@ -1,0 +1,673 @@
+
+
+/* -----------------------	 Media Queries / Breakpoints  ---------------------	*/
+
+
+	/*/?  		Designing for mobile first before the desktop version makes it					 */
+	/*/?  		more difficult in the long run. It's harder to expand on a simple design */
+	/*/?  		and content (mobile-to-desktop) than it is to simplify a desktop design	 */
+	/*/?  		(desktop-to-mobile).  																									 */
+
+
+
+/* ----------  Media queries  ---------- */
+
+
+/*/?  Put a stand-alone media queries css linked to html file*/
+
+
+/*!  Use devtool Phone/Tablet icon for a responsive browser 📱💻 next to cursor icon */
+
+
+/*/  Using em instead of rem (still dont use px)  */
+
+
+/*! AS BEFORE, DONT USE PX FOR SIZING / USE REM STILL */
+/*! ALTHOUGH REM AND EM DONT USE THE HTML 62.5%/ THEY WILL USE THE 16PX = 1REM = 1EM DEFAULT */
+/*! Conversion  num px divide by 16 = rem / em */
+
+
+/*/?   Change background color of hero section when max-width reaches 1200px  */
+
+/* !  media queries must be after original styling selector */
+
+/* 
+@media(max-width:1200px){
+
+	.section-hero{
+
+			background-color: orangered;
+
+ }
+} */
+
+/* 
+
+@media(max-width:600px){
+
+	.section-hero{
+
+		background-color: blue;
+
+ }
+} */
+
+/* !  when there is a conflict , the later style on the sheet applies i.e the blue above */
+
+
+
+
+/* ------------   Breakpoints		-----------	*/
+
+
+
+/*/? Use devtool Phone/Tablet icon for a responsive browser 📱💻 next to cursor icon */
+/*/?  to find the breakpoints of your site */
+
+
+/*!  We have been using responsive units (rem) with the html font-size:62.5%  */
+
+
+
+/*/------------  Small laptop screens (1366 wide) ---------  */
+
+
+
+/*/?  Below 1365px  */
+
+@media(max-width:85em){
+
+	/* /?  hero conatainer overspilling - shrink max-width */
+
+	.hero-container{ max-width: 120rem; }
+
+	/*/? heading font now too big - reduce font-size  */
+
+	.heading-primary{ font-size: 4.4rem; }
+
+	/*/? gallery pics grid to wide - reduce columns from 3 to 2  */
+	
+	
+	.gallery{	grid-template-columns: repeat(2, 1fr); }
+
+	
+}
+
+
+/*/---------  Landscape Tablet screens ( 1200px wide) ---------  */
+
+
+
+/*/?  Below 1200px  */
+
+
+/*!  as all font-sizes  are set by rem and the html 62.5%, to change all font-size.....*/
+/*!  change the html percentage!! */
+
+
+@media( max-width: 75em){  /*/? 75em * 16px = 1200px */
+
+	/*/? 56.25% is the next px size down in the chart  */
+
+	html{ font-size: 56.25%; }  /*/? set to  9px (9 / 16) = 56.25%*/
+
+	.heading-secondary{ font-size: 3.6rem; }
+	
+	
+	.heading-tertiary{ font-size: 2.4rem; }
+
+
+	.grid{ 
+
+		row-gap:6.4rem; 
+		column-gap: 4.8rem; 
+
+			}
+
+	/*/?  header has too much padding for the logo - set it same as the container */
+
+	.header{	padding: 0 3.2rem; }
+
+	/*/? gap is getting to big in the hero  */
+
+	.hero-container{ 	gap:4.8rem;	}
+
+	/*/?  navigation is staying too big - reduce gap size as shrinks  */
+
+	.main-nav-list{	gap: 3.2rem;	}
+
+	/*/?  testimonials look crammed and mis-shapped - reduce padding to square it */
+
+	.testimonials-container{ padding: 9.6rem 3.2rem;}
+
+}
+
+
+
+
+
+
+/*-----------  Tablet screens ( 940 px wide) -----------  */
+
+
+
+
+/*/?  Below 944px  */
+
+@media( max-width:59em){   /*/? 59em * 16px = 944px */
+
+	html{ font-size: 50%;}  /*/? set to  8px (8 / 16) = 50% */
+
+	.grid--3-cols{
+
+		grid-template-columns: repeat(3, 1fr);
+	
+	}
+
+	/*/?  As screen sizes shrink its necessary to turn 2 columns into 1  */
+
+	.hero-container{
+		
+		grid-template-columns: 1fr;	
+
+
+
+		/*/?  add padding to the sides so content doesnt go to the edge of the screen  */
+	
+		padding: 0 8rem ;
+
+
+		/*/?  add the gap from below */
+
+		gap: 6.4rem;
+
+	}
+
+
+
+	/*/? now the image is too big, as it fits 100% of its container width  */
+	
+	.hero-image{	width: 60%;	}
+
+
+
+	/*/?  all inline elements will be centered with text-align:center (inc. images)  */
+
+	.hero-text-box,.hero-image-box{ text-align: center;}
+
+
+
+	/*/?  centring content in a flex container using justify  */
+		
+	.delivered-meals{	
+		
+		justify-content: center;	
+	
+	
+		/*/? now there is too much room around the content - reduce margin, add gap to container */
+
+		margin-top: 3.2rem ;
+		
+	
+	}
+
+
+	/*/?  now the logos are too big - reduce size   */
+
+	.logos img{ height: 2.4rem; }
+
+
+	/*/? the numbers in how it works are now too big  */
+
+	.step-number{	font-size: 7.4rem; }
+
+
+
+	/*/?  meal cards content is squashed too much - reduce padding */
+
+	.meal-text-box{ padding: 2.4rem  3.2rem  3.2rem; }
+
+
+
+	/*/?  turn testimonial / gallery into one column*/
+
+		
+	.section-testimonials{ grid-template-columns: 1fr; }
+
+
+
+	/*/? make gallery a 6x2 grid  */
+
+	.gallery{	grid-template-columns: repeat(6, 1fr);	}
+
+
+
+	.section-pricing{ padding-left: 0; padding-right: 0;}
+	
+
+	
+	/*/? make cta image more prominenet  */
+	
+	.cta{ grid-template-columns: 60% 40%; }
+
+
+	/*/? turn cta form into one column  */
+
+	.cta-form{ grid-template-columns: 1fr ;}
+
+
+	/*/?  give the button some space above  */
+
+	.btn--form{ margin-top: 1.2rem;}
+	
+
+
+
+/*/-------------  Mobile Navigation using menu button ------------   */
+
+
+
+/*!  * see html 'mobile nav' section and  */
+/*!  * see styling.css 'mobile nav' section in header section  */
+
+
+.btn-mobile-nav{ display: block; z-index: 1000; }
+
+
+/*/?   make the navigation cover the entire screen using absolute positioning */
+
+
+.main-nav{
+
+	background-color: rgb(255, 255, 255);
+
+	position: absolute;
+
+	/*! make sure to set parent element to relative  */
+
+	top: 0;
+	left: 0;
+
+
+	/*/? to cover the entire screen use vh for height  */
+
+	width: 100%;
+	height: 100vh;
+
+	
+	/*/?  to centre everything use flex  */
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: all 2s ease-in-out; /*! set a third parameter for transition type*/
+
+
+	/*/?  to slide in the navigation from the side  */
+
+	/*/? move the navigation off the screen by its own width(100%)  */
+
+
+	transform: translateX(100%);
+
+	/*!  to hide the navigation - use the overflowX in the body selector  */
+
+
+	
+	/*------------   Hide the navigation in preparation for JScript  ------------ */
+
+
+	/*! 	 dont use display:none as it doesnt allow transitions			 */
+
+
+			/*/? 				 1) Hide it visually														 */
+
+
+			/*/?  Use opacity as it allows animantions  								 */
+
+			opacity: 0;
+
+
+
+			/*/? 				2) Make it unaccessible to mouse/keyboard				*/
+
+			/*!  new code  */
+
+			pointer-events: none;
+
+
+			/*/? 				3) Hide form sceen readers											*/
+
+			visibility: hidden;
+
+}
+
+
+	/*/ use the nav-open as a parent of main-nav */
+
+
+	.nav-open .main-nav{ 
+		
+			/*! WHEN NAV-OPEN EXISTS AS A PARENT TO MAIN-NAV THE OPACITY IS SET TO 1 */
+
+			opacity: 1;
+
+			/*!  set all previous hiding styles back to reveal content  */
+
+			pointer-events:auto;
+
+			visibility: visible;
+
+			/*! to reveal the nav bar from the side - undo the transform:translateX:(100%)  */
+
+			transform: translateX(0);
+
+	}
+
+
+	/*--------------------------- ------------------------------- ----------------  */
+
+
+
+
+	/*/?  change the direction of the list  */
+
+	.main-nav-list{ 
+		
+		flex-direction: column;	
+		gap: 4.8rem;
+
+	}
+
+
+	/*/?  style text for list  */
+
+	.main-nav-link:link,
+	.main-nav-link:visited { font-size: 3rem; }
+
+
+	/*/ now to display the cross icon (x) instaed of the hmaburger icon  */
+
+
+
+
+	/*/ add the cross  */
+
+	.nav-open .icon-mobile-nav[name="close-outline"]{
+
+		display: block;
+	
+	}
+
+
+
+	/*/ hide the hamburger  */
+
+	.nav-open .icon-mobile-nav[name="menu-outline"]{
+
+		display: none;
+	
+	}
+
+}
+
+
+
+/*/----------- Smaller tablets/ Mobile screens (700px wide) -----------    */
+
+
+@media(max-width:44em){
+
+
+	.grid--3-cols, .grid--4-cols{ grid-template-columns: repeat(2, 1fr); }
+
+
+	/*/?  centre "works with any diets"  */
+
+	.diets{
+
+		grid-column: 1/ -1;
+		justify-self: center
+			
+		}
+
+		.heading-secondary{	 margin-bottom: 4.8rem;	}
+
+		.pricing-plan{ width: 100%; padding: 4.6rem 0;}
+
+
+		/*/	How to arrange footer using span and columns  */
+
+
+
+		/*/? move the 3 footer nav columns to the top of the footer  */
+
+
+		.grid--footer{ grid-template-columns:repeat(6,1fr);}
+
+		.nav-col{
+			grid-row: 1;
+			grid-column: span 2;
+		}
+
+		.logo-col, .address-col{
+
+			grid-column: span 3;
+
+		}
+
+}
+
+
+/*---------------  Mobile screens (550px width) -------------    */
+
+
+
+@media(max-width:34em){
+
+
+
+	/*/ make all grids a single column  */
+
+
+	.grid--2-cols, .grid--3-cols, .grid--4-cols{ 
+		
+		grid-template-columns: 1fr;
+	
+	}
+
+
+
+
+	/*/ reduce the row-gap between rows ( as its just 1 column now, there is no column-gap)  */
+
+
+	.grid{ row-gap: 4.8rem;}
+
+
+
+	.hero-container{
+
+	padding: 0 3.2rem;
+		
+	}
+
+		
+	.section-hero{
+
+		padding: 2.4rem 0 6.4rem 0;
+
+	}
+
+
+	/*/ make buttons taller on a mobile screen but reduce width  */
+	
+	.btn,
+	.btn:link, .btn:visited{
+			
+		padding: 2.4rem 1.6rem;
+	
+}
+
+
+	/*/ image is now too small so increase width  */
+
+
+	.hero-image{
+
+		width: 80%;
+	}
+
+
+	/*/ logos are squashed again - change size using height again */
+
+
+	.logos img {
+
+		height: 1.2rem;
+	}
+
+
+	/*/ mobile phone IMAGES are in the wrong order  */
+
+
+	/*/ Use nth-child(2) */
+
+	/*!  THE NUM 2 IS THE NUMBER CHILD OF THE 'PARENT' NOT THE NUM OF THE CHILD   */
+
+	/* 
+
+	/*!THIS IS THE CONTAINER ⬇
+
+		<div class="container grid grid--2-cols grid-center-v">  
+
+				/*! THIS IS THE FIRST CHILD OF THE CONTAINER ⬇
+
+				<div class="step-text-box">							
+			
+					<p class="step-number">01</p>
+
+					<h3 class="heading-tertiary">Tell us what you like (and what not)</h3>
+
+					<p class="step-description">
+						Never again waste time thinking about what to eat! 
+						Omnifood AI will create a 100% personalized weekly meal plan just for you. 
+						It makes sure you get all the nutrients and vitamins you need,
+						h no matter what diet you follow!
+					</p>
+
+
+				</div>
+		
+				/*!  THIS IS THE 2ND CHILD OF THE CONTAINER ⬇ - SO THIS IS SELECTED CHILD
+
+				<div class="step-img-box">
+
+					<img src="img/app/app-screen-1.png" class="step-img" alt="iphone app pref">
+			
+				</div>
+
+				<div class="step-img-box">
+
+					<img src="img/app/app-screen-2.png" class="step-img" alt="meal approval plan">
+			
+				</div>
+	*/
+
+	/*!  DONT FORGET IT IS NOW A 1 COLUMN GRID  */
+
+
+	.step-img-box:nth-child(2){
+
+		/*/?  move the selected element into the 1st row of the grid  */
+
+		grid-row: 1;
+
+
+	}
+	.step-img-box:nth-child(6){
+
+		/*/?  move the selected element into the 1st row of the grid  */
+
+		grid-row: 5;
+
+
+	}
+
+	/*/?  too much gap between phone img and text (cannot adjust gap)  */
+
+	/*/  Use transform translate */
+	
+
+
+	.step-img-box{
+
+		transform: translateY(2.4rem) ;
+	}
+
+	.testimonials-grid{
+
+		grid-template-columns: 1fr;
+	}
+
+
+	.gallery{
+
+		grid-template-columns: repeat(4,1fr);
+		gap: 1.2rem ;
+	}
+
+
+
+	/*/ cta box is crammed in , make to 1 column */
+
+	.cta{
+
+		grid-template-columns: 1fr;
+		
+	}
+
+	/*/ the image now disappears as its not part of the html - its an empty div  */
+
+	/*! the image (div-box) needs its height set manually  */
+
+
+	.cta-image-box{
+
+		height: 32rem;
+
+	}
+
+	/*/ move the image to first  */
+
+
+	.cta-image-box{
+
+		grid-row: 1;
+	}
+
+
+	/*/ reduce padding as too much space  */
+
+	.cta-text-box{
+
+		padding: 3.2rem;
+
+
+	}
+	
+
+	
+
+}
+
+/*!  DA END  */
+
+/*
+
+! FONT SIZE SYSTEM (px):
+
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+*/

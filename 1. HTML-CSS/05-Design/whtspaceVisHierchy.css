@@ -1,0 +1,365 @@
+
+
+/*--------------------	 WHITESPACE	and VISUAL HIERARCHY	 ------------------- */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------   GENERAL STYLES (Re-usable)  ----------------------- */
+
+/*
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+*/
+
+/*/  Break up sections using the SPACING SYSTEM and *WHITESPACE ADDED HEADING*/
+
+
+/*/? add margins to the sections highlighted below *WHITESPACE ADDED */
+
+
+body {
+	font-family: 'Inter' , sans-serif;
+	color:#343a40;
+	border-bottom: 8px solid #087f5b;
+
+}
+
+.btn:link,btn:visited {
+
+	
+	background-color:#087f5b ;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: inline-block;
+	font-weight: 500;
+	border-radius: 100px;
+
+}
+
+.btn:hover, btn:active{
+
+	background-color:#099268 ;
+}
+
+.btn--big{
+
+		padding: 16px 32px;
+		font-size:18px ;
+
+}
+
+.btn--small{
+
+		padding: 8px 12px;
+		font-size:14px ;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+
+}
+
+/*/		 								*WHITESPACE ADDED BETWEEN SECTIONS											 */
+
+
+header,
+section {
+
+	/*! Increase existing margin-bottom using spacing system guide */
+
+	/*  80 / 96  */
+
+  /* margin-bottom:80px;  adds some whitespace and looks better, but more is needed*/
+	
+  margin-bottom:96px;
+
+}
+
+h2 {
+
+	font-size: 36px;
+	letter-spacing: -0.5px;
+  margin-bottom: 48px;
+
+}
+
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 80px;
+}
+
+img{
+
+	border-radius: 12px;
+
+}
+
+/* ---------------  COMPONENT STYLES  (componenet specific) ------------------ */
+
+
+/*/  HEADER */
+
+
+/*/		 								*WHITESPACE ADDED BETWEEN SECTIONS											 */
+
+
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+
+	/*/? more whitespace is needed above the header, so increase current value, */
+	
+	/*/? using space system guide  */
+	
+	/* 48 / 64 / 80  */
+
+  /* margin-top: 48px; */
+  /* margin-top: 80px; looks too much in the browser window */
+
+  	margin-top:64px;
+
+}
+
+.header-text-box {
+  align-self: center;
+}
+
+
+/*/		 								*WHITESPACE ADDED BETWEEN ELEMENTS										 */
+
+
+h1 {
+		font-size: 44px;
+		line-height: 1.1 ;
+		letter-spacing: -1px; 
+
+	/*/? Give some more space between the main heading and the paragraph beneath  */
+	/*/? Using the SPACING SYSTEM values  */
+
+	/* 24 / 32 / 48  */
+
+
+ 	/* margin-bottom: 24px;  original setting is not enough*/
+
+ 		 margin-bottom: 32px;
+ 	
+	/*! Large-text headings should have more space around them*/
+
+}
+
+.header-text {
+  margin-bottom: 24px;
+	line-height: 1.7;
+	font-size:18px;
+  line-height: 1.6;
+
+}
+
+img {
+  width: 100%;
+}
+
+
+/*/  FEATURES */
+
+
+
+/*/		 								*WHITESPACE ADDED BETWEEN ELEMENTS										 */
+
+
+.features-icon {
+
+	stroke:#087f5b;
+	width: 32px;
+	height: 32px;
+
+	/*/? Give some more space between the icons and the headings beneath  */
+	/*/? Using the SPACING SYSTEM values  */
+
+	/* 16 / 24 / 32 */
+
+	/* margin-bottom:16px; is too crammed, so needs more space*/
+
+		 margin-bottom:24px;
+
+	/*! law of proximity means: ...                        */
+  /*! the heading should be closer its text(16px gap) ,  */
+	/*! than the image above(24px gap)  									 */
+
+}
+
+.features-title {
+  margin-bottom: 16px;
+	font-size: 20px;
+	
+}
+
+.features-text {
+
+	font-size: 18px;
+	line-height: 1.7;
+}
+
+
+/*/  TESTIMONIAL */
+
+ 
+.testimonial-section {
+
+	background-color: #087f5b;
+	color:#fff;
+	padding: 24px;
+	border-radius: 12px;
+	
+}
+
+.testimonial-box {
+  grid-column: 2 / -1;
+  align-self: center;
+}
+
+.testimonial-box h2 {
+
+  margin-bottom: 24px;
+	font-size: 24px;	
+
+}
+
+/*/							*NO WHITESPACE ADDED BUT TEXT COLOR LIGHTENED							  */
+
+.testimonial-author{
+
+	/*/? this element is slightly darker than the testimonial-text */
+
+	color: #c3fae8;
+
+	/*! lighten smaller text to enhance surrounding elements*/
+
+
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 24px;
+	font-size: 18px;
+	line-height: 1.7;
+
+	color: #e6fcf5;
+
+	/*! lighten smaller text to enhance surrounding elements*/
+
+	
+
+}
+
+/* --- Chair Cards ---*/
+
+
+/*/  CHAIRS */
+
+
+.chair{
+
+box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.09);
+border-radius: 12px;
+
+}
+
+.chair img{
+
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+
+}
+
+h3 {
+  margin-bottom: 24px;
+	font-size: 20px;
+
+}
+
+
+/*/		*NO WHITESPACE ADDED BUT PADDING ADDED TO INCREASE WHITESPACE			*/
+
+.chair-box {
+
+/*/? Increase the padding to add more whitespace inside the chair cards */
+
+/* 24 / 32 / 48  */
+
+
+/* padding: 24px;  not enough room inside box - content spaced out */
+
+  padding: 32px;
+
+}
+
+.chair-details {
+  list-style: none;	
+
+/*/		 								*WHITESPACE ADDED BETWEEN ELEMENTS										 */
+
+  /* margin-bottom: 24px;  not enough space between weighs and price*/
+
+  margin-bottom: 48px;
+}
+
+/*/ chair list items in ul */
+
+.chair-details li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+/*/		 								*WHITESPACE DECREASED BETWEEN LIST ITEMS									 */
+
+
+/* 12 / 16 / 24 / 32 */
+
+/* margin-bottom: 24px;  too much space between each list item*/
+
+   margin-bottom: 16px;
+
+
+}
+
+.chair-details li:last-child {
+  margin-bottom: 0;
+}
+
+.chair-icon {
+
+	stroke:#087f5b;
+	width: 24px;
+	height: 24px ;
+
+}
+
+.chair-price {
+  display: flex;
+  justify-content: space-between;
+	font-size: 20px;
+	align-items: center;
+}
+
+
+footer {
+  margin-bottom: 48px;
+	font-size:14px;
+	color:#495057;
+
+}

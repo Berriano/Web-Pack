@@ -1,0 +1,156 @@
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+	font-family: sans-serif;
+	color:#444;
+}
+
+h1,
+h2,
+h3{
+
+	color:rgb(16, 152, 173) ;
+
+}
+
+.main-header{
+
+	background-color: #eee;
+}
+
+aside{
+
+border-top:5px solid #1098ad ;
+
+border-bottom:5px solid #1098ad ;
+
+background-color: #eee;
+
+}
+
+.post-pic{
+
+border:20px solid rgba(0, 0, 0, 0.753);
+}
+
+.author-pic{
+
+border:3px dotted rgba(0, 0, 0, 0.596)
+
+}
+
+h1 { 
+	font-size: 26px;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+h2 {
+	font-size: 40px;	
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+
+}
+
+
+p {
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+li {
+	font-size: 20px;
+}
+
+
+#author{
+	font-style: italic;
+	font-size: 18px;
+}		
+
+#copyright{
+	font-size: 16px;
+}
+
+.related-author{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.related-bullet{
+
+	list-style: none;
+}
+
+
+							/* / 				Use psuedo-classes to select elements				 */
+
+
+/* ! ONLY USE PSUEDO CLASSES WHEN ALL THE CHILD ELEMENTS ARE THE SAME KIND 
+/* ! e.g all <p> or all <li> or all <h>*/ */
+
+/* /? selecting the first element in each list using first-child*/
+
+
+li:first-child{
+
+/* ! make the first item in each list bold */
+
+	font-weight: bold;
+
+}
+
+/* /? selecting the last element in each list using last-child*/
+
+
+li:last-child{
+
+/* ! make the last item in each list italic*/
+
+	font-style: italic;
+}
+
+
+/* /? selecting a specific element in a list using nth-child(num)*/
+
+
+/* ! select the 2nd item in the list */
+
+
+li:nth-child(2){
+
+/* ! make the 2nd element red  */
+
+	color:red;
+
+}
+
+
+/* /?  Use keyword to select elements (odd,even) */
+
+
+/* ! change all odd numbered items */
+
+
+li:nth-child(odd){
+
+	/* ! make the odd elements green */
+	
+		color:green;
+	
+	}
+
+
+	

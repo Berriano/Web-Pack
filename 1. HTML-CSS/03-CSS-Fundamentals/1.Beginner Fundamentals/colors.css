@@ -1,0 +1,137 @@
+
+
+
+									/* /			 Adding color to the web page      */
+
+
+/* /?  Change the text color for the whole page */
+
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+	font-family: sans-serif;
+	color:#444;
+}
+
+
+/* /? Color the 3 headings after the text color style is set*/
+
+
+h1,
+h2,
+h3{
+
+	/* /? color text of h1,h2,h3 */
+
+	color:rgb(16, 152, 173) ;
+
+}
+
+
+/* /?  Change the backgrounsd color of the header */
+
+
+.main-header{
+
+	background-color: #eee;
+}
+
+
+
+								/* /  			Adding Borders with styling			 */
+
+
+
+/*/?  Adding a border and background color to the aside-related post container  */
+
+
+aside{
+
+/* !   width/ style / color for a complete border*/
+
+	/* border: 5px solid #1098ad; */
+
+/* /? only border top and bottom */
+
+
+border-top:5px solid #1098ad ;
+
+border-bottom:5px solid #1098ad ;
+
+
+background-color: #eee;
+
+}
+
+.post-pic{
+
+border:20px solid rgba(0, 0, 0, 0.753);
+}
+
+.author-pic{
+
+border:3px dotted rgba(0, 0, 0, 0.596)
+
+}
+
+h1 { 
+	font-size: 26px;
+	text-transform: uppercase;
+	font-style: italic;
+
+
+
+}
+
+h2 {
+	font-size: 40px;
+	
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+
+}
+
+
+p {
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+
+li {
+	font-size: 20px;
+}
+
+
+#author{
+	font-style: italic;
+	font-size: 18px;
+}		
+
+#copyright{
+	font-size: 16px;
+}
+
+.related-author{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.related-bullet{
+
+	list-style: none;
+}
+
+

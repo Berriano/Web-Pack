@@ -1,0 +1,388 @@
+
+/*
+
+/ 					ADD ALL STYLES USED TO A COMMENTS SECTION FOR EASE OF ACCESS 					/
+
+
+/?  01 TYPOGRAPHY SYSTEM
+
+
+! FONT SIZE SYSTEM (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+! FONT-WEIGHTS :
+
+Default: 400
+medium: 500
+Semi-bold: 600
+bold: 700
+
+
+! LINE-HEIGHTS :
+
+Default: 1
+small: 1.05
+paragraph-default: 1.6
+
+
+
+/? 02 COLORS
+
+
+! PRIMARY :
+
+color: #e67e22
+
+
+----- USE TINT AND SHADE GENERATOR WEBSITE FOR MORE SHADES OF A COLOR -----
+
+
+! TINTS :
+
+color: #fdf2e9
+
+
+
+! SHADES :
+
+color: #cf711f
+
+! ACCENTS :
+
+! GREYS :
+
+#555
+#333
+
+
+/? 03 IMAGES
+
+! SEE IMAGE FOLDER
+
+
+/? 04 ICONS
+
+! NOTHING SPECIFIED
+
+
+
+/? 05 SHADOWS / WHITESPACE
+
+
+
+/? 06 BORDER-RADIUS
+
+default : 9px as we dont want this changed when zoomed
+
+
+/? 07 WHITESPACE
+
+! SPACING SYSTEM (px)
+
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+*/
+
+/* --------------------- General Re-usable Components -------------------- */
+
+
+*{
+
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+
+}
+
+html{
+
+	font-size: 62.5%;
+
+}
+
+body{
+
+	font-family: 'Rubik' , sans-serif;
+	line-height: 1;
+	font-weight: 400;
+	color: #555;
+
+}
+
+
+
+.heading-primary{
+	font-size: 5.2rem;
+	font-weight: 700;
+	line-height: 1.05;
+	color: #333;
+	letter-spacing: 0.5px;
+	margin-bottom: 3.2rem
+}
+
+
+.margin-right-sm{
+
+	margin-right: 1.6rem !important;
+
+}
+
+
+
+/*/?  Buttons   */
+
+
+.btn:link, .btn:visited{
+	
+	font-size: 2rem;
+	font-weight: 600;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1.6rem 3.2rem;
+	border-radius: 0.9rem;
+  transition: background-color 0.3s;
+
+}
+
+.btn--full:link, .btn--full:visited{
+
+	background-color:  #e67e22;
+	color: #fff;
+
+}
+
+
+.btn--full:hover , .btn--full:active {
+
+	background-color:  #cf711f;
+
+	
+}
+
+
+.btn--outline:link, .btn--outline:visited{
+
+	background-color:  #fff;
+	color: #555;
+
+}
+
+
+.btn--outline:active, .btn--outline:hover{
+
+	background-color:  #fdf2e9;
+	box-shadow:inset 0 0 0 3px #fff;
+}
+
+
+
+
+
+/* --------------------------- 	Hero Section	------------------------------  */
+
+
+.section-hero{
+
+	background-color: #fdf2e9;
+	padding: 4.8rem 0 9.6rem 0;
+
+}
+
+.hero-container{
+
+	
+	max-width: 130rem;
+	margin: 0 auto;
+
+	/*/?  Added padding as when shrunk, the image touches the sides of the screen  */
+	padding: 0 3.2rem ;
+
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	align-items: center;
+	gap: 9.6rem;
+
+}
+
+.hero-image{
+
+	width: 100%;
+
+}
+
+
+.hero-description{
+
+	font-size: 2rem;
+	line-height: 1.6;
+	margin-bottom: 4.8rem;
+
+}
+
+
+.delivered-meals{
+	display: flex;
+	margin-top: 8rem;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+
+.delivered-meals p{
+	font-size: 1.8rem;
+
+	font-weight: 600;
+}
+
+
+.delivered-imgs{
+	display: flex;
+}
+
+
+.delivered-imgs img{
+
+	height: 4.8rem;
+	width: 4.8rem;
+	border-radius: 50%;
+	margin-right: -1.6rem;
+	border: 3px solid #fdf2e9;;
+
+}
+
+
+.delivered-imgs img:last-child{
+
+	margin-right: 0;
+}
+
+
+.delivered-text span{
+
+	color: #cf711f;
+	font-weight: 700;
+}
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+/*--------------------- Header / Navigation Section --------------------  */
+
+
+
+
+/*- 	Header  -*/
+
+
+
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: #fdf2e9;
+
+/*/	Give the header a fixed height to make it 'sticky' (remains same position) */
+
+	height: 9.6rem;
+
+/*! if header is not sticky then padding can be used for height  */
+
+	padding:0 4.8rem;
+
+/*! still use padding for the sides */
+
+}
+
+.logo{
+
+	/*/?  Using height on images can make easier to control  */
+
+	height: 2.2rem
+}
+
+
+
+
+/*- 	Navigation  -*/
+
+
+
+
+/*/?  Styling the whole list (ul)  */
+
+
+.main-nav-list{
+
+	list-style: none; 
+
+	/*!  The ul is the flex container  */
+
+	display: flex;
+
+	/*! use gap on the list  */
+
+	gap: 3.2rem;
+
+	align-items: center;
+
+}
+
+/*/?  Styling the individual list items (the <a> tags) */
+
+
+.main-nav-link:link,
+.main-nav-link:visited {
+
+	/*/ for links, add display:inline-block so padding top/bottom works  */
+
+	display: inline-block;
+
+	text-decoration: none;
+	color: #333;
+	font-weight: 500;
+	font-size: 1.8rem;
+
+	/*!  Transition must always be on the :link- state  */
+
+	transition: all 0.3s;
+	
+
+}
+
+.main-nav-link:hover,
+.main-nav-link:active{
+
+	color: #cf711f;
+
+}
+
+/*/ Call to action link  */
+
+
+/*! Adding the 2 classes together increases the priority/so both classes are added */
+/*! Meaning it will always be used when both classes are present,  */
+/*! so the .main-nav-link style is over-ridden if there is a conflict i.e color:#333*/
+
+/*/? no space between classes  */
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+
+	padding: 1.2rem 2.4rem;
+	border-radius: 9px;
+	color: #fff;
+	background-color:#e67e22 ;
+
+
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active{
+
+	background-color: #cf711f;
+}

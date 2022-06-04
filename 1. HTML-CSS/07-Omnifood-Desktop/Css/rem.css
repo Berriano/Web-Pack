@@ -1,0 +1,107 @@
+
+
+/*/							 Responive web desing using max-width and rem 							 */
+
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+
+}
+
+body{
+
+	font-family: sans-serif;
+	line-height: 1;
+	font-weight: 400;
+	color: #555;
+
+}
+
+P{
+
+	font-size: 2rem;
+}
+
+/*!  Test box stays the same size when window is shrunk  */
+
+/* 
+.test{
+
+	width: 1000px;
+	background-color: aqua;
+	padding: 150px;
+} */
+
+
+
+/*/				  Use max-width 				 */
+
+
+/* .test{ */
+
+	/* max-width: 1000px; */
+
+/*/?  When the screen-size is more than 1000px the width will be set to 1000px */
+
+/*/?  When the screen-size is less than 1000px the width will shrink as it */
+/*/?  is now flexible */
+
+/* } */
+
+
+
+/*/  					Using rem  					 */
+
+
+/*!  root element - set by html  */
+/*! (1rem = default browser font-size (16px) unless changed) */ 
+
+
+.test{
+
+	max-width: 50rem;
+
+	/*!  50rem - 50 * 16px = 800px  (default font-size)*/
+
+	background-color: aqua;
+
+	font-size: 2rem;
+	color: red;
+
+	/*! font-size is now 32px  - 'Computed' tab in dev tools show this in px*/
+
+	padding: 4rem;
+
+	/*! padding is now 64px */
+
+}
+
+/*/?  If you change the font-size in the html - the rem value changes  */
+
+html{
+
+	
+/* font-size: 20px; */
+
+/*! Now 2rem = 40px */
+
+/* font-size: 10px; */
+
+/*! Now, 2rem = 20px  */
+
+/*/?  ALWAYS SET FONT-SIZE TO 10PX IN HTML AS ITS EASIER TO CALCULATE BY 10 */
+
+/*! ISSUE */
+
+/*/? This will create an issue for users who want to change their screen font-size */
+
+/*/?  The percentage equivilent to this is 62.5%.....  */
+/*/?	10px(value needed) / 16px (html default) = 0.625 (62.5%) */
+/*/?  The % will now be the % of users browser font-size setting */
+
+font-size: 62.5%;
+
+/*! now our font-size is back to 10px */
+
+}

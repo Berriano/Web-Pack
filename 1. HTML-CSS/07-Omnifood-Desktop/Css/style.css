@@ -1,0 +1,91 @@
+
+
+/*
+
+/ 					ADD ALL STYLES USED TO A COMMENTS SECTION FOR EASE OF ACCESS 					/
+
+
+/?  01 TYPOGRAPHY SYSTEM
+
+
+
+! FONT SIZE SYSTEM (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+! FONT-WEIGHTS :
+
+Default: 400
+
+
+! LINE-HEIGHTS :
+
+Default: 1
+
+
+
+/? 02 COLORS
+
+
+! PRIMARY :
+
+color: #e67e22
+
+
+! TINTS :
+
+! SHADES :
+
+! ACCENTS :
+
+! GREYS :
+
+#555
+
+
+/? 03 IMAGES
+
+! SEE IMAGE FOLDER
+
+
+/? 04 ICONS
+
+! NOTHING SPECIFIED
+
+
+
+/? 05 SHADOWS / WHITESPACE
+
+
+
+/? 06 BORDER-RADIUS
+
+
+/? 07 WHITESPACE
+
+! SPACING SYSTEM (px)
+
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+
+
+*/
+
+
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+
+}
+
+body{
+
+	font-family: sans-serif;
+	line-height: 1;
+	font-weight: 400;
+	color: #555;
+
+}
+

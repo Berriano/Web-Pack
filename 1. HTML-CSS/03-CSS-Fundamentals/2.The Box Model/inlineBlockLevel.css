@@ -1,0 +1,287 @@
+
+
+/* /														Inline-Block Box																 */
+
+
+
+/*/  Block level boxes */
+
+
+/*/?  elements formatted visually as blocks */
+/*/?  100% of parents width */
+/*/? 	Vertically, one after another*/
+
+
+
+/*/ 	Inline level boxes*/
+
+/*/?	Occupies only contents space */
+/*/?	causes no line breaks */
+/*/? heights and widths dont apply*/
+/*/? paddings and margins only (left and right)*/
+
+
+
+/* / 	Inline-block level boxes */
+
+
+/*/? 	looks like inline but behaves like block  */
+/*/?  Occupies only contents space*/
+/*/?  causes no line breaks*/
+/*/?  heights and width can be applied*/
+
+
+
+nav a:link{
+
+/* ! styling the a: not the nav,*/
+/*!  margin-right will work because can apply left and right styles to all */
+
+	margin-right: 30px;
+
+/* ! top and bottom margins wont work because <a> are inline */
+
+	margin-top: 10px;
+
+/*!  but if you change the display type to inline-block, top and bottom work  */
+
+	display: inline-block;
+
+}
+
+
+
+/*/? Need to remove the margin-right from the last element only*/
+
+/*! use the last-child psuedo class chained to the link psudeo class */
+
+
+nav a:link:last-child{
+
+	margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+.main-header{
+
+	background-color: #eee;
+	padding: 20px 40px;
+	margin-bottom: 60px;
+	/* height: 80px; */
+
+}
+
+
+
+.container{
+
+	width:800px;
+	margin: 0 auto;
+
+}
+
+*{
+
+	margin:0;
+	padding: 0;
+
+}
+
+body{
+
+	font-family: sans-serif;
+	color:#444;
+	
+	}
+	
+
+aside{
+
+	padding: 50px 0;
+	
+	border-top:5px solid #1098ad ;
+	
+	border-bottom:5px solid #1098ad ;
+	
+	background-color: #eee;
+
+	width:500px;
+	
+	}
+
+
+.post-pic{
+
+	width:100%;
+	height: auto;
+
+	}
+
+
+li:last-child{
+
+	margin-bottom: 0;
+
+}
+
+
+article{
+
+	margin-bottom: 60px;
+}
+
+
+ul,ol{
+
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+
+
+nav{
+font-size: 18px;	
+}
+
+
+p {
+
+font-size: 22px;
+line-height: 1.5;
+margin-bottom: 15px;
+
+}
+
+
+h1,
+h2,
+h3{
+
+color:rgb(16, 152, 173) ;
+
+}
+
+h1 { 
+
+font-size: 26px;
+text-transform: uppercase;
+font-style: italic;
+
+}
+
+h2 {
+
+font-size: 40px;
+margin-bottom: 30px;
+
+}
+
+h3 {
+
+font-size: 30px;
+margin-bottom: 20px;
+margin-top: 40px;
+
+}
+
+h4 {
+font-size: 20px;
+text-transform: uppercase;
+text-align: center;
+
+}
+	
+
+.post-header{
+
+		margin-bottom: 40px;
+	
+	}
+	
+
+#author{
+font-style: italic;
+font-size: 18px;
+}		
+
+#copyright{
+font-size: 16px;
+}
+
+.related-author{
+font-size: 18px;
+font-weight: bold;
+}
+
+.related-bullet{
+
+list-style: none;
+
+}
+
+
+.author-pic{
+
+border:3px dotted rgba(0, 0, 0, 0.596)
+
+}
+
+
+li:first-child{
+
+	font-weight: bold;
+
+}
+	
+li:last-child{
+
+		font-style: italic;
+}
+
+
+#copyright{
+
+color: black;
+}
+
+
+
+a:link{
+
+color:#1098ad;
+
+text-decoration: none;
+
+}
+
+a:visited{
+
+color:#1098ad;
+
+}
+
+a:hover{
+
+color:rgb(7, 7, 7);
+font-weight: bolder;
+text-decoration: underline wavy rgb(79, 255, 55);
+
+}
+
+a:active{
+
+background-color: rgb(0, 0, 0);
+font-style: italic;
+}
+
+
+
+
+

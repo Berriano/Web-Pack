@@ -1,0 +1,273 @@
+
+/* ! line height spaces the rows */
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing:border-box;
+}
+
+.container{
+
+	width:900px;
+	margin:50px auto;
+	position:relative;
+
+	
+}
+
+.product{
+
+	border: 5px solid rgb(0, 0, 0);
+	color: black;
+	font-size: 18px;
+	font-family: sans-serif;
+	line-height: 1.4;
+
+}
+ 
+h2{
+
+	text-align: center;
+
+
+}
+
+.heading{
+	text-transform: uppercase;
+	font-family: sans-serif;
+	padding: 20px 0;
+	background-color: rgb(241, 243, 229);
+	
+
+}
+
+
+
+.button-style{
+
+	color:rgb(255, 255, 255);
+	background-color: rgb(0, 0, 0);
+	
+	border:none;
+
+	width: 100%;
+	height:auto;
+	padding:20px 0;
+
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: sans-serif;
+
+	border-top: 5px solid black
+
+
+}
+
+.button-style:hover{
+
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	cursor: pointer;
+
+}
+
+
+
+/* ! as a link look black, and after visited look black */
+
+.more-info:link, .more-info:visited {
+
+	color: black;
+
+
+}
+
+
+/* ! when hovering no decoration, when clicked no decoration */
+
+.more-info:hover, .more-info:active{
+
+	text-decoration: none;
+
+}
+
+.details-list{
+
+	list-style: square;
+
+}
+
+
+
+
+/*! sale box with absolute positioning  */
+
+.sale{
+	position:absolute;
+	top: -15px;
+	left: -40px;
+	background-color: red;
+	color: white;
+	padding: 7px 18px;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 15px;
+	letter-spacing: 3px;
+	display: inline-block;
+
+}
+
+
+/*! Adding boxes with different background colors using 2 classes  */
+
+
+.color{
+	
+
+background-color: black;
+height:22px;
+width:22px;
+
+
+}
+
+/*!  Add a second class to change color but keeping the other styles  */
+
+
+.color-blue{
+	
+
+background-color: blue;
+
+
+}
+.color-red{
+	
+
+background-color: red;
+
+
+}
+.color-yellow{
+	
+
+background-color: yellow;
+
+
+}
+.color-green{
+	
+
+background-color: green;
+
+
+}
+.color-brown{
+	
+
+background-color: brown;
+
+
+}
+
+
+
+
+.price{
+
+	font-size: 24px;
+	
+	}
+	
+	
+	.staple{
+	
+		padding-top: 15px;
+	}
+	
+	
+	.free-shipping{
+	
+		color:grey;
+		font-size: 12px;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-family: sans-serif;
+	
+	
+	
+	}
+	
+	
+	.product-detail{
+	
+		text-transform: uppercase;
+		font-family: sans-serif;
+		padding:20px 0;
+	
+	}
+	
+	.details-list{
+	margin-left:23px;
+	
+	}
+	
+	.details-list li{
+	margin-bottom: 10px;
+	padding-right:30px;
+	}
+	
+	.more-info{
+	
+		display: inline-block;
+		padding-top:15px;
+	}
+	
+
+
+/* / float stuff replaced by flexbox*/
+
+
+.horizontal-container{
+
+display: flex;
+gap:50px
+
+
+}
+
+.color-container{
+
+
+	display: flex;
+	gap: 10px;
+	
+	padding-top:15px;
+	padding-bottom:10px;
+
+}
+
+
+
+.product-price{
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 15px;
+
+
+}
+
+/* / gives sections equal spacing */
+
+	.left-section{
+
+		flex:1;
+	}
+
+	.right-section{
+
+		flex:1;
+	}

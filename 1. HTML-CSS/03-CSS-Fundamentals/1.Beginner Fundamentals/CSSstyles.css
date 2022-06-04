@@ -1,0 +1,100 @@
+
+								
+								
+								/*--/ 				Style the text on the page				 */
+
+
+
+/*/? Heading text  */
+
+
+h1 { 
+	font-size: 26px;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+h2 {
+	font-size: 40px;
+	
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+
+}
+
+
+/* /? Paragraph text */
+
+
+p {
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+
+/* /? List text */
+
+
+li {
+	font-size: 20px;
+}
+
+
+
+		/* / 	Using more than one selector for the same style - list selector	 */
+
+
+
+/* /? Set all text with the following tags to the san-serif font */
+
+
+/* ! Useful if you need to change all the text font of the page */
+
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+	font-family: sans-serif;
+}
+
+
+
+		/* / 	Select specific elements inside container tags - decendant selectors*/
+
+
+
+/* /? Specifically for the <p> elements in the <footer> tag only */
+
+
+footer p {
+
+	font-size: 16px;
+	
+}
+
+/* ! Only the <p> elements in the footer are changed */
+
+
+
+/* /?  To specify a single header when multiple are used, include its container tag*/
+
+
+article header p {
+
+	font-style: italic;
+
+}
+
+/* ! Only changes the header inside the article and not the header inside the body */
+

@@ -1,0 +1,288 @@
+
+/*
+
+/ 					ADD ALL STYLES USED TO A COMMENTS SECTION FOR EASE OF ACCESS 					/
+
+
+/?  01 TYPOGRAPHY SYSTEM
+
+
+! FONT SIZE SYSTEM (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+! FONT-WEIGHTS :
+
+Default: 400
+
+
+! LINE-HEIGHTS :
+
+Default: 1
+
+
+
+/? 02 COLORS
+
+
+! PRIMARY :
+
+color: #e67e22
+
+
+----- USE TINT AND SHADE GENERATOR WEBSITE FOR MORE SHADES OF A COLOR -----
+
+
+! TINTS :
+
+color: #fdf2e9
+
+
+
+! SHADES :
+
+color: #cf711f
+
+! ACCENTS :
+
+! GREYS :
+
+#555
+
+
+/? 03 IMAGES
+
+! SEE IMAGE FOLDER
+
+
+/? 04 ICONS
+
+! NOTHING SPECIFIED
+
+
+
+/? 05 SHADOWS / WHITESPACE
+
+
+
+/? 06 BORDER-RADIUS
+
+
+/? 07 WHITESPACE
+
+! SPACING SYSTEM (px)
+
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+*/
+
+
+*{
+
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+
+}
+
+html{
+
+	font-size: 62.5%;
+
+}
+
+body{
+
+	font-family: 'Rubik' , sans-serif;
+	line-height: 1;
+	font-weight: 400;
+	color: #333;
+
+}
+
+
+/*/?  Ok to use grid even if the layout is one dimensions - easier for equal spacing  */
+
+
+.section-hero{
+
+	background-color: #fdf2e9;
+
+	padding: 9.6rem 0;
+
+}
+
+
+.hero-container{
+
+	/*/? set the max-width using rem and flexibility */
+
+	/*!  Make the hero section 100px wider than the rest of the page  */
+
+	max-width: 130rem;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+
+	align-items: center;
+
+	/* ! use same size for gap as section padding top/bottom */
+
+	gap: 9.6rem;
+
+
+}
+
+/*/? the image div is half the screen size (1fr of the 2)  */
+/*/? the image  then take 100% of that 1fr, giving it 50% of the screen  */
+/*/? this creates a flexible image   */
+
+
+.hero-image{
+
+	width: 100%;
+
+}
+
+
+.btn:link, .btn:visited{
+	
+	font-size: 2rem;
+	font-weight: 600;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1.6rem 3.2rem;
+	border-radius: 0.9rem;
+
+
+/*/	 		Transition:(properties to animate and time in seconds)				*/
+/*/			 from link:visited state to active:hover-state  							*/
+
+/* transition: all 1s; */
+/* transition: background-color,color 1s; */
+
+transition: background-color 0.3s;
+
+}
+
+.btn--full:link, .btn--full:visited{
+
+	background-color:  #e67e22;
+	color: #fff;
+
+}
+
+
+.btn--full:hover , .btn--full:active {
+
+	background-color:  #cf711f;
+	/* color: black; */
+	
+}
+
+
+.btn--outline:link, .btn--outline:visited{
+
+	background-color:  #fff;
+	color: #555;
+
+}
+
+
+.btn--outline:active, .btn--outline:hover{
+
+	background-color:  #fdf2e9;
+
+	/*/ Trick to add a border to the inside of a link btn using box-shadow */
+
+	/* ! use inset keyword */
+
+	box-shadow:inset 0 0 0 3px #fff;
+
+}
+
+
+
+
+.heading-primary{
+	font-size: 5.2rem;
+	font-weight: 700;
+	line-height: 1.05;
+	color: #333;
+
+	letter-spacing: 0.5px;
+	margin-bottom: 3.2rem
+}
+
+
+.hero-description{
+
+	font-size: 2rem;
+	line-height: 1.6;
+	margin-bottom: 4.8rem;
+
+}
+
+
+/*/					 	Adding a helper class	with !important keyword (rare)					  */
+
+
+.margin-right-sm{
+
+	margin-right: 1.6rem !important;
+
+}
+
+
+.delivered-meals{
+	display: flex;
+	margin-top: 8rem;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+.delivered-meals p{
+	font-size: 1.8rem;
+
+	font-weight: 600;
+}
+
+.delivered-imgs{
+	display: flex;
+}
+
+.delivered-imgs img{
+
+	height: 4.8rem;
+	width: 4.8rem;
+	border-radius: 50%;
+
+	/*/ to overlap images add a negative margin to left or right  */
+
+	margin-right: -1.6rem;
+
+	/* / border around images */
+
+	border: 3px solid #fdf2e9;;
+
+}
+
+
+/*/ gap disappears because of the overlap, */
+/*/ to add back remove the margin from last child image  */
+
+
+.delivered-imgs img:last-child{
+
+	margin-right: 0;
+}
+
+
+.delivered-text span{
+
+	color: #cf711f;
+	font-weight: 700;
+}
+
+/*! USE CONTRAST CHECKER FOR TEXT AGAINST SIMILAR COLOR BACKGROUND */

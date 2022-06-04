@@ -1,0 +1,256 @@
+
+
+*{
+
+	margin:0;
+	padding: 0;
+
+}
+
+body{
+
+	font-family: sans-serif;
+	color:#444;
+	
+	}
+	
+
+/*/													Dimensions using width and height													  */
+
+
+
+/*/ 	Width  */
+
+
+
+/*/? Use width to shrink the width of the sidebar*/
+
+
+aside{
+
+	padding: 50px 0;
+	
+	border-top:5px solid #1098ad ;
+	
+	border-bottom:5px solid #1098ad ;
+	
+	background-color: #eee;
+
+	/*! width */
+
+	width:500px;
+	
+	}
+
+
+	
+/*/ 	Height  */
+
+/*/? Sets the height of the content in the main header  */
+
+
+.main-header{
+
+	background-color: #eee;
+	padding: 20px 40px;
+	margin-bottom: 60px;
+
+	/*! height  */
+	
+height: 80px;
+
+}
+
+
+
+/*/ CSS rule overules the inline image setting as its not an actual inline selector*/
+
+
+
+/*/  Use height:auto to set the aspect ratio to the images original */
+/*/  if the height is already set in the html */
+
+
+
+/*/ Use % for the percentage of the width of the parent container */
+
+.post-pic{
+
+	width:100%;
+	height: auto;
+
+	}
+
+
+
+
+li {
+
+	font-size: 20px;
+
+	margin-bottom: 10px;
+
+	}
+
+	
+li:last-child{
+
+	margin-bottom: 0;
+
+}
+
+
+article{
+
+	margin-bottom: 60px;
+}
+
+
+ul,ol{
+
+	margin-left: 50px;
+
+	margin-bottom: 20px;
+}
+
+
+nav{
+font-size: 18px;	
+}
+
+
+p {
+font-size: 22px;
+line-height: 1.5;
+margin-bottom: 15px;
+
+}
+
+
+h1,
+h2,
+h3{
+
+color:rgb(16, 152, 173) ;
+
+}
+
+h1 { 
+
+font-size: 26px;
+text-transform: uppercase;
+font-style: italic;
+
+}
+
+h2 {
+
+font-size: 40px;
+margin-bottom: 30px;
+
+}
+
+h3 {
+
+font-size: 30px;
+margin-bottom: 20px;
+margin-top: 40px;
+
+}
+
+h4 {
+font-size: 20px;
+text-transform: uppercase;
+text-align: center;
+
+}
+	
+
+.post-header{
+
+		margin-bottom: 40px;
+	
+	}
+	
+
+#author{
+font-style: italic;
+font-size: 18px;
+}		
+
+#copyright{
+font-size: 16px;
+}
+
+.related-author{
+font-size: 18px;
+font-weight: bold;
+}
+
+.related-bullet{
+
+list-style: none;
+}
+
+
+.author-pic{
+
+border:3px dotted rgba(0, 0, 0, 0.596)
+
+}
+
+
+li:first-child{
+
+	font-weight: bold;
+
+}
+	
+li:last-child{
+
+		font-style: italic;
+}
+
+
+#copyright{
+
+color: black;
+}
+
+
+
+a:link{
+
+color:#1098ad;
+
+text-decoration: none;
+
+}
+
+a:visited{
+
+color:#1098ad;
+
+}
+
+a:hover{
+
+color:rgb(7, 7, 7);
+
+font-weight: bolder;
+
+
+text-decoration: underline wavy rgb(79, 255, 55);
+
+}
+
+a:active{
+
+background-color: rgb(0, 0, 0);
+font-style: italic;
+}
+
+
+
+
+

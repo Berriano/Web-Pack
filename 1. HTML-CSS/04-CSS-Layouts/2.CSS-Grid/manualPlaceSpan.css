@@ -1,0 +1,149 @@
+
+.el--1 {
+background-color: blueviolet;
+}
+.el--2 {
+background-color: orangered;
+}
+.el--3 {
+background-color: green;
+height: 150px;
+}
+.el--4 {
+background-color: goldenrod;
+}
+.el--5 {
+background-color: palevioletred;
+}
+.el--6 {
+background-color: steelblue;
+}
+.el--7 {
+background-color: yellow;
+}
+.el--8 {
+background-color: crimson;
+}
+
+
+
+.container--1 {
+
+font-family: sans-serif;
+background-color: #ddd;
+font-size: 30px;
+margin: 40px;
+
+
+display: grid;
+
+grid-template-columns: repeat(4, 1fr) ;
+
+grid-template-rows: 1fr 1fr;
+
+/* height:500px; */
+
+column-gap: 20px;
+
+row-gap: 40px;
+
+
+}
+
+
+
+
+/*/											 CSS Manual Placing and Spanning													*/
+
+
+
+/*/? to place a cell manually , use the selector for the item */
+
+
+.el--8{
+
+
+/*/? select the grid column start / end and row start / end */
+
+
+grid-column: 2/3;
+grid-row: 1/2;
+
+
+}
+
+
+/*/? move el--2 to el--4 position */
+
+
+/*! IF THE COLUMN/ROW IS THE NEXT COLUMN/ROW THERES NO NEED TO SPECIFY IT */
+
+.el--2{
+
+	/* 
+	
+	grid-column: 1;
+	grid-row: 2;
+	
+	*/
+
+
+/*/? TO MAKE AN ITEM SPAN ACROSS 2 CELLS, INCREASE THE END NUMBER BY 1 MORE */
+
+/* 
+grid-column: 1/3;
+grid-row: 2; 
+*/
+
+
+
+/*/ 	Using Span   */
+
+
+
+/*/? instead of specifying the end cell number, use span num */
+
+
+/*! to span 4 cells (all the way across)*/
+
+/* 
+grid-column: 1 / span 4;
+grid-row: 2;
+ */
+
+
+/* !  INSTEAD OF USING SPAN FOR A COMPLETE ROW ACROSS, USE -1 AS AN END POINT */
+
+
+grid-column: 1 / -1;
+grid-row: 2;
+
+
+}
+
+
+/*!  The same works for rows too	 */
+
+
+
+
+.container--2 {
+
+
+/*/ to remove the container from the display screen */
+
+
+display: none;
+
+
+
+font-family: sans-serif;
+background-color: black;
+font-size: 40px;
+margin: 100px;
+
+width: 1000px;
+height: 600px;
+
+
+}

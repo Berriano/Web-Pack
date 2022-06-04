@@ -1,0 +1,333 @@
+
+body{
+
+font-family: sans-serif;
+color:#444;
+
+}
+
+
+/* / 																	THE BOX MODEL 																					*/
+
+
+
+/*/? Box model image is in the inspect section of the browser showing the margin/border/padding*/
+/*/? Margin is orange/ border is yellow/ padding is green/ content is blue */
+
+/* ! when inspected the green outline is the padding and the orange is the margin */
+
+/* ! The dimensions are also shown in the box model image if applied*/
+
+
+
+/* /							  							Padding and Margins 																				*/
+
+/*! WHEN ADDING SPACE TO PAGE ELEMENT USE MARGINS*/
+
+/* /?  Use Universal selector on padding and margins on all elements,
+
+/* /? unless it has its own selector */ 
+
+
+/*!  GLOBAL RESET OF PADDING AND MARGINS ( first task of CSS)*/
+
+*{
+	margin:0;
+	padding: 0;
+	}
+	
+
+
+/* / Padding */
+
+
+
+/* /?  Padding adds space between the internal content(heading/links),
+
+/* /?  and the edge of the element(header) */ 
+
+/*!  THIS IS MAINLY USEFUL WHEN THERE IS A BACKGROUND COLOR */
+
+
+
+/*/? Shorthand for padding: top/bottom - left/right */
+
+/*! padding: 20px 40px; */
+
+/*! 20px for top/bottom 40px for left/right */
+
+
+.main-header{
+
+	background-color: #eee;
+	padding: 20px 40px;
+
+	/*/? add a margin to the bottom for space between the header and the heading */
+	/*! MARGIN BOTTOM IS MAINLY USED WHEN ADDING SPACE BETWEEN ELEMENTS */
+
+	margin-bottom: 60px;
+	
+	}
+
+
+
+/* / Margin */
+
+
+
+/*/?  Add spacing between list items using margin-bottom */
+
+
+li {
+
+	font-size: 20px;
+
+	margin-bottom: 10px;
+
+	}
+
+	
+/*/? You only want spacing between all list items except the last one  */
+
+
+/*! Reset using 0 value(no unit required) for margin property  */
+
+li:last-child{
+
+	margin-bottom: 0;
+
+}
+
+/*/? Heading of aside box look glued to border, so padding is needed */
+
+/*! Padd top and bottom to 50px using shorthand*/
+
+
+
+
+
+/*/ COLLAPSING MARGINS */
+
+/*!  WHEN 2 MARGINS OCCUPY THE SAME SPACE, THE LARGER OF THE 2 IS SET, THEY ARE NOT ADDED  */
+
+
+
+
+
+/*/  				Padding and Margins added to all elements needed on web page for styling 				*/
+
+
+/*/?  Add spacing between article and aside boxes */
+
+
+article{
+
+	margin-bottom: 60px;
+}
+
+
+
+/*/? universal selector removes all margins so bullet point dots have disappeared  */
+
+/*! Add a margin to reveal the bullet points again */
+
+
+ul,ol{
+
+	margin-left: 50px;
+
+	/*/? Also add space to bottom */
+
+	margin-bottom: 20px;
+}
+
+.post-header{
+
+/*/ Margin added */
+
+	margin-bottom: 40px;
+
+}
+
+
+nav{
+font-size: 18px;	
+}
+
+
+p {
+font-size: 22px;
+line-height: 1.5;
+
+/*/ Margin added  */
+
+margin-bottom: 15px;
+
+}
+
+
+h1,
+h2,
+h3{
+
+color:rgb(16, 152, 173) ;
+
+}
+
+h1 { 
+
+font-size: 26px;
+text-transform: uppercase;
+font-style: italic;
+
+}
+
+h2 {
+
+font-size: 40px;
+
+/*/  margin added */
+
+margin-bottom: 30px;
+
+}
+
+h3 {
+
+font-size: 30px;
+
+/*/ margin added  */
+
+margin-bottom: 20px;
+
+
+
+/*! A collapsing margin*/
+
+margin-top: 40px;
+
+}
+
+h4 {
+font-size: 20px;
+text-transform: uppercase;
+text-align: center;
+
+}
+
+
+aside{
+
+	padding: 50px 0;
+	
+	border-top:5px solid #1098ad ;
+	
+	border-bottom:5px solid #1098ad ;
+	
+	background-color: #eee;
+	
+		}
+	
+
+
+#author{
+font-style: italic;
+font-size: 18px;
+}		
+
+#copyright{
+font-size: 16px;
+}
+
+.related-author{
+font-size: 18px;
+font-weight: bold;
+}
+
+.related-bullet{
+
+list-style: none;
+}
+
+.post-pic{
+
+border:20px solid rgba(0, 0, 0, 0.753);
+}
+
+.author-pic{
+
+border:3px dotted rgba(0, 0, 0, 0.596)
+
+}
+
+
+li:first-child{
+
+	font-weight: bold;
+
+}
+	
+li:last-child{
+
+		font-style: italic;
+}
+
+
+#copyright{
+
+color: black;
+}
+
+
+
+a:link{
+
+color:#1098ad;
+
+text-decoration: none;
+
+}
+
+a:visited{
+
+color:#1098ad;
+
+}
+
+a:hover{
+
+color:rgb(7, 7, 7);
+
+font-weight: bolder;
+
+
+text-decoration: underline wavy rgb(79, 255, 55);
+
+}
+
+a:active{
+
+background-color: rgb(0, 0, 0);
+font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+/* /? Commented out examples */
+
+
+/* 
+footer p {
+
+color:hotpink  !important;
+
+}
+ */
+ 

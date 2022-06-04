@@ -1,0 +1,597 @@
+
+
+
+/* --------------------------- 	Hero Section	------------------------------  */
+
+
+.section-hero{
+
+	background-color: #fdf2e9;
+	padding: 4.8rem 0 9.6rem 0;
+
+}
+
+.hero-container{
+
+	
+	max-width: 130rem;
+	margin: 0 auto;
+	padding: 0 3.2rem ;
+
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	align-items: center;
+	gap: 9.6rem;
+
+}
+
+.hero-image{
+
+	width: 100%;
+
+}
+
+
+.hero-description{
+
+	font-size: 2rem;
+	line-height: 1.6;
+	margin-bottom: 4.8rem;
+
+}
+
+
+.delivered-meals{
+	display: flex;
+	margin-top: 8rem;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+
+.delivered-meals p{
+	font-size: 1.8rem;
+
+	font-weight: 600;
+}
+
+
+.delivered-imgs{
+	display: flex;
+}
+
+
+.delivered-imgs img{
+
+	height: 4.8rem;
+	width: 4.8rem;
+	border-radius: 50%;
+	margin-right: -1.6rem;
+	border: 3px solid #fdf2e9;;
+
+}
+
+
+.delivered-imgs img:last-child{
+
+	margin-right: 0;
+}
+
+
+.delivered-text span{
+
+	color: #cf711f;
+	font-weight: 700;
+}
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+/*--------------------- Header / Navigation Section --------------------  */
+
+
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fdf2e9;
+	height: 9.6rem;
+	padding:0 4.8rem;
+
+}
+
+.logo{
+
+	height: 2.2rem
+}
+
+
+
+.main-nav-list{
+
+	list-style: none; 
+	display: flex;
+	gap: 3.2rem;
+	align-items: center;
+
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+	font-weight: 500;
+	font-size: 1.8rem;
+	transition: all 0.3s;
+	
+
+}
+
+.main-nav-link:hover,
+.main-nav-link:active{
+
+	color: #cf711f;
+
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+
+	padding: 1.2rem 2.4rem;
+	border-radius: 9px;
+	color: #fff;
+	background-color:#e67e22 ;
+
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active{
+
+	background-color: #cf711f;
+}
+
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+
+/* ------------------------- Featured In Section ------------------------ */
+
+
+.section-featured{
+
+	padding: 4.8rem 0 3.2rem 0;
+}
+
+
+.heading-featured-in{
+
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 0.75px;
+	font-weight: 500;
+	color: #888;
+	text-align: center;
+	margin-bottom: 2.4rem;
+
+}
+
+.logos{
+
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+
+
+.logos img{
+
+	height: 3.2rem;
+
+	filter: brightness(0%); 
+
+	opacity: 50%;
+
+}
+
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+
+
+
+/* ------------------------- How it works Section ----------------------- */
+
+
+
+.section-how{
+
+	padding: 9.6rem 0;
+
+}
+
+
+.step-number{
+
+	font-size: 8.6rem;
+	font-weight: 600;
+	color: #ddd;
+	margin-bottom: 1.2rem;
+
+}
+
+.heading-tertiary{
+
+	font-size: 2.8rem;
+	line-height: 1.2;
+	margin-bottom: 3.2rem;
+
+}
+
+.step-description{
+
+	font-size: 1.8rem;
+	line-height: 1.8;
+}
+
+
+.step-img-box{
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position:relative;
+
+}
+
+
+.step-img{
+
+	width: 35%;
+
+}
+
+.step-img-box::before{
+
+	width: 60%;
+	padding-bottom: 60%;
+	background-color: #fdefe3;
+
+	z-index: -2;
+
+}
+
+
+.step-img-box::before, .step-img-box::after {
+
+	content: "";
+	display: block;
+	border-radius: 50%;
+
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+
+}
+
+
+.step-img-box::after{
+
+	width: 45%;
+	padding-bottom: 45%;
+	background-color:#fae5d3;
+	
+	z-index: -1;
+
+}
+
+
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+
+/* ---------------------------  Meals Section  -------------------------- */
+
+
+
+.section-meals{
+
+	padding: 9.6rem;
+}
+
+
+
+.meal{
+
+	box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.116);
+
+	border-radius: 12px;
+
+	/*/?  Instead of using border-top-left-radius to curve top image edges....  */
+	/*/?  Use overflow:hidden  */
+
+	overflow: hidden;
+	
+}
+
+.meal-text-box{
+
+	padding: 3.2rem  4.8rem 4.8rem 4.8rem;
+}
+
+
+.meals-image{
+
+	width: 100%;
+
+
+}
+
+
+.meal-name{
+
+	font-size: 2.4rem;
+	color: #333;
+	font-weight: 600;
+	margin-bottom: 3.2rem;
+
+
+}
+
+
+/*/	  							MAKE THE CARD RISE OFF OF THE PAGE  								*/
+
+
+/*/				Use hover on a div to move it	when hovered and animate				*/
+
+/*!  Use translate with only the Y property  */
+
+
+.meal:hover{
+
+	transform: translateY(-1.2rem);
+
+	transition: all 0.4s;
+
+	box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.308);
+
+
+}
+
+
+.tag{
+
+/*/? As its a span(inline) element, add height padding with display:inline-block */
+
+display: inline-block;
+
+padding: 0.4rem 0.8rem;
+
+font-size: 1.2rem;
+
+text-transform: uppercase;
+
+color:#333;
+
+border-radius: 100px;
+
+font-weight: 600;
+
+	
+}
+
+
+.tag--vegetarian{
+
+	background-color: #51cf66;
+
+}
+
+.tag--vegan{
+
+	background-color:rgb(170, 255, 148) ;
+
+}
+
+.tag--paleo{
+
+	background-color: rgb(245, 248, 32);
+
+}
+
+.meal-tags{
+
+	margin-bottom:1.2rem ;
+
+	display: flex;
+	
+	gap: 0.4rem;
+}
+
+
+/*! The ul is the list container  */
+
+.meal-attributes{
+
+	list-style: none;
+
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+
+}
+
+
+.meal-icon{
+
+	height: 2.4rem;
+	width: 2.4rem;
+
+	/* !  could also use font-size to size icons */
+
+	/* fill: #e67e22;
+		stroke: #e67e22; */
+
+	/* !  if fill and stroke dont color icons, use color instead */
+
+	color: #e67e22;
+
+}
+
+
+/*/?  to center icons with text on a list, the <li> is the container  */
+
+
+
+.meal-attribute{
+
+	font-size: 1.8rem;
+
+	display: flex;
+	align-items: center;
+	gap: 1.6rem;
+
+
+}
+
+
+
+/*/?  Redefine the strong tags boldness  */
+/* !  This would go on the main css as its reusable */
+
+
+strong{
+
+	font-weight: 500;
+}
+
+
+.list-item{
+
+	font-size: 1.8rem;
+
+	display: flex;
+	align-items: center;
+	gap: 1.6rem;
+
+
+}
+
+/*!  use the ul as a flex container, then flex direction back to how it was  */
+/* !  now you can use gap to space horizontally */
+
+
+.list{
+
+	list-style: none;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+}
+
+
+.list-icon{
+
+	width: 3rem;
+	height: 3rem;
+	color: #e67e22;
+}
+
+
+/*/															Using currentColor  											*/
+
+.link:link, .link:visited{
+
+	color: #e67e22;
+
+/*! remove underline  */
+
+	text-decoration: none;
+
+/*! add own underline and use currentcolor instead of specifying color: #e67e22;*/
+
+	border-bottom: 1px solid currentColor;
+
+/*/?  use a bit of padding-bottom (must make inline-block)  */
+/*/? to lower the underline  */
+
+display: inline-block;
+
+padding-bottom: 0.3rem; 
+
+transition: all 0.3s;
+
+}
+
+
+/*/ 														Using transparent													*/
+
+
+.link:active, .link:hover{
+
+	color: #cf711f;
+
+	/*/?  to make the underline disappear, you cannot remove it(1px disappears) */
+
+	/* !  make it transparent */
+
+	border-bottom: 1px solid transparent;
+
+
+
+}
+
+
+/* !  This would go on the main css as its reusable */
+
+.margin-bottom-md{
+
+	margin-bottom: 4.8rem !important;
+
+}
+
+
+.all-recipes{
+
+	text-align: center;
+	font-size: 1.8rem;
+
+
+}
+
+
+/* !  This would go on the main css as its reusable */
+
+
+.center-text{
+
+	text-align: center;
+}
+
+/*--------------------- ----------------------- ------------------------  */
+
+
+
+
+

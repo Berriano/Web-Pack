@@ -1,0 +1,217 @@
+
+/*
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+*/
+
+/*/?  MAIN COLOR : #087f5b  */
+/*/? GREY COLOR :  #343a40  */
+
+
+
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1;
+}
+
+
+body {
+	font-family: 'Inter' , sans-serif;
+	color:#343a40;
+
+}
+
+
+/*/ 													Accordian pt 1															 */
+
+
+/*/?  Set a width for the accordian div box  */
+
+.accordian{
+
+	width: 700px;
+
+/*!  Centering trick */
+	margin: 100px auto;
+
+/*! margin 100px will create a gap at the top and bottom*/
+
+
+/*/?  Give it a background color to test  */
+/* background-color: aqua; */
+
+/*/ Use flex-direction to add a gap without having to use margin bottom */
+
+display: flex;
+flex-direction: column;
+gap: 24px;
+
+
+}
+
+
+.item{
+
+	/*/? add a shadow following the guidelines  */
+
+	box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+
+	/*/? use padding to create space inside the box */
+
+	padding:24px;
+
+	/*/?  Use grid to set the 3 columns  */
+
+	display: grid;
+
+	/*/? set the outer columns to fit the content- automatically  */
+
+	grid-template-columns: auto 1fr auto;
+
+	/* !  Sizing is off because box 4 is too wide for the first column */
+
+
+	/*/? Set gaps to space evenly */
+
+	column-gap: 24px;
+
+	row-gap: 32px;
+
+	/*/? centre items vertically in the cells  */
+
+	align-items: center;
+
+
+}
+.number, .text{
+	
+	font-size:24px;
+	font-weight: 500;
+
+	/*/ To hide color remove the color of the text temporarily/ comment out  */
+
+	/* color:  #087f5b; */
+
+
+}
+.text{
+	
+	font-size:24px;
+	font-weight: 500;
+
+
+}
+
+.number{
+	color:#ced4da
+}
+
+.icon{
+
+	width: 24px;
+	height: 24px;
+	stroke:  #087f5b;
+
+
+}
+.hidden-box{
+
+	grid-column: 2/3;
+
+/*/ To hide the content from display use none  */
+
+/*! will be opened when the open class is added to it  */
+
+display: none;
+
+
+}
+
+.hidden-box p {
+
+	line-height: 1.6;
+	margin-bottom: 24px;
+
+
+}
+
+
+
+/*/								Flexbox setting vertical flow plus gap								  */
+
+
+
+.hidden-box ul {
+
+	color: #868e96;
+	margin-left:20px;
+
+	/*/? set the box to a flex container  */
+
+	display: flex;
+
+	/*/?  Then set the flex-direction to column  */
+
+	flex-direction: column;
+
+	/*/?  Gap property as there is only one column so no colums to gap between */
+
+	gap: 12px;
+
+
+
+
+}
+
+	/*/ * See hidden-box  */
+
+
+
+/*/ Setting a second class to elements to display only one section/element*/
+
+/*/? Add the display:none style to hide all the boxes  */
+
+/* 
+.hidden-box{
+	grid-column: 2/3;
+  display: none;
+} */
+
+
+/*/ Open box styling (* see also the class added to the html)  */
+
+/*/? Add the open class to a box, so you can change its child elements */
+
+
+.open{
+	border-top:4px solid #087f5b;
+}
+
+/*/ To display the rest of the OPEN box, */
+/*/  use the child elements of the open class and add the display property back */
+
+/*!When an element has the class of open/ change the child elements to these */
+
+
+.open .hidden-box{
+
+	display: block; 
+	/*! the user-agent is set to block originally)*/
+
+}
+
+/*! use multiple selectors for the same style (MUST ADD OPEN TO BOTH) */
+
+.open .number, .open .text{
+
+	color: #087f5b;
+
+}

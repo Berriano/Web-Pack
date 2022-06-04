@@ -1,0 +1,209 @@
+
+							/*/							  * Universal selector									*/
+
+
+/*/? The universal selector selects every element on the page */
+
+/* ! when you want a certain property applied to every element on the page, 
+/*! but doesnt get inherited, like adding a border to EVERYTHING!!*/
+
+
+*{
+		color: rgb(165, 165, 165);
+}
+
+/*! any text that doenst have a color set will be grey*/
+
+
+
+/* /? universal selector has the lowest priority, so can be easily overidden */
+
+
+
+
+
+
+							/*/ 								Inheritance (For Text Only)											*/
+							
+
+
+/* /? elements can inherit many text styles from many different selectors */
+
+
+
+/* ! set some styles on the body element (the parent element of all child elements) */
+
+
+body{
+
+	/* ! any text that doesnt have a color set will become #444 
+	
+	/* ! and any text that doesnt have a font-family wil become san-serif */
+
+	font-family: sans-serif;
+	color:#444;
+}
+
+
+
+/* /? use the nav container to set all text inside to a specific size */
+
+
+/* ! all text in the nav will be 18px except the <p>
+! /* as all <p> elements are set below it*/ 
+
+
+nav{
+	font-size: 18px;	
+}
+
+
+
+
+
+
+/* /? set all page elements */
+
+
+
+p {
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+
+h1,
+h2,
+h3{
+
+	color:rgb(16, 152, 173) ;
+
+}
+
+.main-header{
+
+	background-color: #eee;
+}
+
+aside{
+
+border-top:5px solid #1098ad ;
+
+border-bottom:5px solid #1098ad ;
+
+background-color: #eee;
+
+}
+
+h1 { 
+	font-size: 26px;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+h2 {
+	font-size: 40px;	
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+
+}
+
+
+li {
+	font-size: 20px;
+}
+
+
+#author{
+	font-style: italic;
+	font-size: 18px;
+}		
+
+#copyright{
+	font-size: 16px;
+}
+
+.related-author{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.related-bullet{
+
+	list-style: none;
+}
+
+.post-pic{
+
+	border:20px solid rgba(0, 0, 0, 0.753);
+	}
+	
+	.author-pic{
+	
+	border:3px dotted rgba(0, 0, 0, 0.596)
+	
+	}
+	
+
+li:first-child{
+
+		font-weight: bold;
+	
+	}
+		
+	li:last-child{
+	
+			font-style: italic;
+	}
+
+
+#copyright{
+
+	color: red;
+}
+
+footer p {
+
+	color:hotpink  !important;
+}
+
+
+a:link{
+
+	color:#1098ad;
+
+	text-decoration: none;
+
+}
+
+a:visited{
+
+	color:#1098ad;
+
+}
+
+a:hover{
+
+	color:rgb(7, 7, 7);
+
+	font-weight: bolder;
+
+
+	text-decoration: underline wavy rgb(79, 255, 55);
+
+}
+
+a:active{
+
+	background-color: rgb(0, 0, 0);
+	font-style: italic;
+}
+

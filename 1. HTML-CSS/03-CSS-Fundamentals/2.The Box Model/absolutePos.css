@@ -1,0 +1,303 @@
+
+/*/														Absolute Positioning														 */
+
+
+
+/*/ Normal flow */
+
+
+/*/? default positioning */
+/*/? position:relative*/
+/*/? elements are laid out in their order of the html code*/
+
+
+
+/*/ Absolute positioning */
+
+
+/*/?	 element get removed from the normal flow */
+/*/? 	 now it doesnt affect surrounding elements, it might even OVERLAP them*/
+/*/? 	 use top,bottom,left,right to offset from the relative container*/
+
+
+
+button{
+
+	font-size: 22px;
+	padding:20px;
+	cursor: pointer;
+
+	position: absolute;
+
+	/* ! use top,bottom,left, right with co-ordinates for the veiwport*/
+	/* ! viewport is the visible part of the browser screen on opening */
+
+
+	bottom:50px;
+	right: 50px;
+
+
+}
+
+/*/?  To set the position on the page instead of the viewport, */
+/*/?  Set an area to position:relative */
+
+/*! set the body to position:relative and the button will position itself   */
+/*! in relation to it */
+
+
+body{
+
+	/* position: relative;	 */
+
+	font-family: sans-serif;
+	color:#444;
+	
+	}
+
+	/*/?  if you want it positioned in the container, set to position:relative */
+
+
+	.container{
+
+		width:800px;
+		margin: 0 auto;
+
+		position: relative;
+
+		/* !  now its part of the first container parent element*/
+	
+	}
+
+
+	/*!  THE BUTTON HAS TO BE A CHILD OF THE NAV BAR IN THE HTML  */
+	
+
+	
+
+li {
+
+		font-size: 20px;
+		margin-bottom: 10px;
+	
+
+	}
+	
+
+
+nav a:link{
+
+	margin-right: 30px;
+	margin-top: 10px;
+	display: inline-block;
+
+}
+
+nav a:link:last-child{
+
+	margin-right: 0;
+
+}
+
+
+*{
+
+	margin:0;
+	padding: 0;
+
+}
+
+
+aside{
+
+	padding: 50px 0;
+	
+	border-top:5px solid #1098ad ;
+	
+	border-bottom:5px solid #1098ad ;
+	
+	background-color: #eee;
+
+	width:500px;
+	
+	}
+
+
+.post-pic{
+
+	width:100%;
+	height: auto;
+
+	}
+
+
+li:last-child{
+
+	margin-bottom: 0;
+
+}
+
+
+article{
+
+	margin-bottom: 60px;
+}
+
+
+ul,ol{
+
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+
+
+nav{
+font-size: 18px;	
+}
+
+
+p {
+
+font-size: 22px;
+line-height: 1.5;
+margin-bottom: 15px;
+
+}
+
+
+h1,
+h2,
+h3{
+
+color:rgb(16, 152, 173) ;
+
+}
+
+h1 { 
+
+font-size: 26px;
+text-transform: uppercase;
+font-style: italic;
+
+}
+
+h2 {
+
+font-size: 40px;
+margin-bottom: 30px;
+
+}
+
+h3 {
+
+font-size: 30px;
+margin-bottom: 20px;
+margin-top: 40px;
+
+}
+
+h4 {
+font-size: 20px;
+text-transform: uppercase;
+text-align: center;
+
+}
+
+
+
+.post-header{
+
+	margin-bottom: 40px;
+
+}
+
+.main-header{
+
+	background-color: #eee;
+	padding: 20px 40px;
+	margin-bottom: 60px;
+
+
+}
+
+
+
+#author{
+font-style: italic;
+font-size: 18px;
+}		
+
+#copyright{
+font-size: 16px;
+}
+
+.related-author{
+font-size: 18px;
+font-weight: bold;
+}
+
+.related-bullet{
+
+list-style: none;
+
+}
+
+
+.author-pic{
+
+border:3px dotted rgba(0, 0, 0, 0.596)
+
+}
+
+
+li:first-child{
+
+	font-weight: bold;
+
+}
+	
+li:last-child{
+
+		font-style: italic;
+}
+
+
+#copyright{
+
+color: black;
+}
+
+
+
+a:link{
+
+color:#1098ad;
+
+text-decoration: none;
+
+}
+
+a:visited{
+
+color:#1098ad;
+
+}
+
+a:hover{
+
+color:rgb(7, 7, 7);
+font-weight: bolder;
+text-decoration: underline wavy rgb(79, 255, 55);
+
+}
+
+a:active{
+
+background-color: rgb(0, 0, 0);
+font-style: italic;
+}
+
+
+
+
+

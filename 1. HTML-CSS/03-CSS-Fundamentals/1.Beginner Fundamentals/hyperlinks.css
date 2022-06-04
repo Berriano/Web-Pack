@@ -1,0 +1,176 @@
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+	font-family: sans-serif;
+	color:#444;
+}
+
+h1,
+h2,
+h3{
+
+	color:rgb(16, 152, 173) ;
+
+}
+
+.main-header{
+
+	background-color: #eee;
+}
+
+aside{
+
+border-top:5px solid #1098ad ;
+
+border-bottom:5px solid #1098ad ;
+
+background-color: #eee;
+
+}
+
+.post-pic{
+
+border:20px solid rgba(0, 0, 0, 0.753);
+}
+
+.author-pic{
+
+border:3px dotted rgba(0, 0, 0, 0.596)
+
+}
+
+h1 { 
+	font-size: 26px;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+h2 {
+	font-size: 40px;	
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+
+}
+
+
+p {
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+li {
+	font-size: 20px;
+}
+
+
+#author{
+	font-style: italic;
+	font-size: 18px;
+}		
+
+#copyright{
+	font-size: 16px;
+}
+
+.related-author{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.related-bullet{
+
+	list-style: none;
+}
+
+
+li:first-child{
+
+		font-weight: bold;
+	
+	}
+		
+	li:last-child{
+	
+			font-style: italic;
+	}
+
+
+							/* / 						Styling hyperlinks 						*/
+
+
+
+/* /?  Select all the anchor elements on the page*/
+
+/* a {
+
+	color:#1098ad;
+} */
+
+/* ! Incorrect way to style links */
+
+
+
+
+			/* /  		Use psuedo classes to style individual types of links 			*/
+
+
+/* ! Targets only href="" links and not any other <a> tags */
+
+
+a:link{
+
+	color:#1098ad;
+
+/* ! Use text-decoration-none to remove underlines etc */
+
+
+text-decoration: none;
+
+}
+
+
+/* ! change color of hyperlinks already clicked using :visited  psuedo class */
+
+
+a:visited{
+
+	color:#1098ad;
+
+}
+
+
+/* !  HOVER over styles */
+
+a:hover{
+
+	color:rgb(7, 7, 7);
+
+	font-weight: bolder;
+
+
+	/* ! bring back the underline with extra styling so type/style/color (can leave out either) */
+
+	text-decoration: underline wavy rgb(79, 255, 55);
+
+}
+
+
+/* ! Use :active for the state when clicking at that moment*/
+
+a:active{
+
+	background-color: rgb(0, 0, 0);
+	font-style: italic;
+}
