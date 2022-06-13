@@ -8,10 +8,6 @@
 // ---------------------------------- ------------------------------------//
 
 
-/// Start 1
-
-
-/*
 
 /// multiple variable method
 
@@ -122,7 +118,7 @@ const ourYears = [1990, 1976, 1999, 2009, 1974];
 
 const age1 = calcAge(ourYears[0]);
 
-console.log(age1);
+// console.log(age1);
 
 // 32
 
@@ -131,7 +127,7 @@ console.log(age1);
 const age2 = calcAge(ourYears[1]);
 
 
-console.log(age2);
+// console.log(age2);
 
 // 46
 
@@ -142,21 +138,15 @@ console.log(age2);
 const age3 = ourYears[ourYears.length - 1];
 
 
-console.log(age3);
+// console.log(age3);
 
 // 48
 
 
 const ages = [calcAge(ourYears[0]), age2, calcAge(ourYears[ourYears.length - 1])]
 
-console.log(ages);
+// console.log(ages);
 
-
-
-// End 1
-
-
-*/
 
 
 
@@ -166,13 +156,15 @@ console.log(ages);
 
 
 
+
+
 const populations = [65, 25, 365, 1500];
 
 
 
-if (populations.length === 4) console.log(`The arrays has 4 elements`);
+// if (populations.length === 4) console.log(`The arrays has 4 elements`);
 
-else console.log(`The array does not have 4 elements`);
+// else console.log(`The array does not have 4 elements`);
 
 
 
@@ -183,7 +175,7 @@ const percentageWorld = population => (population / 7900) * 100;
 const percentages = [percentageWorld(populations[0]), percentageWorld(populations[1]), percentageWorld(populations[2]), percentageWorld(populations[3])];
 
 
-console.log(percentages);
+// console.log(percentages);
 
 
 
@@ -215,7 +207,7 @@ const towns = ['Bmouth', 'Wmouth', 'BdBerg'];
 towns.push('Brissy');
 
 
-console.log(towns);
+// console.log(towns);
 
 
 // (4) ['Bmouth', 'Wmouth', 'BdBerg', 'Brissy']
@@ -234,7 +226,7 @@ console.log(towns);
 towns.unshift(`Pompey`);
 
 
-console.log(towns);
+// console.log(towns);
 
 
 // (5) ['Pompey', 'Bmouth', 'Wmouth', 'BdBerg', 'Brissy']
@@ -255,14 +247,14 @@ console.log(towns);
 const lastTown = towns.pop();
 
 
-console.log(lastTown);
+// console.log(lastTown);
 
 
 //  Brissy
 
 
 
-console.log(towns);
+// console.log(towns);
 
 
 // (4) ['Pompey', 'Bmouth', 'Wmouth', 'BdBerg']
@@ -283,13 +275,13 @@ const firstTown = towns.shift();
 
 
 
-console.log(firstTown);
+// console.log(firstTown);
 
 
 //  Pompey
 
 
-console.log(towns);
+// console.log(towns);
 
 
 //  (3) ['Bmouth', 'Wmouth', 'BdBerg']
@@ -307,7 +299,7 @@ console.log(towns);
 
 
 
-console.log(towns.indexOf('Wmouth'));
+// console.log(towns.indexOf('Wmouth'));
 
 
 //  1
@@ -326,13 +318,13 @@ console.log(towns.indexOf('Wmouth'));
 
 
 
-console.log(towns.includes('BdBerg'));
+// console.log(towns.includes('BdBerg'));
 
 
 //  true
 
 
-console.log(towns.includes('Sydney'));
+// console.log(towns.includes('Sydney'));
 
 
 // false
@@ -349,11 +341,11 @@ towns.push('23');
 
 
 
-if (towns.includes(23)) {
-	
-	console.log(`23 the string is included`);
-	
-} else console.log('23 is a number and not included');
+// if (towns.includes(23)) {
+
+//     console.log(`23 the string is included`);
+
+// } else console.log('23 is a number and not included');
 
 
 // 23 is a number and not included
@@ -362,11 +354,11 @@ if (towns.includes(23)) {
 
 
 
-if (towns.includes('23')) {
-	
-	console.log(`23 the string is included`);
-	
-} else console.log('23 is a number and not included');
+// if (towns.includes('23')) {
+
+//     console.log(`23 the string is included`);
+
+// } else console.log('23 is a number and not included');
 
 
 // 23 the string is included
@@ -382,13 +374,13 @@ if (towns.includes('23')) {
 
 
 
-const neighbours = ['Wales','Scotland'];
+const neighbours = ['Wales', 'Scotland'];
 
 
 
 neighbours.push('Utopia');
 
-console.log(neighbours);
+// console.log(neighbours);
 
 // (3) ['Wales', 'Scotland', 'Utopia']
 
@@ -397,29 +389,29 @@ console.log(neighbours);
 
 neighbours.pop();
 
-console.log(neighbours);
+// console.log(neighbours);
 
 // (2) ['Wales', 'Scotland']
 
 
 
 
-if(!neighbours.includes('Germany')){
-	
-	console.log(`Probably not a central European Country`);
-	
-}
+// if (!neighbours.includes('Germany')) {
+
+//     console.log(`Probably not a central European Country`);
+
+// }
 
 
 
 
 const wales = neighbours.indexOf('Wales');
 
-console.log(wales);
+// console.log(wales);
 
 neighbours[0] = 'Whales';
 
-console.log(neighbours);
+// console.log(neighbours);
 
 
 
@@ -430,6 +422,24 @@ console.log(neighbours);
 // ----------------------------- ---- 2 -----  ----------------------------//
 
 
+
+
+const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+
+
+const bills = [125, 555, 44];
+
+
+const tips = [calcTip(bills[0]), calcTip(bills[1]),  calcTip(bills[2])];
+
+
+// console.log(tips);
+
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+
+// console.log(total);
 
 
 
