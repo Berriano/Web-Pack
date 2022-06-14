@@ -1,39 +1,20 @@
-// ------------------------    DOM and Event    ----------------------------//
-// --------------------------   Fundamentals   -----------------------------//
-
+// ------------------------     PIG GAME   ----------------------------//
 
 
 'use strict';
 
 
 
-//--------------------------  querySelector() ------------------------------//
+document.querySelector('.check').addEventListener('click',
 
+    function() {
 
+        const guess = Number(document.querySelector('.guess').value);
 
-/// to select class and id tags and return the first element
-/// for the given CSS selector
+        if (!guess) {
 
+            document.querySelector('.message').textContent = '⛔ No Number ';
 
-///?  console.log(document.querySelector('.message'));
-
-
-//   <p class="message">Start guessing...</p>
-
-
-
-///  to then get the text content of the element
-
-
-
-console.log(document.querySelector('.message').textContent);
-
-
-//   Start guessing...
-
-
-
-
-
-
-
+        }
+    }
+);
