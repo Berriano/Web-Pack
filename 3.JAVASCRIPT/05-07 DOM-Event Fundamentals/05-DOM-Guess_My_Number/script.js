@@ -12,12 +12,9 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let highScore = 0;
 
+
+
 document.querySelector('.guess').value = "";
-
-
-
-
-///  refactoring functions
 
 
 
@@ -31,9 +28,6 @@ const displayMessage = function(message) {
 
 
 
-
-
-
 document.querySelector('.check').addEventListener('click', function() {
 
 
@@ -42,31 +36,12 @@ document.querySelector('.check').addEventListener('click', function() {
 
         if (!guess) {
 
-
-            /// refactored message
-
-
-            // document.querySelector('.message').textContent = '⛔ No Number!! ';
-
-
             displayMessage('⛔ No Number!! ');
-
-
-
 
         } else if (guess === secretNumber) {
 
 
-            /// refactored message
-
-
-            // document.querySelector('.message').textContent = '✅ Correct Number!!';
-
-
             displayMessage('✅ Correct Number!!');
-
-
-
 
 
             document.querySelector('body').style.backgroundColor = '#60b347';
@@ -85,32 +60,13 @@ document.querySelector('.check').addEventListener('click', function() {
 
 
 
-            // ----- refactored code ------ //
-
-
-            //! THIS
-
-
-            /// when guess is wrong instead of 2 blocks of high or low 
-
-
-
         } else if (guess !== secretNumber) {
 
 
             if (score > 1) {
 
 
-                /// refactored message with big expression
-
-
                 displayMessage(guess > secretNumber ? 'TOO HIGH!!' : 'TOO LOW!!');
-
-
-                // document.querySelector('.message').textContent = guess > secretNumber ? 'TOO HIGH!!' : 'TOO LOW!!';
-
-
-
 
                 score--;
 
@@ -120,15 +76,7 @@ document.querySelector('.check').addEventListener('click', function() {
             } else {
 
 
-
-                /// refactored message
-
-
-                // document.querySelector('.message').textContent = 'You Lost!!';
-
-
                 displayMessage('You Lost!!');
-
 
                 document.querySelector('.score').textContent = 0;
 
@@ -142,67 +90,6 @@ document.querySelector('.check').addEventListener('click', function() {
 
 
 
-//! REPLACES THIS
-
-
-// else if (guess > secretNumber) {
-
-
-
-//     if (score > 1) {
-
-
-//         document.querySelector('.message').textContent = 'TOO HIGH!!';
-
-//         score--;
-
-//         document.querySelector('.score').textContent = score;
-
-
-//     } else {
-
-//         document.querySelector('.message').textContent = 'You Lost!!';
-
-//         document.querySelector('.score').textContent = 0;
-
-//     }
-
-
-// } else if (guess < secretNumber) {
-
-
-
-//     if (score > 1) {
-
-//         document.querySelector('.message').textContent = 'TOO LOW!!';
-
-//         score--;
-
-//         document.querySelector('.score').textContent = score;
-
-
-//     } else {
-
-//         document.querySelector('.message').textContent = 'You Lost!!';
-
-//         document.querySelector('.score').textContent = 0;
-
-//     }
-
-// }
-
-
-//! End
-
-
-
-
-
-
-// ------------------------    DOM and Event    ----------------------------//
-// --------------------------   Challlenge 1   -----------------------------//
-
-
 
 document.querySelector('.again').addEventListener('click', function() {
 
@@ -213,14 +100,7 @@ document.querySelector('.again').addEventListener('click', function() {
     secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 
-    /// refactored message
-
-
-    // document.querySelector('.message').textContent = 'Start guessing...!!';
-
-
     displayMessage('Start guessing...!!');
-
 
 
     document.querySelector('.number').textContent = '?';
