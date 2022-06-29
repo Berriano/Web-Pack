@@ -7,7 +7,7 @@
 
 
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650];
 
 
 
@@ -47,9 +47,6 @@ movements.forEach(function(mov) {
 // You Withdrew $400
 // You deposited $3000
 // You Withdrew $650
-// You Withdrew $130
-// You deposited $70
-// You deposited $1300
 
 
 
@@ -81,15 +78,11 @@ movements.forEach(function(mov, i, array) {
 // Transaction 2 : You Withdrew $400
 // Transaction 3 : You deposited $3000
 // Transaction 4 : You Withdrew $650
-// Transaction 5 : You Withdrew $130
-// Transaction 6 : You deposited $70
-// Transaction 7 : You deposited $1300
 
 
 
 /// FOREACH WILL LOOP OVER THE ENTIRE ARRAY AND CANNOT BREAK OUT (LIKE CONTINUE AND BREAK)
 
-console.log('');
 
 
 
@@ -99,7 +92,6 @@ console.log('');
 // --------------------------- with maps() and sets() -------------------------- //
 
 console.log('----------------------------- Maps and Sets -----------------------------');
-console.log('');
 
 
 
@@ -141,9 +133,7 @@ currencies.forEach(function(value, key, map){
 
 
 
-
 // --------------- Sets() ---------------- //
-
 
 
 
@@ -168,5 +158,72 @@ console.log(value);
 // USD
 // GBP
 // AUD
+
+
+
+
+// ------------- forEach with the map function and other methods ---------- //
+
+
+
+
+const account1 = {
+	owner: 'Jonas Schmedtmann',
+	movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+	interestRate: 1.2, // %
+	pin: 1111,
+};
+
+
+const account2 = {
+	owner: 'Jessica Davis',
+	movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+	interestRate: 1.5,
+	pin: 2222,
+};
+
+
+
+const accounts = [account1, account2];
+
+
+
+
+const createUserName = function(accs) {
+
+
+	/// on the accounts passed in, for each account
+
+
+	accs.forEach(function(acc) {
+
+
+			/// create a username property which is calculated by a callback function
+			/// used on the account.owner string 
+
+
+			acc.username = acc.owner.toLowerCase()
+					.split(' ')
+					.map(name => name[0])
+					.join('');
+
+	})
+	
+
+	//!  no need to return anything as foreach has already created the username,
+	//!  and no value is created
+
+}
+
+
+/// So, forEach of the accounts in the array,           
+/// a username is created based on the callback function
+
+
+createUserName(accounts);
+
+
+
+console.log(account1,account2);
 
 
