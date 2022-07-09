@@ -86,59 +86,94 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 
 
-//--  display movements --//
+// -- Display UI function -- //
 
 
 
-const displayMovements = function (movements) {
+const updateUI = function (acc) {
 
+
+	displayBalance(acc);
+
+	displayMovements(acc.movements);
+
+	displaySummary(acc);
+
+}
+
+
+
+
+// --------------------------- 9. Sort amounts ------------------------------ //
+
+
+
+
+/// firstly add a sort parameter (set to false), 
+/// and movement ternary operator for sorting to the displayMovements function
+
+
+
+
+/// add sort parameter set to false by default
+
+
+const displayMovements = function (movements, sort = false) {
 
 
 	document.querySelector('.movements').innerHTML = '';
 
-	movements.forEach(function (mov, i) {
+
+
+	/// create a new variable for the movements - if sort = true then
+	/// create a copy and sort(function)
+
+	/// else just display movements
+
+
+	const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+
+
+	/// now use the foreach method on the new movs variable(which holds the new movements)
+
+
+	movs.forEach(function (mov, i) {
+
+
 		const type = mov > 0 ? 'deposit' : 'withdrawal';
 
 		const html = `
 		
 		<div class="movements__row">		
-		<div class="movements__type movements__type--${type}">${i + 1} ${type}</div>		
-		<div class="movements__value">${mov}€</div>									
+		
+				<div class="movements__type movements__type--${type}">${i + 1} ${type}</div>		
+				<div class="movements__value">${mov}€</div>		
+											
 		</div>`;
 
+
+		/// the sort parameter need setting to true when the sort button is clicked-
+		/// see btnSort at end of page
+
+
+
 		document.querySelector('.movements').insertAdjacentHTML('afterbegin', html);
+
+
 	});
 };
+
 
 
 
 //-- display balance --//
 
 
-/// now pass in the whole currentAccount object and create a balance property
-
-
-
 const displayBalance = function (currAcc) {
 
 
-
-	// const balance = currAcc.movements.reduce((acc, mov) => acc + mov, 0);
-
-	// currAcc.balance = balance;
-
-	// labelBalance.textContent = '€' + balance;
-
-
-
-
-	/// instead of creating a variable and then a property,
-	/// just create a property and use the object: value
-
-
-
 	currAcc.balance = currAcc.movements.reduce((acc, mov) => acc + mov, 0);
-
 
 	labelBalance.textContent = `${currAcc.balance}€ `;
 
@@ -235,27 +270,12 @@ btnLogin.addEventListener('click', function (e) {
 			}`;
 
 
-		containerApp.style.opacity = 100;
 
+		containerApp.style.opacity = 100;
 
 		inputLoginUsername.value = inputLoginPin.value = '';
 
-
 		inputLoginPin.blur();
-
-
-
-
-		/// Re-factor the 3 display functions(also in the money transfer) into 1 UI function
-
-
-		// displayBalance(currentAccount);
-
-
-		// displayMovements(currentAccount.movements);
-
-
-		// displaySummary(currentAccount);
 
 
 		updateUI(currentAccount);
@@ -266,29 +286,17 @@ btnLogin.addEventListener('click', function (e) {
 
 
 
-// ----------------------- 6. Money transfer ------------------------ //
+// ----- Money transfer ------ //
 
 
 
 btnTransfer.addEventListener('click', function (e) {
 
 
-	/// form - prevent default
-
-
 	e.preventDefault();
 
 
-
-	/// create a variable for the amount to transfer from input field - AS a number
-
-
 	const amount = Number(inputTransferAmount.value);
-
-
-
-	/// create a variable for the reciever account, and use find with value from input field,
-	/// to loop thru accounts array and match with the username 
 
 
 
@@ -301,105 +309,137 @@ btnTransfer.addEventListener('click', function (e) {
 	console.log(recieverAccount, amount);
 
 
-	/// check if the current account balance is greater than the transfer amount
-	/// and also greater than 0 
-
-
-	//! The current account balance is not saved to a variable yet!
-	//! Use the displayBalance function to create a property and value,
-	//! to hold the balance in each account, then pass into the function the whole account,
-	//! instead of just the movements
-
-
 	if (
-		amount > 0 &&
 
-		// amount is over 0
+		amount > 0 &&
 
 		recieverAccount &&
 
-		// reciever account exists
-
 		currentAccount.balance >= amount &&
 
-		// Theres enough money in the currentAccount
-
 		recieverAccount?.username !== currentAccount.username) {
-
-		// check again if reciever account exist, and is not the same as current account
-
-		console.log('TRANSFERED');
-
-
-
-		/// transfering the money from one account to another
-
-
-
-		/// push the negative amount to the current account movements
 
 
 
 		currentAccount.movements.push(-amount);
 
-
-
-		/// push the amount to the reciever account movements
-
-
-
 		recieverAccount.movements.push(amount);
 
-
-
-		/// clear the input fields of any values left in them, by setting to empty string
-
-
-
 		inputTransferAmount.value = inputTransferTo.value = '';
-
-
-
-		//! And thats it!!
-
-
-
-		/// now update the UI with the new balances / movements
-
-
-		//! Re-factor the 3 display functions(also in the create login) into 1 UI function
-		//! then call the UI function here and in create login
 
 
 		updateUI(currentAccount)
 
 	}
 
-
-
 });
 
 
 
-// --- UI Function Declaration -- //
 
-
-/// set parameter to acc so any account can be passed in
-
-
-function updateUI(acc) {
-
-	displayBalance(acc);
-
-
-	displayMovements(acc.movements);
-
-
-	displaySummary(acc);
+// ------- Close account -------- //
 
 
 
-}
+
+btnClose.addEventListener('click', function (e) {
+
+	e.preventDefault();
 
 
+	if (
+
+		inputCloseUsername.value === currentAccount.username &&
+		Number(inputClosePin.value) === currentAccount.pin) {
+
+
+		const index = accounts.findIndex(acc => acc.username === currentAccount.username);
+
+
+		accounts.splice(index, 1);
+
+		containerApp.style.opacity = 0;
+
+	}
+
+	inputCloseUsername.value = inputClosePin.value = '';
+
+
+})
+
+
+
+
+
+// ----------  Request Loan ----------- //
+
+
+
+
+btnLoan.addEventListener('click', function (e) {
+
+
+	e.preventDefault();
+
+
+	const amount = Number(inputLoanAmount.value);
+
+
+	if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+
+
+		currentAccount.movements.push(amount);
+
+
+		inputLoanAmount.value = '';
+
+
+		updateUI(currentAccount);
+
+	}
+
+
+})
+
+
+
+
+
+// --------------------------- 9. Sort amounts ------------------------------ //
+// ---------------------------    CONTINUED    ------------------------------ //
+
+
+/// sort click event
+
+
+/// create a state variable set to false
+
+
+let sorted = false;
+
+
+
+btnSort.addEventListener('click', function (e) {
+
+
+	e.preventDefault;
+
+
+	/// call the updated displayMovements function and set sort parameter to true
+	/// to activate the true state of the movs ternary operator (so opposite of sorted)
+
+
+
+	displayMovements(currentAccount.movements, !sorted)
+
+
+
+	/// so when clicked sorted get set to the opposite of sorted i.e true if the function call
+
+	/// now set sorted variable to this aswell
+
+	sorted = !sorted;
+
+
+})
 

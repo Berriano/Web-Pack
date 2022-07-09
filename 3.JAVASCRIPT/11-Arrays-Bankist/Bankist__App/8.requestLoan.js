@@ -41,6 +41,7 @@ const account4 = {
 
 
 
+
 // Array of the account objects
 
 
@@ -84,11 +85,33 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 
 
+
+// -- Display UI function -- //
+
+
+
+const updateUI = function (acc) {
+
+
+	displayBalance(acc);
+
+	displayMovements(acc.movements);
+
+	displaySummary(acc);
+
+}
+
+
+
+
 //--  display movements --//
 
 
 
 const displayMovements = function (movements) {
+
+
+
 	document.querySelector('.movements').innerHTML = '';
 
 	movements.forEach(function (mov, i) {
@@ -107,15 +130,17 @@ const displayMovements = function (movements) {
 
 
 
+
 //-- display balance --//
 
 
+const displayBalance = function (currAcc) {
 
-const displayBalance = function (movs) {
 
-	const balance = movs.reduce((acc, mov) => acc + mov, 0);
+	currAcc.balance = currAcc.movements.reduce((acc, mov) => acc + mov, 0);
 
-	labelBalance.textContent = '€' + balance;
+	labelBalance.textContent = `${currAcc.balance}€ `;
+
 
 };
 
@@ -137,16 +162,13 @@ const displaySummary = function (currAcc) {
 	labelSumIn.textContent = ` ${incomes}€`;
 
 
+
 	const out = currAcc.movements
 		.filter(mov => mov < 0)
 		.reduce((acc, mov) => acc + mov, 0);
 
 
 	labelSumOut.textContent = ` ${Math.abs(out)}€`;
-
-
-
-	/// Can now set the interest rate to currentAccount
 
 
 
@@ -165,66 +187,39 @@ const displaySummary = function (currAcc) {
 
 
 
+
 //-- create username --//
 
 
 
 const createUserName = function (accs) {
+
 	accs.forEach(function (acc) {
+
 		acc.username = acc.owner
 			.toLowerCase()
 			.split(' ')
 			.map(name => name[0])
 			.join('');
 	});
-
 };
+
 
 
 createUserName(accounts);
 
 
 
-// ---------------------------- 5. Create login ---------------------------- //
-
-
-
-/// For a login to work, you need a global variable,
-/// to hold all the account data outside of any function to be re-used anywhere
-
-
-
-//! Now that a currentAccount has been created, it can be used to calculate the
-//! interest rate for each account in the displaySummary
+// -- Create login -- //
 
 
 
 let currentAccount;
 
 
-
-/// the event handler for the login
-
-
-/// form element buttons default behavior is to reload the page when clicked
-
-
-/// Use the event parameter to stop the default behavior of an event -
-
-/// Prevent default on the (e) argument
-
-
-
 btnLogin.addEventListener('click', function (e) {
 
-
 	e.preventDefault();
-
-
-	/// now find the account owner from the accounts array,
-	/// using the inputLoginUsername.value,
-	/// and store in the currentAccount variable
-
 
 	currentAccount = accounts.find(
 
@@ -232,30 +227,7 @@ btnLogin.addEventListener('click', function (e) {
 
 	);
 
-
-	/// to login, check the pin matches the currentAccount pin
-
-
-	//! Use optional chaining so no errors appear if account doesnt exist
-
 	if (currentAccount?.pin === Number(inputLoginPin.value)) {
-
-
-		//- Display the UI and message, movements, summary and balance of the current account//
-
-
-
-		// -- Show UI message -- //
-
-
-
-		/// split the owner name into an array, then take the array element at index[0]
-
-		//! This should always give ou the first name
-
-		/// add name to the welcome message
-
-
 
 		labelWelcome.textContent = `Welcome back ${currentAccount.owner.split(' ')[0]
 
@@ -263,54 +235,152 @@ btnLogin.addEventListener('click', function (e) {
 
 
 
-		/// reveal UI on correct login by setting css .app opacity to 100
-
-
-
 		containerApp.style.opacity = 100;
 
-
-
-		/// clear input fields when logged in by setting both fields to an empty string
-
-
-
 		inputLoginUsername.value = inputLoginPin.value = '';
-
-		//! this makes loginUsername the same as loginPin (which is an empty string)
-
-
-
-		/// blur pin field cursor using DOM method - (see DOM events on chrome bookmarks)
-
 
 		inputLoginPin.blur();
 
 
-
-
-		// -- Display movements, summary and balance  -- //
-
-
-
-		/// call all the display methods and pass in the movements,
-		/// as this is what they use to calculate what to display
-
-
-
-		displayBalance(currentAccount.movements);
-
-
-		displayMovements(currentAccount.movements);
-
-
-
-
-		/// now pass in the whole account as we want more than just the movements
-
-
-		displaySummary(currentAccount);
+		updateUI(currentAccount);
 
 
 	}
 });
+
+
+
+// ----- Money transfer ------ //
+
+
+
+btnTransfer.addEventListener('click', function (e) {
+
+
+	e.preventDefault();
+
+
+	const amount = Number(inputTransferAmount.value);
+
+
+
+	const recieverAccount = accounts.find(
+
+		acc => acc.username === inputTransferTo.value
+
+	);
+
+	console.log(recieverAccount, amount);
+
+
+	if (
+
+		amount > 0 &&
+
+		recieverAccount &&
+
+		currentAccount.balance >= amount &&
+
+		recieverAccount?.username !== currentAccount.username) {
+
+
+
+		currentAccount.movements.push(-amount);
+
+		recieverAccount.movements.push(amount);
+
+		inputTransferAmount.value = inputTransferTo.value = '';
+
+
+		updateUI(currentAccount)
+
+	}
+
+});
+
+
+
+
+// ------- Close account -------- //
+
+
+
+
+btnClose.addEventListener('click', function (e) {
+
+	e.preventDefault();
+
+
+	if (
+
+		inputCloseUsername.value === currentAccount.username &&
+		Number(inputClosePin.value) === currentAccount.pin) {
+
+
+		const index = accounts.findIndex(acc => acc.username === currentAccount.username);
+
+
+		accounts.splice(index, 1);
+
+		containerApp.style.opacity = 0;
+
+	}
+
+	inputCloseUsername.value = inputClosePin.value = '';
+
+
+})
+
+
+
+
+
+// --------------------------- 8. Request Loan --------------------------- //
+
+
+
+
+btnLoan.addEventListener('click', function (e) {
+
+
+	e.preventDefault();
+
+
+	/// get the amount from the input field
+
+
+	const amount = Number(inputLoanAmount.value);
+
+
+
+	/// if the amount is greater than 0 and the current account has a deposit >= 10% loan
+
+
+
+	if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+
+
+
+		/// push the amount to the current account
+
+
+		currentAccount.movements.push(amount);
+
+
+
+		/// clear input 
+
+
+		inputLoanAmount.value = '';
+
+
+
+		/// DONT FORGET to update UI		
+
+
+		updateUI(currentAccount);
+
+	}
+
+
+})
