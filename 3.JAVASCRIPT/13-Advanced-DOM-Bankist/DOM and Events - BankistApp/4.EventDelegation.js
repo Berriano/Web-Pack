@@ -108,7 +108,9 @@ navLinks.addEventListener('click', function (e) {
 	// <a class="nav__link" href="section--(1,2,3)">text</a>
 
 
-	/// Matching startegy for each link 
+
+	// ----- Matching startegy for each link ----- //
+
 	/// (and not the empty space inside <ul class="nav__links">)
 
 
